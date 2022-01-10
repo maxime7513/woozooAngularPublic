@@ -38,7 +38,7 @@ export class OffresDetailsComponent implements OnInit {
     if(el == 'securite' && this.notationOneTime == false){ // lancer fonction roughtNotation() si categorie securite et fonction pas encore effectué
       setTimeout(() => {
         this.roughtNotation();
-      }, 1000);
+      }, 1500);
     }else if(el != 'securite'){
       this.notationOneTime = false; // remettre variable à false pour pouvoir relancer la fonction roughtNotation() 
     }
