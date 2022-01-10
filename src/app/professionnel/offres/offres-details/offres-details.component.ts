@@ -14,7 +14,7 @@ export class OffresDetailsComponent implements OnInit {
       let offreDetails = document.getElementById("offre_details") as HTMLCanvasElement,
       offreDetailsOffset = offreDetails.offsetTop,
       offreDetailsHeight = offreDetails.offsetHeight;
-      this.scrolled = window.scrollY > (offreDetailsOffset - 65);
+      this.scrolled = window.scrollY > (offreDetailsOffset - 60);
       this.scrolledDepasse = window.scrollY > (offreDetailsOffset + offreDetailsHeight - 200);
   }
 
