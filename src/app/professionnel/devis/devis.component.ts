@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
 import { PopupLivraisonService } from 'src/app/services/popup-livraison.service';
 
