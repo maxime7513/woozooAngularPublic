@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SecteursService } from 'src/app/services/secteurs.service';
 
 @Component({
   selector: 'app-secteurs',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecteursComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: SecteursService) { }
 
   ngOnInit(): void {
   }
-
+  
+  changeSecteur(el: string) {
+    this.data.changeServiceSecteur(el);
+  }
 }
