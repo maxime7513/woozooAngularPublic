@@ -54,6 +54,9 @@ section{
     background: rgba(255, 255, 255, 0.35);
     border-radius: 10px;
     padding: 25px 0;
+    &.opacite{
+        background: rgba(255, 255, 255, 0.55);
+    }
     label{
         position: relative;
         width: 70%;
@@ -138,7 +141,7 @@ section{
     position: absolute;
     top: 35px;
     right: -50px;
-    width: 30px;
+    width: 27px;
     cursor: pointer;
     transition: .4s;
     &:hover{

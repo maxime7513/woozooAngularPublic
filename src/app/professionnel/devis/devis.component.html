@@ -2,7 +2,7 @@
     <div id="map"></div>
     <div class="formulaire">
         <h3>Estimez le prix de votre livraison<br>en quelques clics</h3>
-        <div id="form-devis">
+        <div id="form-devis" [ngClass]="{'opacite': estimation}">
             <label>
                 <img src="./assets/img/professionnel/devis/colis.png" alt="adresse de retrait">
                 <input type="text" name="adresse1" id="origin-input" required placeholder="Adresse de retrait" maxlength="160">
