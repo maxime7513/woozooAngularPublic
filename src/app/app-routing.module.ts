@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
-import { SecteursDetailsComponent } from './professionnel/secteurs-details/secteurs-details.component';
-
+import { SecteurComponent } from './secteur/secteur.component';
 
 // const routes: Routes = [
 //   {path: '' , component: HomePageComponent},
@@ -13,7 +12,7 @@ import { SecteursDetailsComponent } from './professionnel/secteurs-details/secte
 const routes: Routes = [
   { path: '', component: HomePageComponent , data: {animation: 'Home'} },
   { path: 'professionnel', component: ProfessionnelComponent , data: {animation: 'Professionnel'} },
-  { path: 'secteurs', component: SecteursDetailsComponent , data: {animation: 'Secteurs'} },
+  { path: 'secteur', component: SecteurComponent , data: {animation: 'Secteur'} },
   // { path: 'coursier', component: CoursierComponent , data: {animation: 'Coursier'} },
 ];
 

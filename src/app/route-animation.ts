@@ -50,20 +50,20 @@ export const slideInAnimation =
                 ], { optional: true }),
             ])
         ]),
-        transition('Professionnel => Secteurs', [
+        transition('Professionnel => Secteur', [
             query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
             group([
                 query(':enter', [
-                    style({ transform: 'translateX(100%)' }),
+                    style({ transform: 'translateX(-100%)' }),
                     animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
                 ], { optional: true }),
                 query(':leave', [
                     style({ transform: 'translateX(0%)' }),
-                    animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
+                    animate('0.5s ease-in-out', style({ transform: 'translateX(100%)' }))
                 ], { optional: true }),
             ])
         ]),
-        transition('Secteurs => *', [
+        transition('Secteur => *', [
             query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
             group([
                 query(':enter', [

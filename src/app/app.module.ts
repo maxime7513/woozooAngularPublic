@@ -33,14 +33,16 @@ import { OffresDetailsComponent } from './professionnel/offres/offres-details/of
 import { PartenairesComponent } from './professionnel/partenaires/partenaires.component';
 import { PopupLivraisonComponent } from './professionnel/popup-livraison/popup-livraison.component';
 import { FooterProfessionnelComponent } from './professionnel/footer-professionnel/footer-professionnel.component';
-// secteurs
-import { SecteursDetailsComponent } from './professionnel/secteurs-details/secteurs-details.component';
-import { HeaderSecteursDetailsComponent } from './professionnel/secteurs-details/header-secteurs-details/header-secteurs-details.component';
-import { SecteursDetailsContenuComponent } from './professionnel/secteurs-details/secteurs-details-contenu/secteurs-details-contenu.component';
+// secteur
+import { SecteurComponent } from './secteur/secteur.component';
+import { HeaderSecteurComponent } from './secteur/header-secteur/header-secteur.component';
+import { ContenuSecteurComponent } from './secteur/contenu-secteur/contenu-secteur.component';
+import { FooterSecteurComponent } from './secteur/footer-secteur/footer-secteur.component';
 
 // service
 import { PopupLivraisonService } from './services/popup-livraison.service';
 import { SecteursService } from './services/secteurs.service';
+
 
 
 @NgModule({
@@ -62,9 +64,10 @@ import { SecteursService } from './services/secteurs.service';
     OffresDetailsComponent,
     PartenairesComponent,
     FooterProfessionnelComponent,
-    SecteursDetailsComponent,
-    HeaderSecteursDetailsComponent,
-    SecteursDetailsContenuComponent,
+    SecteurComponent,
+    HeaderSecteurComponent,
+    ContenuSecteurComponent,
+    FooterSecteurComponent,
   ],
   imports: [
     BrowserModule,

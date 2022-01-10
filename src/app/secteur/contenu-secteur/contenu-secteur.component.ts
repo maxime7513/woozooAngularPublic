@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SecteursService } from 'src/app/services/secteurs.service';
 
 @Component({
-  selector: 'app-secteurs-details-contenu',
-  templateUrl: './secteurs-details-contenu.component.html',
-  styleUrls: ['./secteurs-details-contenu.component.scss']
+  selector: 'app-contenu-secteur',
+  templateUrl: './contenu-secteur.component.html',
+  styleUrls: ['./contenu-secteur.component.scss']
 })
-export class SecteursDetailsContenuComponent implements OnInit {
+export class ContenuSecteurComponent implements OnInit {
   secteurVisible : string;
 
   constructor(private data: SecteursService) {

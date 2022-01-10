@@ -1,0 +1,18 @@
+#transition_secteurs{ /* transition secteurs */
+    background: #34b5c1;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 5;
+    &.active{
+        animation: 1s transitionSolutions ease;
+    }
+}
+@keyframes transitionSolutions{
+    0%{transform: translateX(-100%);}
+    40%{transform: translateX(0);background: rgba(0,14,34,1);}
+    60%{transform: translateX(0);}
+    100%{transform: translateX(100%);background:  rgba(17,63,113,1);}
+}
