@@ -10,12 +10,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { FooterHomePageComponent } from './home-page/footer-home-page/footer-home-page.component';
-import { HeaderComponent } from './header/header.component';
 import { PresentationComponent } from './professionnel/presentation/presentation.component';
 import { ClientsSliderComponent } from './professionnel/clients-slider/clients-slider.component';
 import { OffresComponent } from './professionnel/offres/offres.component';
@@ -27,9 +28,12 @@ import { PopupLivraisonComponent } from './professionnel/popup-livraison/popup-l
 import { OffresDetailsComponent } from './professionnel/offres/offres-details/offres-details.component';
 import { PartenairesComponent } from './professionnel/partenaires/partenaires.component';
 import { FooterComponent } from './footer/footer.component';
+import { SecteursDetailsComponent } from './professionnel/secteurs-details/secteurs-details.component';
 
 import { PopupLivraisonService } from './services/popup-livraison.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderProfessionnelComponent } from './professionnel/header-professionnel/header-professionnel.component';
+import { HeaderSecteursDetailsComponent } from './professionnel/secteurs-details/header-secteurs-details/header-secteurs-details.component';
+import { SecteursDetailsContenuComponent } from './professionnel/secteurs-details/secteurs-details-contenu/secteurs-details-contenu.component';
 
 
 @NgModule({
@@ -40,7 +44,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     ProfessionnelComponent,
     PresentationComponent,
-    HeaderComponent,
     ClientsSliderComponent,
     OffresComponent,
     ValeursComponent,
@@ -51,10 +54,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OffresDetailsComponent,
     PartenairesComponent,
     FooterComponent,
+    SecteursDetailsComponent,
+    HeaderProfessionnelComponent,
+    HeaderSecteursDetailsComponent,
+    SecteursDetailsContenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     GoogleMapsModule,
     SlickCarouselModule,
     FontAwesomeModule,
@@ -63,7 +71,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatToolbarModule,
     NgxPageScrollModule,
-    BrowserAnimationsModule
+    
   ],
   providers: [PopupLivraisonService],
   bootstrap: [AppComponent]
