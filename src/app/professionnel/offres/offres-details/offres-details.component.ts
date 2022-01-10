@@ -18,13 +18,18 @@ export class OffresDetailsComponent implements OnInit {
       offreDetailsHeight = offreDetails.offsetHeight;
       this.scrolled = window.scrollY > (offreDetailsOffset - 60);
       this.scrolledDepasse = window.scrollY > (offreDetailsOffset + offreDetailsHeight - 200);
+
+      if(this.contenuVisible == 'securite' && this.scrolled == true && this.notationOneTime == false){
+        this.roughtNotation();
+      }
   }
 
   constructor() { 
     this.contenuVisible = 'securite';
   }
 
-  ngOnInit(): void {} 
+  ngOnInit(): void {}
+
   // scroll(el: HTMLElement){ // function scroll
   //   let y = el.offsetTop;
   //   window.scrollTo({top: y - 64, behavior: 'smooth'});
