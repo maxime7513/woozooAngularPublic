@@ -7,11 +7,11 @@ import { CommentairesService } from 'src/app/services/commentaires.service';
   styleUrls: ['./commentaires.component.scss']
 })
 export class CommentairesComponent implements OnInit {
-  clients: Array<{nom: string, enseigne: string, img: string, texte: string}>
+  commentaires: Array<{nom: string, enseigne: string, img: string, texte: string}>
   slideConfig = {"slidesToShow": 3, "slidesToScroll": 1, "autoplay": true};
 
   constructor(private data: CommentairesService) {
-    this.clients = this.data.clients;
+    this.commentaires = this.data.clients;
   }
 
   ngOnInit(): void {
