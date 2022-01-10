@@ -17,15 +17,15 @@ export class PresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let tab = ["presentation1", "presentation2", "presentation3"];
-    let i = 1;
-    setInterval(() => { // slider presentation
-      this.dotNav = tab[i];
-      i++;
-      if(i>= tab.length){
-        i = 0;
-      }
-    }, 5000);
+    // let tab = ["presentation1", "presentation2", "presentation3"];
+    // let i = 1;
+    // setInterval(() => { // slider presentation
+    //   this.dotNav = tab[i];
+    //   i++;
+    //   if(i>= tab.length){
+    //     i = 0;
+    //   }
+    // }, 5000);
   }
 
 }

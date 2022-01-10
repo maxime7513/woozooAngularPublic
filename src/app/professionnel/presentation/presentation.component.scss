@@ -17,7 +17,8 @@ section{
         transform: skew(-20deg, 0) translateX(0rem);
         bottom: -1px;
         right: -5%;
-        top: 40%;
+        // top: 40%;
+        top: 45%;
         box-shadow: 0px 3px 10px 8px rgba(0,0,0,.2);
     }
     > div:not(.dot_nav){
@@ -35,7 +36,8 @@ section{
             display: flex;
             flex-direction: column;
             width: 45%;
-            margin-top: 6%;
+            // margin-top: 6%;
+            margin-top: 7.5%;
             position: relative;
         }
     }
