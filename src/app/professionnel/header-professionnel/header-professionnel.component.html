@@ -21,10 +21,10 @@
                 <div class="block-hover"></div>
                 <div id="dropdown_nos-secteurs"> <!-- dropdown nos solutions -->
                     <div class="fleche-dropdown"></div>
-                    <a routerLink="../secteurs"><img src="./assets/img/header/shop.svg" alt="">Commerce</a>
-                    <a><img src="./assets/img/header/mode.svg" alt="">Retail & luxe</a>
-                    <a><img src="./assets/img/header/online.svg" alt="">E-commerce</a>
-                    <a><img src="./assets/img/header/restaurant.svg" alt="">Restaurant</a>
+                    <a routerLink="../secteurs" (click)="changeSecteur('commerce')"><img src="./assets/img/header/shop.svg" alt="commerce">Commerce</a>
+                    <a routerLink="../secteurs" (click)="changeSecteur('luxe')"><img src="./assets/img/header/mode.svg" alt="luxe">Retail & luxe</a>
+                    <a routerLink="../secteurs" (click)="changeSecteur('e-commerce')"><img src="./assets/img/header/online.svg" alt="e-commerce">E-commerce</a>
+                    <a routerLink="../secteurs" (click)="changeSecteur('restaurant')"><img src="./assets/img/header/restaurant.svg" alt="restaurant">Restaurant</a>
                 </div>
             </div>
             <button>Contactez un commercial</button>

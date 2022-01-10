@@ -1,5 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { PopupLivraisonService } from 'src/app/services/popup-livraison.service';
+import { SecteursService } from 'src/app/services/secteurs.service';
 
 @Component({
   selector: 'app-header-professionnel',
@@ -14,7 +15,7 @@ export class HeaderProfessionnelComponent implements OnInit {
   };
   @Input() contenuVisibleOffres: any;
   
-  constructor(private PopupLivraisonService: PopupLivraisonService) { }
+  constructor(private PopupLivraisonService: PopupLivraisonService, private data: SecteursService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,10 @@ export class HeaderProfessionnelComponent implements OnInit {
 
   contenuVisibleOffre(el: string) { // changer contenu visible offres-details
     this.contenuVisibleOffres.changeContenu(el);
+  }
+
+  changeSecteur(el: string) {
+    this.data.changeServiceSecteur(el);
   }
 
 }

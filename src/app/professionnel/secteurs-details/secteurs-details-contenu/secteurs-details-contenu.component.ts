@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SecteursService } from 'src/app/services/secteurs.service';
 
 @Component({
   selector: 'app-secteurs-details-contenu',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class SecteursDetailsContenuComponent implements OnInit {
   secteurVisible : string;
 
-  constructor() {
-    this.secteurVisible = "commerce";
+  constructor(private data: SecteursService) {
+    // this.secteurVisible = "commerce";
+    this.secteurVisible = this.data.secteur;
   }
 
   ngOnInit(): void {
