@@ -8,12 +8,12 @@
 
     <div [class.active]="dotNav == 'presentation2'" class="presentation_commercant2">
         <ngx-slick-carousel id="slider-commentaire_presentation" #slickModal="slick-carousel" [config]="slideConfig">
-            <div ngxSlickItem *ngFor="let client of clients">
+            <div ngxSlickItem *ngFor="let commentaire of commentaires">
                 <div class="card-commentaire_presentation">
                     <img src="./assets/img/commentaire/double-quote_bleu.png" alt="double quote">
-                    <img src="{{ client.img }}" alt="photo client">
-                    <p>{{ client.texte }}</p>
-                    <p>{{ client.nom }} | {{client.enseigne}}</p>
+                    <img src="{{ commentaire.img }}" alt="photo client">
+                    <p>{{ commentaire.texte }}</p>
+                    <p>{{ commentaire.nom }} | {{commentaire.enseigne}}</p>
                 </div>
             </div>
         </ngx-slick-carousel>
