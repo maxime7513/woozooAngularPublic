@@ -122,6 +122,12 @@ export class DevisComponent implements OnInit {
 
     initMap(); // initialiser map
 
+    // map qui reste carré (responsive)
+    let map = document.getElementById("map") as HTMLElement;//
+    let mapWidth = map.clientWidth;//
+    let calcHeightMap:any = mapWidth * 0.685;//
+    map.style.height = calcHeightMap + "px";//
+    
   }
 
   openPopup(){
