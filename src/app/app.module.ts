@@ -15,9 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // component
 import { AppComponent } from './app.component';
+// home page
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { FooterHomePageComponent } from './home-page/footer-home-page/footer-home-page.component';
+// professionnel
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
 import { HeaderProfessionnelComponent } from './professionnel/header-professionnel/header-professionnel.component';
 import { PresentationComponent } from './professionnel/presentation/presentation.component';
@@ -30,7 +32,8 @@ import { DevisComponent } from './professionnel/devis/devis.component';
 import { OffresDetailsComponent } from './professionnel/offres/offres-details/offres-details.component';
 import { PartenairesComponent } from './professionnel/partenaires/partenaires.component';
 import { PopupLivraisonComponent } from './professionnel/popup-livraison/popup-livraison.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterProfessionnelComponent } from './professionnel/footer-professionnel/footer-professionnel.component';
+// secteurs
 import { SecteursDetailsComponent } from './professionnel/secteurs-details/secteurs-details.component';
 import { HeaderSecteursDetailsComponent } from './professionnel/secteurs-details/header-secteurs-details/header-secteurs-details.component';
 import { SecteursDetailsContenuComponent } from './professionnel/secteurs-details/secteurs-details-contenu/secteurs-details-contenu.component';
@@ -58,7 +61,7 @@ import { SecteursService } from './services/secteurs.service';
     PopupLivraisonComponent,
     OffresDetailsComponent,
     PartenairesComponent,
-    FooterComponent,
+    FooterProfessionnelComponent,
     SecteursDetailsComponent,
     HeaderSecteursDetailsComponent,
     SecteursDetailsContenuComponent,
