@@ -12,6 +12,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// component
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
@@ -29,11 +30,13 @@ import { OffresDetailsComponent } from './professionnel/offres/offres-details/of
 import { PartenairesComponent } from './professionnel/partenaires/partenaires.component';
 import { FooterComponent } from './footer/footer.component';
 import { SecteursDetailsComponent } from './professionnel/secteurs-details/secteurs-details.component';
-
-import { PopupLivraisonService } from './services/popup-livraison.service';
 import { HeaderProfessionnelComponent } from './professionnel/header-professionnel/header-professionnel.component';
 import { HeaderSecteursDetailsComponent } from './professionnel/secteurs-details/header-secteurs-details/header-secteurs-details.component';
 import { SecteursDetailsContenuComponent } from './professionnel/secteurs-details/secteurs-details-contenu/secteurs-details-contenu.component';
+
+// service
+import { PopupLivraisonService } from './services/popup-livraison.service';
+import { SecteursService } from './services/secteurs.service';
 
 
 @NgModule({
@@ -73,7 +76,7 @@ import { SecteursDetailsContenuComponent } from './professionnel/secteurs-detail
     NgxPageScrollModule,
     
   ],
-  providers: [PopupLivraisonService],
+  providers: [PopupLivraisonService, SecteursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
