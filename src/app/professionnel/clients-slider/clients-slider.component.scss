@@ -1,0 +1,34 @@
+section{
+    position: relative;
+    background: var(--blanc-opac);
+    padding-top: 50px;
+    overflow: hidden;
+    h2{
+        position: relative;
+        width: max-content;
+        color: var(--blue-primary);
+        margin: 0 auto 50px auto;
+        &:before{
+            position: absolute;
+            content: '';
+            width: 500px;
+            height: 1.5px;
+            bottom: calc(50% - 3px);
+            left: -560px;
+            background: var(--blue-secondary);
+        }
+        &:after{
+            position: absolute;
+            content: '';
+            width: 500px;
+            height: 1.5px;
+            bottom: calc(50% - 3px);
+            right: -560px;
+            background: var(--blue-primary);
+        }
+    }
+    img{
+        height: 70px;
+        width: auto;
+    }
+}

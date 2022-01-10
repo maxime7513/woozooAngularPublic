@@ -1,0 +1,17 @@
+p{
+    color: #fff;
+    text-align: center;
+    fa-icon{
+        color: #fff;
+        font-size: 44px;
+        vertical-align: text-bottom;
+        margin-right: 10px;
+    }
+    &:first-of-type{
+        font-size: 30px;
+    }
+    &:last-of-type{
+        font-size: 36px;
+        margin: 15px 0 3px 0;
+    }
+}

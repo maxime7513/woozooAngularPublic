@@ -1,0 +1,40 @@
+<section>
+    <div [class.active]="dotNav == 'presentation1'" class="presentation_commercant">
+        <img src="./assets/img/professionnel/mockup-scoot.png" alt="">
+        <div>
+            <h2>Le service de livraison instantané pour tous les commerces & entreprises</h2>
+        </div>
+    </div>
+
+    <div [class.active]="dotNav == 'presentation2'" class="presentation_commercant2">
+        <ngx-slick-carousel id="slider-commentaire_presentation" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let client of clients">
+                <div class="card-commentaire_presentation">
+                    <img src="./assets/img/commentaire/double-quote_bleu.png" alt="double quote">
+                    <img src="{{ client.img }}" alt="photo client">
+                    <p>{{ client.texte }}</p>
+                    <p>{{ client.nom }} | {{client.enseigne}}</p>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+        <div>
+            <h2>Connectez-vous à la meilleure flotte de livreurs de votre ville</h2>
+            <button>Consultez avis clients</button>
+        </div>
+    </div>
+
+    <div [class.active]="dotNav == 'presentation3'" class="presentation_commercant3">
+        <img src="./assets/img/professionnel/mockup-securite.png" alt="">
+        <div>
+            <h2>Une livraison garantie et 100% sécurisée</h2>
+            <button class="course-securite_p">Nos garanties</button>
+        </div>
+    </div>
+
+    <div class="dot_nav">
+        <div (click)="dotNav = 'presentation1'" [class.active]="dotNav == 'presentation1'"></div>
+        <div (click)="dotNav = 'presentation2'" [class.active]="dotNav == 'presentation2'"></div>
+        <div (click)="dotNav = 'presentation3'" [class.active]="dotNav == 'presentation3'"></div>
+    </div>
+    
+</section>

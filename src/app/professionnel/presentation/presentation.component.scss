@@ -1,0 +1,166 @@
+section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding: 90px 0 15px 0;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: inset 0px -6px 9px rgba(0,0,0,.2);
+    &:before {
+        content: '';
+        width: 58%;
+        position: absolute;
+        z-index: -1;
+        background-color: var(--blanc-opac);
+        border-radius: 20px 0rem 0rem 0px;
+        transform: skew(-20deg, 0) translateX(0rem);
+        bottom: -1px;
+        right: -5%;
+        top: 40%;
+        box-shadow: 0px 3px 10px 8px rgba(0,0,0,.2);
+    }
+    > div:not(.dot_nav){
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        opacity: 0;
+        transition: .7s;
+        &.active{
+        opacity: 1;
+        }
+        > div:not(#container-commentaire_presentation){
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            margin-top: 6%;
+            position: relative;
+        }
+    }
+    img:not(.card-commentaire_presentation img){
+        width: 32%;
+        height: auto;
+    }
+    h2{
+        color: var(--blue-primary);
+        font-size: 34px;
+        text-align: center;
+        // text-transform: none;
+        margin-left: 5%;
+    }
+    button{
+        position: relative;
+        background: var(--blue-primary);
+        color: white;
+        width: max-content;
+        font-size: 18px;
+        border: none;
+        // height: 35px;
+        // margin: 20px auto;
+        margin: 25px auto 15px auto;
+        padding: 7px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .4s;
+        z-index: 1;
+        &:after{
+            content: url(/assets/img/professionnel/go.svg);
+            position: absolute;
+            top: calc(50% - 8px);
+            margin-left: -1rem;
+            opacity: 0;
+        }
+        &:hover{
+            padding-right: 30px;
+            &:after{
+                margin-left: 7px;
+                opacity: 1;
+                transition: .3s;
+            }
+        }
+    }
+}
+.presentation_commercant{ /* presentation1 */
+    img{
+        width: 40% !important;
+    }
+}
+.presentation_commercant2{ /* presentation2 */
+    position: absolute;
+    top: 90px;
+    bottom: 0;
+}
+.presentation_commercant3{ /* presentation3 */
+    position: absolute;
+    top: 90px;
+    bottom: 0;
+    img{
+        width: 40% !important;
+    }
+}
+.dot_nav{ /* dots naviguation slider */
+    position: absolute;
+    bottom: 10px;
+    right: 23.5%;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    div{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid var(--blue-primary);
+        margin: 0 5px;
+        cursor: pointer;
+        &.active{
+            background: var(--blue-primary);
+        }
+    }
+}
+#slider-commentaire_presentation{ /* commentaire clients */
+    width: 40%;
+}
+.card-commentaire_presentation{ /* card commentaire clients */
+    position: relative;
+    width: 130px !important;
+    background: #fff;
+    padding: 20px 30px;
+    padding: 15px 10px 10px 10px;
+    font-size: 8px;
+    text-align: center;
+    border-radius: 7px;
+    img{
+        &:first-of-type{
+        position: absolute;
+        width: 13px !important;
+        top: 3px;
+        left: 3px;
+        }
+        &:last-of-type{
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 50%;
+            z-index: 1;
+        }
+    }
+    p{
+        &:first-of-type{
+        color: #7e8da9;
+        font-weight: 600;
+        line-height: 1.2;
+        }
+        &:last-of-type{
+            color: var(--blue-primary);
+            margin-top: 15px;
+            padding-right: 10px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

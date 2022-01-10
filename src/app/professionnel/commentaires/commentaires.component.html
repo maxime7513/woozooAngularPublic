@@ -1,0 +1,13 @@
+<section>
+        <h3>Ce qu'ils disent de nous</h3>
+        <ngx-slick-carousel id="slider-commentaires" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let client of clients">
+                <div class="card-commentaire">
+                    <img src="./assets/img/commentaire/double-quote_bleu.png" alt="double quote">
+                    <img src="{{ client.img }}" alt="photo client">
+                    <p>{{ client.texte }}</p>
+                    <p>{{ client.nom }} | {{client.enseigne}}</p>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+</section>

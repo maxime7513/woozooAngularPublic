@@ -1,0 +1,30 @@
+<section>
+    <div id="map"></div>
+    <div class="formulaire">
+        <h3>Estimez le prix de votre livraison<br>en quelques clics</h3>
+        <div id="form-devis">
+            <label>
+                <img src="./assets/img/professionnel/devis/colis.png" alt="adresse de retrait">
+                <input type="text" name="adresse1" id="origin-input" required placeholder="Adresse de retrait" maxlength="160">
+                <img (click)="inverserInputs()" src="./assets/img/professionnel/devis/double-arrow.png" alt="inverser adresses" id="double-arrow">
+            </label>
+            <label>
+                <img src="./assets/img/professionnel/devis/position.png" alt="adresse de livraison">
+                <input type="text" name="adresse2" id="destination-input" required placeholder="Adresse de livraison" maxlength="160">
+            </label>
+            <button *ngIf="!estimation" (click)="calculerDistance()" id="estimer">Estimez Livraison</button>
+
+            <div *ngIf="estimation" id="reponse-devis">
+                <p><fa-icon [icon]="clockIcon"></fa-icon>Prise en charge dans <strong> 20 </strong> min</p>
+                <div>
+                    <p><fa-icon [icon]="roadIcon"></fa-icon><strong>{{ distance }}</strong> km</p>
+                    <p><fa-icon [icon]="cardIcon"></fa-icon><strong>{{ prixCourse }}</strong> €</p>
+                </div>
+            </div>
+            <div *ngIf="estimation" id="valider_estimation">
+                <button (click)="openPopup()">Confirmer cette livraison</button>
+                <p (click)="resetDevis()"><fa-icon [icon]="redoIcon"></fa-icon>Lancer une nouvelle estimation</p>
+            </div>
+        </div>
+    </div>
+</section>

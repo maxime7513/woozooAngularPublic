@@ -1,0 +1,232 @@
+@use '@angular/material' as mat;
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$woozooAngular-primary: mat.define-palette(mat.$indigo-palette);
+$woozooAngular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$woozooAngular-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$woozooAngular-theme: mat.define-light-theme((
+  color: (
+    primary: $woozooAngular-primary,
+    accent: $woozooAngular-accent,
+    warn: $woozooAngular-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($woozooAngular-theme);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$woozooAngular-primary: mat.define-palette(mat.$indigo-palette);
+$woozooAngular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$woozooAngular-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$woozooAngular-theme: mat.define-light-theme((
+  color: (
+    primary: $woozooAngular-primary,
+    accent: $woozooAngular-accent,
+    warn: $woozooAngular-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($woozooAngular-theme);
+
+@import '~reset.css';
+@import '~normalize.css';
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+:root {
+    --blue-primary: #046497;
+    --blue-secondary: #0aa3d2;
+    --dark-primary: #2a3b47;
+    --blanc-opac: rgba(255,255,255,.97);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+h2{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#slider-clients{ // slider clients
+    .slick-track{
+        display: flex;
+    }
+    .slick-slide{
+        margin: auto;
+        width: auto !important;
+    }
+    .slick-arrow{
+        display: none !important;
+    }
+}
+
+#slider-commentaire_presentation{ // slider commentaires presentation
+    .slick-track{
+        display: flex;
+        padding: 45px 0;
+    }
+    .slick-arrow{
+        display: none !important;
+    }
+    .slick-active{
+        transition: .5s;
+    }
+    .slick-current{
+        &+ .slick-active{ /* card du milieu */
+            transform: scale(1.65);
+            z-index: 2;
+            .card-commentaire_presentation{
+                box-shadow: 0 2px 5px 5px rgba(0,0,0,0.35);
+            }
+            img:first-of-type{ /* double quote */
+                animation: 3s quoteMove infinite;
+            }
+        }
+    }
+}
+
+#slider-commentaires{ // slider commentaires
+    .slick-track{
+        display: flex;
+        padding: 50px 0;
+    }
+    .slick-slide{
+        width: max-content !important;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    .slick-arrow{
+        border: none;
+        width: 0;
+        font-size: 0;
+        transform: none;
+        z-index: 10;
+        transition: .2s;
+        &:before {
+            opacity: 1;
+            font-size: 30px;
+        }
+    }
+    .slick-prev{
+        left: unset;
+        right: 22%;
+        top: -20%;
+        &:hover{
+            transform: scale(1.15);
+            transition: .4s;
+        }
+    }
+    .slick-next{
+        right: 18%;
+        top: -20%;
+        &:hover{
+            transform: scale(1.15);
+            transition: .4s;
+        }
+    }
+    .slick-current{
+        &+ .slick-active{ /* card du milieu */
+            transform: scale(1.65);
+            img:first-of-type{ /* double quote */
+                animation: 3s quoteMove infinite;
+            }
+        }
+    }
+    .slick-active{
+        transition: .5s;
+    }
+}
+
+@keyframes quoteMove { // animation slider commentaire
+    0% {transform: rotate(0deg);}
+    5% {transform: rotate(30deg);}
+    10% {transform: rotate(-30deg);}
+    15% {transform: rotate(30deg);}
+    20% {transform: rotate(0deg);}
+    100% {transform: rotate(0deg);}
+}
+
+#valider_estimation{ // animation redo devis
+    p{
+        fa-icon{
+            svg{
+                animation: 2.5s rotatei infinite;
+            }
+        }
+        &:hover{
+            fa-icon{
+                svg{
+                    animation: .8s rotateispeed infinite;
+                }
+            }
+        }
+    }
+}
+@keyframes rotatei{ // animation redo devis
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(360deg);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes rotateispeed{ // animation redo devis
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+// modal mat-dialog
+.mat-dialog-container{
+    position: relative;
+    background: rgba(9,113,164,.95);
+    border-radius: 20px !important;
+}
+
+// modal popup livraison
+#popup-livraison{
+    .mat-dialog-content{
+        margin: 0 !important;
+        padding: 25px 20px 10px 20px !important;
+        overflow: unset !important;
+    }
+    .mat-icon-button{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: rgba(255,255,255,.9);
+        &:hover{
+            color: #fff;
+        }
+    }
+    .mat-dialog-actions{
+        button{
+            color: var(--blue-primary);
+        }
+    }
+}
+
