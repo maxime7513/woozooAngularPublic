@@ -42,6 +42,7 @@ import { FooterSecteurComponent } from './secteur/footer-secteur/footer-secteur.
 // service
 import { PopupLivraisonService } from './services/popup-livraison.service';
 import { SecteursService } from './services/secteurs.service';
+import { OffresService } from './services/offres.service';
 
 
 
@@ -83,7 +84,7 @@ import { SecteursService } from './services/secteurs.service';
     NgxPageScrollModule,
     
   ],
-  providers: [PopupLivraisonService, SecteursService],
+  providers: [PopupLivraisonService, SecteursService, OffresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
