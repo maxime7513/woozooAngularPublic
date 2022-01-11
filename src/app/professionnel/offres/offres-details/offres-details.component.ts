@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { annotate, annotationGroup } from 'rough-notation';
+import { OffresService } from 'src/app/services/offres.service';
 
 @Component({
   selector: 'app-offres-details',
@@ -24,8 +25,9 @@ export class OffresDetailsComponent implements OnInit {
       }
   }
 
-  constructor() { 
-    this.contenuVisible = 'securite';
+  constructor(private data: OffresService) { 
+    // this.contenuVisible = 'securite';
+    this.contenuVisible = this.data.offre;
   }
 
   ngOnInit(): void {}

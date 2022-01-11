@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SecteursService } from 'src/app/services/secteurs.service';
+import { OffresService } from 'src/app/services/offres.service';
 
 @Component({
   selector: 'app-footer-secteur',
@@ -8,13 +8,13 @@ import { SecteursService } from 'src/app/services/secteurs.service';
 })
 export class FooterSecteurComponent implements OnInit {
 
-  constructor(private data: SecteursService) { }
+  constructor(private data: OffresService) { }
 
   ngOnInit(): void {
   }
 
-  changeSecteur(el: string) {
-    this.data.changeSecteurService(el);
+  changeOffre(el: string) {
+    this.data.changeSecteurOffre(el);
   }
 
 }
