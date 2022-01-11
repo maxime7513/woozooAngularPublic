@@ -29,7 +29,7 @@ export class HeaderProfessionnelComponent implements OnInit {
   }
 
   changeSecteur(el: string) {
-    this.data.changeServiceSecteur(el);
+    this.data.changeSecteurService(el);
   }
 
 }

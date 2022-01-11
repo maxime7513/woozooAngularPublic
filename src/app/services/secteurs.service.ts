@@ -7,7 +7,7 @@ export class SecteursService {
     this.secteur = 'commerce';
   }
   
-  changeServiceSecteur(el: string){
+  changeSecteurService(el: string){
     this.secteur = el;
   }
 

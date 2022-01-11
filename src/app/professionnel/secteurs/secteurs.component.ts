@@ -14,6 +14,6 @@ export class SecteursComponent implements OnInit {
   }
   
   changeSecteur(el: string) {
-    this.data.changeServiceSecteur(el);
+    this.data.changeSecteurService(el);
   }
 }
