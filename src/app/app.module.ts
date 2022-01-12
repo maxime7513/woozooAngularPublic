@@ -44,6 +44,16 @@ import { PopupLivraisonService } from './services/popup-livraison.service';
 import { SecteursService } from './services/secteurs.service';
 import { OffresService } from './services/offres.service';
 
+//coursier
+import { CoursierComponent } from './coursier/coursier.component';
+import { HeaderCoursierComponent } from './coursier/header-coursier/header-coursier.component';
+import { PresentationCoursierComponent } from './coursier/presentation-coursier/presentation-coursier.component';
+import { DetailsCoursierComponent } from './coursier/details-coursier/details-coursier.component';
+import { BesoinsComponent } from './coursier/details-coursier/besoins/besoins.component';
+import { InscriptionCoursierComponent } from './coursier/details-coursier/inscription-coursier/inscription-coursier.component';
+import { CsmComponent } from './coursier/csm/csm.component';
+import { AvantagesComponent } from './coursier/avantages/avantages.component';
+
 
 
 @NgModule({
@@ -69,6 +79,14 @@ import { OffresService } from './services/offres.service';
     HeaderSecteurComponent,
     ContenuSecteurComponent,
     FooterSecteurComponent,
+    CoursierComponent,
+    HeaderCoursierComponent,
+    PresentationCoursierComponent,
+    DetailsCoursierComponent,
+    BesoinsComponent,
+    InscriptionCoursierComponent,
+    CsmComponent,
+    AvantagesComponent,
   ],
   imports: [
     BrowserModule,

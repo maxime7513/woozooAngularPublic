@@ -1,0 +1,103 @@
+section{
+    margin-top: -35px;
+    h2{
+        position: relative;
+        font-size: 34px;
+        text-align: start;
+        color: var(--blue-primary);
+        width: max-content;
+        margin-left: 7%;
+        margin-bottom: 20px;
+        &:after{
+            position: absolute;
+            content: '';
+            left: 50%;
+            bottom: -3px;
+            width: 100%;
+            height: 15px;
+            transform: skew(-12deg) translateX(-50%);
+            background: #9be8ff;
+            z-index: -1;
+        }
+    }
+    h4{
+        color: var(--blue-secondary);
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+        transition: 1s;
+    }
+    > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 20px 0 50px;
+        > img{
+            width: 33%;
+        }
+        ul{
+            width: 60%;
+            width: 18%;
+            display: flex;
+            flex-direction: column;
+            li{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 25px 0;
+                cursor: pointer;
+                transition: 1s;
+                img{
+                    width: 25px;
+                    margin-right: 10px;
+                    transition: 1s;
+                }
+                &.active{
+                    img{
+                        width: 40px;
+                    }
+                    h4{
+                        color: var(--blue-primary);
+                        font-size: 27px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#detail_csm{
+    position: relative;
+    width: 30%;
+    div{
+        position: relative;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+        animation: 1s opacity linear;
+        ol{
+            margin-top: 10px;
+            li{
+                list-style: disc;
+                margin: 5px 0 0px 30px;
+            }
+        }
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        background-image: url(/assets/img/coursier/right.png);
+        background-size: 75px 75px;
+        top: calc(50% - 40px);
+        left: -100px;
+        width: 75px;
+        height: 75px;
+        transform: rotateX(180deg) rotateZ(-15deg);
+    }
+}
+@keyframes opacity{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
