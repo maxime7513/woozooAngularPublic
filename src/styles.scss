@@ -67,6 +67,9 @@ $woozooAngular-theme: mat.define-light-theme((
     --dark-primary: #2a3b47;
     --blanc-opac: rgba(255,255,255,.97);
 }
+*{
+    outline: none;
+}
 body{
     font-family: 'Poppins', sans-serif;
 }
