@@ -53,6 +53,7 @@ import { BesoinsComponent } from './coursier/details-coursier/besoins/besoins.co
 import { InscriptionCoursierComponent } from './coursier/details-coursier/inscription-coursier/inscription-coursier.component';
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
+import { FooterCoursierComponent } from './coursier/footer-coursier/footer-coursier.component';
 
 
 
@@ -87,6 +88,7 @@ import { AvantagesComponent } from './coursier/avantages/avantages.component';
     InscriptionCoursierComponent,
     CsmComponent,
     AvantagesComponent,
+    FooterCoursierComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ export class PresentationCoursierComponent implements OnInit {
 
   ngOnInit(): void {
     // HAUTEUR ::before accueil-coursier
-    let besoinCoursier = (<HTMLElement>document.querySelector('.besoin_coursier')).offsetHeight + 120,
+    let besoinCoursier = (<HTMLElement>document.getElementById('besoin_coursier')).offsetHeight + 120,
     root = document.documentElement;
     root.style.setProperty('--bottom-before', '-' + besoinCoursier + 'px');
   }

@@ -75,6 +75,12 @@
             }
         }
     }
+    &.popup{
+        border: 1px solid var(--blue-secondary);
+        .popup-formulaire_coursier{
+            opacity: 1;
+        }
+    }
 }
 
 #capacite{
@@ -90,8 +96,8 @@
     }
 }
 
-/* popup formulaire coursier */
-.popup-formulaire_coursier{
+
+.popup-formulaire_coursier{ /* popup formulaire inscription coursier */
     position: absolute;
     bottom: 125px;
     left: -225px;
