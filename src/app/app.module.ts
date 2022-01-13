@@ -48,9 +48,8 @@ import { OffresService } from './services/offres.service';
 import { CoursierComponent } from './coursier/coursier.component';
 import { HeaderCoursierComponent } from './coursier/header-coursier/header-coursier.component';
 import { PresentationCoursierComponent } from './coursier/presentation-coursier/presentation-coursier.component';
-import { DetailsCoursierComponent } from './coursier/details-coursier/details-coursier.component';
-import { BesoinsComponent } from './coursier/details-coursier/besoins/besoins.component';
-import { InscriptionCoursierComponent } from './coursier/details-coursier/inscription-coursier/inscription-coursier.component';
+import { BesoinsComponent } from './coursier/besoins/besoins.component';
+import { InscriptionCoursierComponent } from './coursier/inscription-coursier/inscription-coursier.component';
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
 import { FooterCoursierComponent } from './coursier/footer-coursier/footer-coursier.component';
@@ -83,7 +82,6 @@ import { FooterCoursierComponent } from './coursier/footer-coursier/footer-cours
     CoursierComponent,
     HeaderCoursierComponent,
     PresentationCoursierComponent,
-    DetailsCoursierComponent,
     BesoinsComponent,
     InscriptionCoursierComponent,
     CsmComponent,

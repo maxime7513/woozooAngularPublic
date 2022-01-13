@@ -1,6 +1,9 @@
 <app-header-coursier></app-header-coursier>
-<app-presentation-coursier></app-presentation-coursier>
-<app-details-coursier></app-details-coursier>
+<app-presentation-coursier [popupInscription]="popup"></app-presentation-coursier>
+<div>
+    <app-besoins></app-besoins>
+    <app-inscription-coursier #popup></app-inscription-coursier>
+</div>
 <app-csm></app-csm>
 <app-avantages></app-avantages>
-<app-footer-coursier></app-footer-coursier>
+<app-footer-coursier [popupInscription]="popup"></app-footer-coursier>

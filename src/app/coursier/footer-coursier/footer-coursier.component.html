@@ -10,7 +10,7 @@
                     <p>Liens</p>
                     <a pageScroll [pageScrollOffset]="100" [pageScrollDuration]="500" href="#avantages">nos avantages</a>
                     <a pageScroll [pageScrollOffset]="120" [pageScrollDuration]="500" href="#besoin_coursier">critères requis</a>
-                    <a pageScroll [pageScrollOffset]="70" [pageScrollDuration]="500" href="#form_coursier">inscription</a>
+                    <a (click)="activerPopupInscription()" pageScroll [pageScrollOffset]="70" [pageScrollDuration]="500" href="#form_coursier">inscription</a>
                     <a pageScroll [pageScrollOffset]="80" [pageScrollDuration]="500" href="#csm">comment sa marche ?</a>
                 </div>
                 <div>

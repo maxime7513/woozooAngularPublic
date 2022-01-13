@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer-coursier',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer-coursier.component.scss']
 })
 export class FooterCoursierComponent implements OnInit {
-  
+  @Input() popupInscription: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  activerPopupInscription(){
+    this.popupInscription.activerPopup();
+  }
+  
 }

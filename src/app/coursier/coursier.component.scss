@@ -1,8 +1,14 @@
-app-details-coursier{
+div{
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 25px;
+}
+app-besoins{
+    width: 39%;
+}
+app-inscription-coursier{
+    width: 45%;
 }
