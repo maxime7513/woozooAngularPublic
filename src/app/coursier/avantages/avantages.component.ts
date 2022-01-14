@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-avantages',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./avantages.component.scss']
 })
 export class AvantagesComponent implements OnInit {
+  chevronDown = faChevronDown;
 
   constructor() { }
 
