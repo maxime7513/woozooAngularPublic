@@ -96,7 +96,6 @@
     }
 }
 
-
 .popup-formulaire_coursier{ /* popup formulaire inscription coursier */
     position: absolute;
     bottom: 125px;
@@ -125,5 +124,22 @@
     }
     p{
         line-height: 1.15;
+    }
+}
+
+// media queries
+@media screen and (max-width : 700px){
+    /* FORMULAIRE COURSIER */
+    #form_coursier{
+        h4{
+            font-size: 26px;
+        }
+        input:not(input[type='radio']){
+            width: 42%;
+            height: 30px;
+        }
+        select{
+            height: 30px;
+        }
     }
 }
