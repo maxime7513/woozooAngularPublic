@@ -2,7 +2,43 @@
     --bottom-before: 0px;
     --height-li: 0px;
 }
-#accueil-coursier{
+
+.accueil-coursier_before{
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        width: 52%;
+        background: url(/assets/img/noir-bleu_min.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        border-radius: 0px 35px 35px 0px;
+        transform: skew(-18deg, 0) translateX(-23%);
+        bottom: var(--bottom-before); /* DEFINI DANS responsive.js*/
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        width: 55%;
+        background: url(/assets/img/map.png);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        border-radius: 30px 0rem 0rem 25px;
+        transform: skew(-18deg, 0) translateX(12%);
+        bottom: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+}
+
+section{
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -12,84 +48,124 @@
     padding-top: 60px;
     overflow: hidden;
     z-index: 0;
+    img{
+        width: 52%;
+    }
+    > div{
+        width: 40%;
+        margin: 2% 0 0 2.5%;
+    }
+    h2{
+        text-align: start;
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #fff;
+        text-transform: initial;
+    }
+    button{
+        position: relative;
+        display: block;
+        background: var(--blue-secondary);
+        color: white;
+        width: max-content;
+        font-size: 20px;
+        font-weight: 600;
+        border: none;
+        height: 40px;
+        margin: 8% auto 0 auto;
+        padding: 0 20px;
+        text-transform: capitalize;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .4s;
+    }
+    &:after{
+        content: url(/assets/img/professionnel/go.svg);
+        position: absolute;
+        top: calc(50% - 10px);
+        margin-left: -1rem;
+        opacity: 0;
+    }
+    &:hover{
+        padding-right: 30px !important;
+        &:after{
+            margin-left: 7px;
+            opacity: 1;
+            transition: .3s;
+        }
+    }
 }
-.accueil-coursier_before{
-    position: relative;
+
+// media queries
+@media screen and (max-width : 700px){
+    section{
+        padding-bottom: 20px;
+        background-attachment: initial !important;
+        >div{
+            width: 80%;
+            margin: auto;
+            padding: 0 15px;
+        }
+        img{
+            width: 90%;
+            margin: 10px auto auto auto;
+            padding: 0 15px;
+        }
+        h2{
+            text-align: center;
+        }
+        &:after{
+            display: none;
+        }
+    }
 }
-.accueil-coursier_before::before{
-    content: '';
-    position: absolute;
-    width: 52%;
-    background: url(/assets/img/noir-bleu_min.jpg);
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;
-    border-radius: 0px 35px 35px 0px;
-    transform: skew(-18deg, 0) translateX(-23%);
-    bottom: var(--bottom-before); /* DEFINI DANS responsive.js*/
-    left: 0;
-    top: 0;
-    z-index: -1;
+@media screen and (max-width : 900px){
+    section{
+        h2{
+            font-size: 26px;
+        }
+        button{
+            font-size: 18px;
+            height: 34px;
+            padding: 0 15px;
+        }
+        &:after{
+            top: calc(50% - 8px);
+        }
+    }
 }
-#accueil-coursier::after{
-    content: '';
-    position: absolute;
-    width: 55%;
-    background: url(/assets/img/map.png);
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;
-    border-radius: 30px 0rem 0rem 25px;
-    transform: skew(-18deg, 0) translateX(12%);
-    bottom: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    overflow: hidden;
+@media screen and (min-width : 901px) and (max-width : 1050px){
+    section h2{
+        font-size: 33px;
+    }
 }
-#accueil-coursier img{
-    width: 52%;
+@media screen and (max-width : 1050px){
+    section{
+        background: url(../img/noir-bleu_min.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        overflow: visible;
+        &:before{
+            display: none;
+        }
+        &:after{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0%);
+            background: url(../img/noir-bleu_min.jpg);
+            background-size: cover;
+            background-position: top;
+            background-attachment: fixed;
+            width: 100%;
+            height: 80px;
+            bottom: -79px;
+            border-radius: 0;
+            transform: none;
+            top: auto;
+        }
+    }
 }
-#accueil-coursier > div{
-    width: 40%;
-    margin: 2% 0 0 2.5%;
-}
-#accueil-coursier h2{
-    text-align: start;
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #fff;
-    text-transform: initial;
-}
-#accueil-coursier button{
-    position: relative;
-    display: block;
-    background: var(--blue-secondary);
-    color: white;
-    width: max-content;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    height: 40px;
-    margin: 8% auto 0 auto;
-    padding: 0 20px;
-    text-transform: capitalize;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .4s;
-}
-#accueil-coursier button::after{
-    content: url(/assets/img/professionnel/go.svg);
-    position: absolute;
-    top: calc(50% - 10px);
-    margin-left: -1rem;
-    opacity: 0;
-}
-#accueil-coursier button:hover::after, #form_coursier button:hover::after{
-    margin-left: 7px;
-    opacity: 1;
-    transition: .3s;
-}
-#accueil-coursier button:hover, #form_coursier button:hover{
-    padding-right: 30px !important;
+@media screen and (min-width : 1051px) and (max-width : 1200px){
+    .accueil-coursier_before::before{
+        transform: skew(-18deg, 0) translateX(-26%);
+    }
 }
