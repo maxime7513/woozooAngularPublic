@@ -9,8 +9,35 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 })
 export class AvantagesComponent implements OnInit {
   chevronDown = faChevronDown;
+  avantages: Array<{image: string, titre: string, texte: string}> = [
+    {image: "./assets/img/coursier/avantages/euro.svg",
+    titre: "Une rémunération équitable",
+    texte: "Nous garantissons à nos livreurs 4 euros minimum par course. Nos livreurs partenaires peuvent gagner 15 euros HT minimum de l'heure."
+    },
+    {image: "./assets/img/coursier/avantages/calendrier.svg",
+    titre: "Gérez votre planning",
+    texte: "Positionnez vous sur les courses de votre choix, selon vos disponibilités.<br><span>Nous garantissons votre indépendance.</span>"
+    },
+    {image: "./assets/img/coursier/avantages/euro3.svg",
+    titre: "Optimisez vos revenus",
+    texte: "Compléter vos revenus en livrant même pendant les heures creuses de livraison. Notre service est accessible de 7h00 à minuit 7 jours sur 7."
+    },
+    {image: "./assets/img/coursier/avantages/axa2.png",
+    titre: "Notre partenaire d'assurance",
+    texte: "Vous bénéficiez de notre assurance professionnelle, elle vous couvrira en cas d'accidents pendant votre activité sur notre plateforme."
+    },
+    {image: "./assets/img/coursier/avantages/call-center.svg",
+    titre: "Assistance en cas de besoin",
+    texte: "Notre équipe vous accompagne tout le long de votre activité, reste disponible et à votre écoute à chaque livraison."
+    },
+    {image: "./assets/img/coursier/avantages/tenue.svg",
+    titre: "Un équipement vous est offert",
+    texte: "Nous vous fournissons tout l’équipement nécessaire (sac et tenue), totalement personnalisé pour apporter un côté fun à vos livraisons."
+    }
+  ];
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {}
 
