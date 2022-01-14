@@ -20,6 +20,18 @@
         top: 0;
         z-index: -1;
     }
+}
+
+section{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    padding-top: 60px;
+    overflow: hidden;
+    z-index: 0;
     &:after{
         content: '';
         position: absolute;
@@ -36,18 +48,6 @@
         z-index: -1;
         overflow: hidden;
     }
-}
-
-section{
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-    padding-top: 60px;
-    overflow: hidden;
-    z-index: 0;
     img{
         width: 52%;
     }
@@ -78,20 +78,20 @@ section{
         border-radius: 5px;
         cursor: pointer;
         transition: .4s;
-    }
-    &:after{
-        content: url(/assets/img/professionnel/go.svg);
-        position: absolute;
-        top: calc(50% - 10px);
-        margin-left: -1rem;
-        opacity: 0;
-    }
-    &:hover{
-        padding-right: 30px !important;
         &:after{
-            margin-left: 7px;
-            opacity: 1;
-            transition: .3s;
+            content: url(/assets/img/professionnel/go.svg);
+            position: absolute;
+            top: calc(50% - 10px);
+            margin-left: -1rem;
+            opacity: 0;
+        }
+        &:hover{
+            padding-right: 30px !important;
+            &:after{
+                margin-left: 7px;
+                opacity: 1;
+                transition: .3s;
+            }
         }
     }
 }
@@ -141,7 +141,7 @@ section{
 }
 @media screen and (max-width : 1050px){
     section{
-        background: url(../img/noir-bleu_min.jpg);
+        background: url(/assets/img/noir-bleu_min.jpg);
         background-size: cover;
         background-position: top;
         background-attachment: fixed;
@@ -151,7 +151,7 @@ section{
         }
         &:after{
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0%);
-            background: url(../img/noir-bleu_min.jpg);
+            background: url(/assets/img/noir-bleu_min.jpg);
             background-size: cover;
             background-position: top;
             background-attachment: fixed;
@@ -162,6 +162,9 @@ section{
             transform: none;
             top: auto;
         }
+    }
+    .accueil-coursier_before::before{
+        display: none;
     }
 }
 @media screen and (min-width : 1051px) and (max-width : 1200px){
