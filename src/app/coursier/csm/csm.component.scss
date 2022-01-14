@@ -102,7 +102,7 @@ section{
     100%{opacity: 1;}
 }
 
-
+// media queries
 @media screen and (max-width : 700px){
     section{
         h2{
@@ -127,10 +127,10 @@ section{
                 }
                 &.active{
                     h4{
-                        font-size: 20px;
+                        font-size: 20px !important;
                     }
                     img{
-                        width: 30px;
+                        width: 30px !important;
                     }
                 }
             }
