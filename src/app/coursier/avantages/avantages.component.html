@@ -9,37 +9,9 @@
         </div>    
         <div>
             <div *ngFor="let avantage of avantages | slice:3:6">
-                <img src="{{ avantage.image }}" alt="icone avantages">
+                <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="icone avantages">
                 <p>{{ avantage.titre }}<fa-icon [icon]="chevronDown"></fa-icon></p>
                 <p>{{ avantage.texte }}</p>
             </div>
         </div>
-            <!--<div>
-                <img src="./assets/img/coursier/avantages/calendrier.svg" alt="">
-                <p>Gérez votre planning<fa-icon [icon]="chevronDown"></fa-icon></p>
-                <p>Positionnez vous sur les courses de votre choix, selon vos disponibilités.<br><span>Nous garantissons votre indépendance.</span></p>
-            </div>
-            <div>
-                <img src="./assets/img/coursier/avantages/euro3.svg" alt="">
-                <p>Optimisez vos revenus<fa-icon [icon]="chevronDown"></fa-icon></p>
-                <p>Compléter vos revenus en livrant même pendant les heures creuses de livraison. Notre service est accessible de 7h00 à minuit 7 jours sur 7.</p>
-            </div>
-        </div>
-
-        <div>
-            <div>
-                <img src="./assets/img/coursier/avantages/axa2.png" alt="" class="axa_avantages">
-                <p>Notre partenaire d'assurance<fa-icon [icon]="chevronDown"></fa-icon></p>
-                <p>Vous bénéficiez de notre assurance professionnelle, elle vous couvrira en cas d'accidents pendant votre activité sur notre plateforme.</p>
-            </div>
-            <div>
-                <img src="./assets/img/coursier/avantages/call-center.svg" alt="">
-                <p>Assistance en cas de besoin<fa-icon [icon]="chevronDown"></fa-icon></p>
-                <p>Notre équipe vous accompagne tout le long de votre activité, reste disponible et à votre écoute à chaque livraison.</p>
-            </div>
-            <div>
-                <img src="./assets/img/coursier/avantages/tenue.svg" alt="">
-                <p>Un équipement vous est offert<fa-icon [icon]="chevronDown"></fa-icon></p>
-                <p>Nous vous fournissons tout l’équipement nécessaire (sac et tenue), totalement personnalisé pour apporter un côté fun à vos livraisons.</p>
-            </div>-->
 </section>
