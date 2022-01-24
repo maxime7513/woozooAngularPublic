@@ -40,7 +40,7 @@ import { ContenuSecteurComponent } from './secteur/contenu-secteur/contenu-secte
 import { FooterSecteurComponent } from './secteur/footer-secteur/footer-secteur.component';
 
 // service
-import { PopupLivraisonService } from './services/popup-livraison.service';
+import { PopupService } from './services/popup.service';
 import { SecteursService } from './services/secteurs.service';
 import { OffresService } from './services/offres.service';
 
@@ -53,6 +53,7 @@ import { InscriptionCoursierComponent } from './coursier/inscription-coursier/in
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
 import { FooterCoursierComponent } from './coursier/footer-coursier/footer-coursier.component';
+import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popup-formulaire-contact.component';
 
 
 
@@ -87,6 +88,7 @@ import { FooterCoursierComponent } from './coursier/footer-coursier/footer-cours
     CsmComponent,
     AvantagesComponent,
     FooterCoursierComponent,
+    PopupFormulaireContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,7 @@ import { FooterCoursierComponent } from './coursier/footer-coursier/footer-cours
     NgxPageScrollModule,
     
   ],
-  providers: [PopupLivraisonService, SecteursService, OffresService],
+  providers: [ PopupService, SecteursService, OffresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

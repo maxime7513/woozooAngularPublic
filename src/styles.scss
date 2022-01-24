@@ -210,29 +210,6 @@ h2{
     border-radius: 20px !important;
 }
 
-// modal popup livraison
-#popup-livraison{
-    .mat-dialog-content{
-        margin: 0 !important;
-        padding: 25px 20px 10px 20px !important;
-        overflow: unset !important;
-    }
-    .mat-icon-button{
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: rgba(255,255,255,.9);
-        &:hover{
-            color: #fff;
-        }
-    }
-    .mat-dialog-actions{
-        button{
-            color: var(--blue-primary);
-        }
-    }
-}
-
 // footer
 footer{
     background: #000e22;

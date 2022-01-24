@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PopupLivraisonService } from 'src/app/services/popup-livraison.service';
+import { PopupService } from 'src/app/services/popup.service';
 
 @Component({
   selector: 'app-header-secteur',
@@ -8,13 +8,13 @@ import { PopupLivraisonService } from 'src/app/services/popup-livraison.service'
 })
 export class HeaderSecteurComponent implements OnInit {
 
-  constructor(private PopupLivraisonService: PopupLivraisonService) { }
+  constructor(private PopupLivraisonService: PopupService) { }
 
   ngOnInit(): void {
   }
 
   openPopup(){
-    this.PopupLivraisonService.confirmDialog();
+    this.PopupLivraisonService.openPopupLivraison();
   }
 
 }

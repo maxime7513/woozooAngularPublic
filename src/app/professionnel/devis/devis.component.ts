@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
-import { PopupLivraisonService } from 'src/app/services/popup-livraison.service';
+import { PopupService } from 'src/app/services/popup.service';
 
 @Component({
   selector: 'app-devis',
@@ -18,7 +18,7 @@ export class DevisComponent implements OnInit {
   distance: any;
   estimation: boolean;
 
-  constructor(private PopupLivraisonService: PopupLivraisonService) {
+  constructor(private PopupLivraisonService: PopupService) {
     this.estimation = false;
   }
 
@@ -131,7 +131,7 @@ export class DevisComponent implements OnInit {
   }
 
   openPopup(){
-    this.PopupLivraisonService.confirmDialog();
+    this.PopupLivraisonService.openPopupLivraison();
   }
 
   calculerDistance(){

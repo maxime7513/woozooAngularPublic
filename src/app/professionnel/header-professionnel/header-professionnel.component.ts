@@ -1,5 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { PopupLivraisonService } from 'src/app/services/popup-livraison.service';
+import { PopupService } from 'src/app/services/popup.service';
 import { SecteursService } from 'src/app/services/secteurs.service';
 
 @Component({
@@ -15,13 +15,17 @@ export class HeaderProfessionnelComponent implements OnInit {
   };
   @Input() contenuVisibleOffres: any;
   
-  constructor(private PopupLivraisonService: PopupLivraisonService, private data: SecteursService) { }
+  constructor(private PopupLivraisonService: PopupService, private data: SecteursService) { }
 
   ngOnInit(): void {
   }
 
   openPopup(){
-    this.PopupLivraisonService.confirmDialog();
+    this.PopupLivraisonService.openPopupLivraison();
+  }
+
+  openPopupFormulaire(){
+    this.PopupLivraisonService.openPopupFormulaireContact();
   }
 
   contenuVisibleOffre(el: string) { // changer contenu visible offres-details

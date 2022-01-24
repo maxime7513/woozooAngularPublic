@@ -12,6 +12,22 @@ div{
         margin: 0 !important;
         padding: 25px 20px 10px 20px !important;
         overflow: unset !important;
+        h4{
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            &:after{
+                position: absolute;
+                content: "";
+                width: 40px;
+                height: 5px;
+                bottom: -10px;
+                left: calc(50% - 20px);
+                background: #fff;
+            }
+        }
         p{
             color: #fff;
             text-align: center;
@@ -22,9 +38,6 @@ div{
                 margin-right: 10px;
             }
             &:first-of-type{
-                font-size: 30px;
-            }
-            &:last-of-type{
                 font-size: 36px;
                 margin: 15px 0 3px 0;
             }
