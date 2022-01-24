@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SecteursService } from 'src/app/services/secteurs.service';
+import { PopupService } from 'src/app/services/popup.service';
 
 @Component({
   selector: 'app-footer-professionnel',
@@ -8,11 +9,15 @@ import { SecteursService } from 'src/app/services/secteurs.service';
 })
 export class FooterProfessionnelComponent implements OnInit {
 
-  constructor(private data: SecteursService) { }
+  constructor(private PopupLivraisonService: PopupService, private data: SecteursService) { }
 
   ngOnInit(): void {
   }
 
+  openPopupFormulaire(){
+    this.PopupLivraisonService.openPopupFormulaireContact();
+  }
+  
   changeSecteur(el: string) {
     this.data.changeSecteurService(el);
   }

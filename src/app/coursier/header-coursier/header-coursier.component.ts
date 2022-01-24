@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { PopupService } from 'src/app/services/popup.service';
 
 @Component({
   selector: 'app-header-coursier',
@@ -11,7 +12,7 @@ export class HeaderCoursierComponent implements OnInit {
   onWindowScroll() { // classe active sur header au scroll
     this.scrolled = window.scrollY > 50;
   };
-  constructor() { }
+  constructor(private PopupLivraisonService: PopupService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,10 @@ export class HeaderCoursierComponent implements OnInit {
   scroll(el: string, reglageHeight: number){ // function scroll
     let y = (document.getElementById(el) as HTMLElement).offsetTop;
     window.scrollTo({top: y - reglageHeight, behavior: 'smooth'});
+  }
+
+  openPopupFormulaireContact(){
+    this.PopupLivraisonService.openPopupFormulaireContact();
   }
 
 }

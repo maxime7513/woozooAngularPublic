@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PopupService } from 'src/app/services/popup.service';
 
 @Component({
   selector: 'app-footer-coursier',
@@ -8,13 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FooterCoursierComponent implements OnInit {
   @Input() popupInscription: any;
 
-  constructor() { }
+  constructor(private PopupLivraisonService: PopupService) { }
 
   ngOnInit(): void {
   }
 
   activerPopupInscription(){
     this.popupInscription.activerPopup();
+  }
+
+  openPopupFormulaireContact(){
+    this.PopupLivraisonService.openPopupFormulaireContact();
   }
   
 }
