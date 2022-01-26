@@ -2,7 +2,7 @@
     <h2>Le bien être de nos livreurs,<br>au coeur de nos préoccupations</h2>
         <div>
             <div *ngFor="let avantage of avantages | slice:0:3">
-                <img src="{{ avantage.image }}" alt="icone avantages">
+                <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="icone avantages">
                 <p>{{ avantage.titre}}<fa-icon [icon]="chevronDown"></fa-icon></p>
                 <p>{{ avantage.texte}}</p>
             </div>
