@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { annotate, annotationGroup } from 'rough-notation';
+import { BehaviorSubject } from 'rxjs';
 import { OffresService } from 'src/app/services/offres.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { OffresService } from 'src/app/services/offres.service';
   styleUrls: ['./offres-details.component.scss']
 })
 export class OffresDetailsComponent implements OnInit {
-  contenuVisible : string;
+  contenuVisible : string = "";
   scrolled: boolean = false;
   scrolledDepasse: boolean = false;
   notationOneTime: boolean = false;
@@ -25,9 +26,11 @@ export class OffresDetailsComponent implements OnInit {
       }
   }
 
-  constructor(private data: OffresService) { 
-    // this.contenuVisible = 'securite';
-    this.contenuVisible = this.data.offre;
+  constructor(private offreService: OffresService) { 
+    this.offreService.offreDetails.subscribe((res) => {
+      this.contenuVisible = res;
+    });
+
   }
 
   ngOnInit(): void {}

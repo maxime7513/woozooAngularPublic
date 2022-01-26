@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class OffresService {
-  offre: string;
+  
+  offreDetails: BehaviorSubject<string>;
 
   constructor() {
-    this.offre = "securite";
+    this.offreDetails = new BehaviorSubject('securite');
   }
 
-  changeSecteurOffre(el: string){
-    this.offre = el;
+  changeOffreDetails(el: string){
+    this.offreDetails.next(el);
     setTimeout(() => { // scroller vers la section offre
       let offre = document.getElementById("offre_details") as HTMLCanvasElement;
       window.scrollTo({top: offre.offsetTop - 64, behavior: 'smooth'});

@@ -8,13 +8,13 @@ import { OffresService } from 'src/app/services/offres.service';
 })
 export class FooterSecteurComponent implements OnInit {
 
-  constructor(private data: OffresService) { }
+  constructor(private offreService: OffresService) { }
 
   ngOnInit(): void {
   }
 
   changeOffre(el: string) {
-    this.data.changeSecteurOffre(el);
+    this.offreService.changeOffreDetails(el);
   }
 
 }
