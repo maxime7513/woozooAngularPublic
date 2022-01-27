@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPhoneSquareAlt} from '@fortawesome/free-solid-svg-icons';
+import { faPhoneSquareAlt, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +9,7 @@ import { faPhoneSquareAlt} from '@fortawesome/free-solid-svg-icons';
 })
 export class PopupFormulaireContactComponent implements OnInit {
   phoneIcon = faPhoneSquareAlt;
+  paperPlaneIcon = faPaperPlane;
 
   constructor() { }
 

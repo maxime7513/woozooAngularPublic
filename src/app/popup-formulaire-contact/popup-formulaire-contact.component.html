@@ -3,13 +3,22 @@
         <mat-icon>close</mat-icon>
     </button>
     <div mat-dialog-content>
-        <h4>Contactez-nous</h4>
+        <h4>appelez-nous</h4>
         <p><fa-icon [icon]="phoneIcon"></fa-icon>04 960 960</p>
-        <h4>Ecrivez-nous</h4>
-    </div>
-    <div mat-dialog-actions [align]="'center'">
-        <button mat-raised-button [mat-dialog-close]="false">
-           OK
-        </button>
+        <h4>ou Ecrivez-nous</h4>
+        <form>
+            <div>
+                <input type="text" name="nom" required placeholder="Votre nom">
+                <input type="text" name="entreprise" placeholder="Raison sociale">
+            </div>
+            <div>
+                <input type="text" name="tel" placeholder="Numéro de telephone">
+                <input type="email" name="email" required placeholder="Votre email">
+            </div>
+            <div>
+                <textarea name="message" cols="12" rows="6" required placeholder="Votre message ..."></textarea>
+            </div>
+            <button>Envoyer<fa-icon [icon]="paperPlaneIcon"></fa-icon></button>
+        </form>
     </div>
 </div>

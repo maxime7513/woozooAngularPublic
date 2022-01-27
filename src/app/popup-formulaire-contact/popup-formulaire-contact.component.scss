@@ -9,43 +9,102 @@ div{
         }
     }
     .mat-dialog-content{
-        margin: 0 !important;
-        padding: 25px 20px 10px 20px !important;
-        overflow: unset !important;
+        width: 90%;
+        margin: auto;
+        padding: 5px 10px;
         h4{
-            font-size: 30px;
+            font-size: 26px;
             color: #fff;
-            text-align: center;
+            margin-bottom: 30px;
             text-transform: uppercase;
             position: relative;
             &:after{
                 position: absolute;
                 content: "";
                 width: 40px;
-                height: 5px;
+                height: 4px;
                 bottom: -10px;
-                left: calc(50% - 20px);
+                left: 0;
                 background: #fff;
+            }
+            @media screen and (max-width : 550px){
+                font-size: 22px;
             }
         }
         p{
             color: #fff;
+            font-size: 36px;
             text-align: center;
+            margin-bottom: 25px;
             fa-icon{
                 color: #fff;
                 font-size: 44px;
                 vertical-align: text-bottom;
                 margin-right: 10px;
             }
-            &:first-of-type{
-                font-size: 36px;
-                margin: 15px 0 3px 0;
+            @media screen and (max-width : 550px){
+                font-size: 30px;
+                fa-icon{
+                    font-size: 34px;
+                }
             }
         }
     }
-    .mat-dialog-actions{
-        button{
-            color: var(--blue-primary);
+}
+
+form{
+    width: 100%;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        input{
+            width: 45%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding-left: 7px;
+            border: none;
+            color: #0971a4;
+            border-radius: 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @media screen and (max-width : 430px){
+                width: 100%;
+            }
+        }
+        textarea{
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 7px 0 0 7px;
+            border: none;
+            color: #0971a4;
+            border-radius: 4px;
+        }
+    }
+    button{
+        position: relative;
+        display: block;
+        background: #0d97c8;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: .4s;
+        fa-icon{
+            position: absolute;
+            top: calc(50% - 8px);
+            margin-left: -1rem;
+            opacity: 0;
+        }
+        &:hover{
+            padding-right: 30px !important;
+            fa-icon{
+                margin-left: 7px;
+                opacity: 1;
+                transition: .3s;
+            }
         }
     }
 }
