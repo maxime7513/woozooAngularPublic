@@ -1,0 +1,51 @@
+<footer>
+    <div>
+        <!-- <video autoplay muted loop>
+          <source src="assets/video/woozoo-loop.mp4" type="video/mp4">
+        </video> -->
+        <div id="container-video"></div>
+        <div class="solutions">
+            <div>
+                <div>
+                    <p>{{ titreLinkFooter }}</p>
+                    <div *ngIf="footerPage === 'professionnel'">
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeSecteur('commerce')">commerce</a>
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeSecteur('luxe')">retail & luxe</a>
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeSecteur('e-commerce')">e-commerce</a>
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeSecteur('restaurant')">restaurant</a>
+                    </div>
+                    <div *ngIf="footerPage === 'secteur'">
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeOffre('demande')">Course à la demande</a>
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeOffre('securite')">Course haute sécurité</a>
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeOffre('disposition')">Mise à disposition</a>
+                        <a routerLink="{{ cheminRouterLink }}" (click)="changeOffre('optimisation')">Optimisation des tournées</a>
+                    </div>
+                    <div *ngIf="footerPage === 'coursier'">
+                        <a pageScroll [pageScrollOffset]="100" [pageScrollDuration]="500" href="#avantages">nos avantages</a>
+                        <a pageScroll [pageScrollOffset]="120" [pageScrollDuration]="500" href="#besoin_coursier">critères requis</a>
+                        <a (click)="activerPopupInscription()" pageScroll [pageScrollOffset]="70" [pageScrollDuration]="500" href="#form_coursier">inscription</a>
+                        <a pageScroll [pageScrollOffset]="80" [pageScrollDuration]="500" href="#csm">comment sa marche ?</a>
+                    </div>
+                </div>
+                <div>
+                    <p>+ d'info</p>
+                    <a href="">Conditions générales</a>
+                    <a href="">Politique de Confidentialité</a>
+                    <a href="">Mentions légales</a>
+                    <a (click)="openPopupFormulaire()">contact</a>
+                </div>
+            </div>
+            <div class="telecharger">
+                <p>Suivez nous</p>
+                <div>
+                    <a href=""><img src="./assets/img/footer/facebook.svg" alt="logo facebook"></a>
+                    <a href=""><img src="./assets/img/footer/instagram.svg" alt="logo instagram"></a>
+                    <a href=""><img src="./assets/img/footer/linkedin.svg" alt="logo linkedin"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copright">
+        <p>&copy; {{currentDate | date: 'yyyy'}} | WOOZOO</p>
+    </div>
+</footer>
