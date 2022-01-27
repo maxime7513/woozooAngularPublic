@@ -35,6 +35,12 @@ section{
         padding: 0 20px 0 50px;
         > img{
             width: 33%;
+            @media screen and (max-width : 500px){
+                width: 100% !important;
+            }
+            @media screen and (min-width: 501px) and (max-width : 700px){
+                width: 75% !important;
+            }
         }
         ul{
             width: 60%;
@@ -114,9 +120,6 @@ section{
         }
         > div{
             padding: 0 10px !important;
-            > img{
-                width: 100% !important;
-            }
             li{
                 margin: 10px !important;
                 h4{
