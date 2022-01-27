@@ -15,13 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // component
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 // home page
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { FooterHomePageComponent } from './home-page/footer-home-page/footer-home-page.component';
 // professionnel
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
-import { HeaderProfessionnelComponent } from './professionnel/header-professionnel/header-professionnel.component';
 import { PresentationComponent } from './professionnel/presentation/presentation.component';
 import { OffresComponent } from './professionnel/offres/offres.component';
 import { ValeursComponent } from './professionnel/valeurs/valeurs.component';
@@ -32,28 +34,24 @@ import { DevisComponent } from './professionnel/devis/devis.component';
 import { OffresDetailsComponent } from './professionnel/offres/offres-details/offres-details.component';
 import { PartenairesComponent } from './professionnel/partenaires/partenaires.component';
 import { PopupLivraisonComponent } from './professionnel/popup-livraison/popup-livraison.component';
-import { FooterProfessionnelComponent } from './professionnel/footer-professionnel/footer-professionnel.component';
+
 // secteur
 import { SecteurComponent } from './secteur/secteur.component';
-import { HeaderSecteurComponent } from './secteur/header-secteur/header-secteur.component';
 import { ContenuSecteurComponent } from './secteur/contenu-secteur/contenu-secteur.component';
-import { FooterSecteurComponent } from './secteur/footer-secteur/footer-secteur.component';
-
-// service
-import { PopupService } from './services/popup.service';
-import { SecteursService } from './services/secteurs.service';
-import { OffresService } from './services/offres.service';
 
 //coursier
 import { CoursierComponent } from './coursier/coursier.component';
-import { HeaderCoursierComponent } from './coursier/header-coursier/header-coursier.component';
 import { PresentationCoursierComponent } from './coursier/presentation-coursier/presentation-coursier.component';
 import { BesoinsComponent } from './coursier/besoins/besoins.component';
 import { InscriptionCoursierComponent } from './coursier/inscription-coursier/inscription-coursier.component';
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
-import { FooterCoursierComponent } from './coursier/footer-coursier/footer-coursier.component';
 import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popup-formulaire-contact.component';
+
+// service
+import { PopupService } from './services/popup.service';
+import { SecteursService } from './services/secteurs.service';
+import { OffresService } from './services/offres.service';
 
 
 
@@ -63,8 +61,8 @@ import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popu
     HomePageComponent,
     HomeComponent,
     FooterHomePageComponent,
+    HeaderComponent,
     ProfessionnelComponent,
-    HeaderProfessionnelComponent,
     PresentationComponent,
     OffresComponent,
     ValeursComponent,
@@ -75,20 +73,16 @@ import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popu
     PopupLivraisonComponent,
     OffresDetailsComponent,
     PartenairesComponent,
-    FooterProfessionnelComponent,
     SecteurComponent,
-    HeaderSecteurComponent,
     ContenuSecteurComponent,
-    FooterSecteurComponent,
     CoursierComponent,
-    HeaderCoursierComponent,
     PresentationCoursierComponent,
     BesoinsComponent,
     InscriptionCoursierComponent,
     CsmComponent,
     AvantagesComponent,
-    FooterCoursierComponent,
     PopupFormulaireContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
