@@ -1,5 +1,5 @@
-<section id="offre_details" #offre>
-    <div id="header_offre_details" [class.active]="scrolled" [ngClass]="{'scale': scrolledDepasse}">
+<section id="offre_details" #offre [class.active]="scrolled">
+    <div id="header_offre_details" [ngClass]="{'scale': scrolledDepasse}">
         <p [class.active]="contenuVisible == 'demande'" (click)="changeContenu('demande')">Course à la demande</p>
         <p [class.active]="contenuVisible == 'securite'" (click)="changeContenu('securite')">Course haute sécurité</p>
         <p [class.active]="contenuVisible == 'disposition'" (click)="changeContenu('disposition')">Mise à disposition</p>

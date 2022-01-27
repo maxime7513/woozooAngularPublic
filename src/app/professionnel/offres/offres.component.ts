@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { OffresService } from 'src/app/services/offres.service';
 
 @Component({
   selector: 'app-offres',
@@ -6,14 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./offres.component.scss']
 })
 export class OffresComponent implements OnInit {
-  @Input() contenuVisibleOffres: any;
 
-  constructor() { }
+  constructor(private offresService: OffresService) { }
 
   ngOnInit(): void {
   }
 
   contenuVisibleOffre(el: string) { // changer contenu visible offres-details
-    this.contenuVisibleOffres.changeContenu(el);
+    this.offresService.changeOffreDetails(el);
   }
 }

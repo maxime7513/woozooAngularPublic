@@ -35,15 +35,10 @@ export class OffresDetailsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // scroll(el: HTMLElement){ // function scroll
-  //   let y = el.offsetTop;
-  //   window.scrollTo({top: y - 64, behavior: 'smooth'});
-  // }
-
   changeContenu(el: string){ // changer contenue quand click sur header offres-details (+ scroll)
     this.contenuVisible = el;
     let offre = document.getElementById("offre_details") as HTMLCanvasElement;
-    window.scrollTo({top: offre.offsetTop - 64, behavior: 'smooth'});
+    window.scrollTo({top: offre.offsetTop - 59, behavior: 'smooth'});
     
     if(el == 'securite' && this.notationOneTime == false){ // lancer fonction roughtNotation() si categorie securite et fonction pas encore effectué
       setTimeout(() => {

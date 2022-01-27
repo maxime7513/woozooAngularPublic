@@ -36,7 +36,9 @@ export class FooterComponent implements OnInit {
   }
 
   changeOffre(el: string) { // page professionnel
-    this.offreService.changeOffreDetails(el);
+    setTimeout(() => {
+      this.offreService.changeOffreDetails(el);
+    }, 1000);
   }
 
 

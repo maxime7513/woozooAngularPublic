@@ -12,10 +12,8 @@ export class OffresService {
 
   changeOffreDetails(el: string){
     this.offreDetails.next(el);
-    setTimeout(() => { // scroller vers la section offre
-      let offre = document.getElementById("offre_details") as HTMLCanvasElement;
-      window.scrollTo({top: offre.offsetTop - 64, behavior: 'smooth'});
-    }, 1000);
+    let offre = document.getElementById("offre_details") as HTMLCanvasElement;
+    window.scrollTo({top: offre.offsetTop - 59, behavior: 'smooth'});
   }
 
 }

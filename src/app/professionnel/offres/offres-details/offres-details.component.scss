@@ -1,5 +1,17 @@
 section{
     background: var(--blanc-opac);
+    &.active{
+        #header_offre_details{
+            font-size: 14px;
+            position: fixed;
+            top: 64px;
+            width: 100%;
+            padding: 18px 20px 22px 20px;
+        }
+        > div:not(#header_offre_details){
+            padding: 70px 0 40px 0;
+        }
+    }
 }
 #header_offre_details{
     display: flex;
@@ -12,13 +24,6 @@ section{
     transform-origin: top;
     transition: .5s;
     z-index: 10;
-    &.active{
-        font-size: 14px;
-        position: fixed;
-        top: 64px;
-        width: 100%;
-        padding: 18px 20px 22px 20px;
-    }
     &.scale{
         transform: scaleY(0);
     }
@@ -55,7 +60,7 @@ section > div:not(#header_offre_details){
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 0;
+    padding: 40px 0;
     img{
         width: 33%;
     }
