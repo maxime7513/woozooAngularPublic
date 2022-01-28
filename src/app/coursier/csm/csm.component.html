@@ -2,19 +2,19 @@
     <h2>Comment sa marche ?</h2>
     <div>
         <ul>
-            <li [class.active]="csmEtape == 'notification'" (click)="changeEtape('notification')">
+            <li [class.active]="csmEtape == 'notification'" (click)="changeBlokEtape('notification')">
                 <img src="./assets/img/coursier/1.png" alt="">
                 <h4>notification</h4>
             </li>
-            <li [class.active]="csmEtape == 'coordonnees'" (click)="changeEtape('coordonnees')">
+            <li [class.active]="csmEtape == 'coordonnees'" (click)="changeBlokEtape('coordonnees')">
                 <img src="./assets/img/coursier/2.png" alt="">
                 <h4>coordonnées</h4>
             </li>
-            <li [class.active]="csmEtape == 'recuperation'" (click)="changeEtape('recuperation')">
+            <li [class.active]="csmEtape == 'recuperation'" (click)="changeBlokEtape('recuperation')">
                 <img src="./assets/img/coursier/3.png" alt="">
                 <h4>récupération</h4>
             </li>
-            <li [class.active]="csmEtape == 'livraison'" (click)="changeEtape('livraison')">
+            <li [class.active]="csmEtape == 'livraison'" (click)="changeBlokEtape('livraison')">
                 <img src="./assets/img/coursier/4.png" alt="">
                 <h4>livraison</h4>
             </li>
