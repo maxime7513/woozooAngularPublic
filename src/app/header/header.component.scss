@@ -60,13 +60,6 @@ header{
         text-transform: capitalize;
         font-size: 18px;
         cursor: pointer;
-        @media screen and (max-width : 700px){
-            color: #0c87bb;
-            color: var(--blue-secondary);
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
     }
     &.active{
         background: white;
@@ -74,11 +67,6 @@ header{
         box-shadow: 0 0 4px 1px #96969680;
         span{
             color: var(--blue-primary);
-        }
-        .header-dropdown{
-            > a{
-                color: var(--blue-primary);
-            }
         }
     }
     &.secteur{
@@ -90,19 +78,13 @@ header{
     }
 }
 
-// header.solutions{
-//     background: white;
-//     opacity: 0.97;
-//     box-shadow: 0 0 4px 1px #96969680;
-// }
-
-// header dropdown
 .header-dropdown{
     display: flex;
     align-items: center;
+    transition: .3s ease-in-out;
+    z-index: -1;
     a{
         color: var(--blue-primary);
-        text-decoration: none;
         padding: 5px 0;
         text-decoration: none;
         cursor: pointer;
@@ -132,26 +114,81 @@ header{
             }
         }
     }
-    @media screen and (max-width : 700px){
+    &.mobile{
         position: fixed;
         flex-direction: column;
         justify-content: space-around;
         background: #fff;
         width: 100%;
-        top: 50px;
+        top: 0;
         right: 0;
         transform-origin: top;
         transform: scaleY(0);
-        padding: 20px 0;
+        padding: 65px 0 20px 0;
         box-shadow: 0px 7px 5px -1px rgba(0,0,0,.15);
         border-radius: 0 0 25px 25px;
+        > a{
+            color: var(--blue-primary);
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            padding: 0;
+        }
+        span{
+            color: var(--blue-primary);
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        button:first-of-type{
+            margin-bottom: 13px;
+        }
+        #dropdown_nos-solutions, #dropdown_nos-secteurs{
+            display: none;
+            position: relative;
+            top: -15px;
+            left: 20px;
+            margin-bottom: 10px;
+            opacity: 1;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+            transform: translateZ(0);
+            transition: .3s ease-in-out;
+            a{
+                font-size: 18px;
+                color: var(--blue-secondary);
+            }
+            &.show{
+                display: flex !important;
+            }
+        }
+        &.show{
+            transform: scaleY(1);
+            transition: .5s ease-in-out;
+        }
     }
+}
+
+#menu-hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #11a8da;
+    background-color: var(--blue-secondary);
+    color: white;
+    border: 1px solid #fff;
+    width: 38px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #solution_hover, #secteurs_hover{
     position: relative;
-    .block-hover{ /* pour la zone hover de nos solutions et secteurs activité*/
+    &:after{ /* pour la zone hover de nos solutions et secteurs activité*/
         position: absolute;
+        content: '';
         top: 20px;
         width: 200px;
         height: 15px;
@@ -172,7 +209,6 @@ header{
 #dropdown_nos-solutions, #dropdown_nos-secteurs{
     position: absolute;
     top: 35px;
-    /* width: 270px; */
     width: max-content;
     display: flex;
     flex-direction: column;
@@ -183,10 +219,6 @@ header{
     border-radius: 9px;
     transform: translate3d(0,-50%,0) scaleY(0);
     transition: .2s ease-in-out;
-    &.active{
-        transform: translateZ(0);
-        transition: .3s ease-in-out; 
-    }
     .fleche-dropdown{
         position: absolute;
         top: -6px;
@@ -227,45 +259,3 @@ header{
         transition: .5s;
     }
 }
-
-
-/* HEADER MOBILE */
-#menu-hamburger{
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: #11a8da;
-    background-color: var(--blue-secondary);
-    color: white;
-    border: 1px solid #fff;
-    width: 38px;
-    height: 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    @media screen and (max-width : 700px){
-            display: flex;
-    }
-}
-
-// .header-dropdown.show{
-//     transform: scaleY(1);
-//     transition: .5s ease-in-out;
-// }
-
-@media screen and (max-width : 700px){
-    header nav a:not(#dropdown_nos-secteurs a){
-        color: #0c87bb;
-        color: var(--blue-secondary);
-        font-size: 22px;
-        font-weight: 500;
-        margin-bottom: 25px;
-    }
-}
-// if(window.matchMedia("(max-width: 700px)").matches){
-//     $('header img').attr('src','./assets/img/header/logo-woozoo_mobile.png');
-//     $('header a, header img, .header-dropdown, header nav a:not(#dropdown_nos-secteurs a), header span').addClass('mobile');
-//     $(".header-dropdown a, .header-dropdown button").click(function(){
-//         $(".header-dropdown").removeClass("show");
-//         $("#menu-hamburger .fa-bars, #menu-hamburger .fa-times").toggleClass("cache");
-//     });
-// }

@@ -1,14 +1,13 @@
 <header [class.active]="scrolled" [ngClass]="{'secteur': headerSecteur}">
-    <a routerLink=""><img src="./assets/img/header/logo-woozoo.png" alt="logo woozoo"></a>
+    <a routerLink=""><img src="./assets/img/header/{{logoWoozoo}}.png" alt="logo woozoo"></a>
     <nav>
-        <button id="menu-hamburger"><i class="fas fa-bars"></i><i class="fas fa-times cache"></i></button>
-        <div class="header-dropdown">
+        <button *ngIf="getScreenWidth < 700" (click)="dropdownHeader()" id="menu-hamburger"><fa-icon [icon]="barreIcon"></fa-icon></button>
+        <div class="header-dropdown" [ngClass]="{'mobile': getScreenWidth < 700, 'show': headerMobileShow}">
             <a routerLink="{{ cheminRouterLink }}">Accueil</a>
             <a *ngIf="headerPage === 'coursier'" (click)="scroll('avantages',100)">Nos Avantages</a>
             <div *ngIf="headerPage === 'professionnel'" id="solution_hover">
-                <span>nos solutions</span>
-                <div class="block-hover"></div>
-                <div id="dropdown_nos-solutions"> <!-- dropdown nos solutions -->
+                <span (click)="solutionsSubMenu = !solutionsSubMenu">nos solutions</span>
+                <div id="dropdown_nos-solutions" [ngClass]="{'show': solutionsSubMenu}"> <!-- dropdown nos solutions -->
                     <div class="fleche-dropdown"></div>
                     <a (click)="contenuVisibleOffre('demande')"><img src="./assets/img/professionnel/offre/mobile_course-demande3.png" alt="">Course à la demande</a>
                     <a (click)="contenuVisibleOffre('securite')"><img src="./assets/img/professionnel/offre/sac-scelle2.png" alt="">Course haute sécurité</a>
@@ -17,9 +16,8 @@
                 </div>
             </div>
             <div *ngIf="headerPage === 'professionnel'" id="secteurs_hover">
-                <span>nos secteurs d'activité</span>
-                <div class="block-hover"></div>
-                <div id="dropdown_nos-secteurs"> <!-- dropdown nos solutions -->
+                <span (click)="secteursSubMenu = !secteursSubMenu">nos secteurs d'activité</span>
+                <div id="dropdown_nos-secteurs" [ngClass]="{'show': secteursSubMenu}"> <!-- dropdown nos secteurs -->
                     <div class="fleche-dropdown"></div>
                     <a routerLink="../secteur" (click)="changeSecteur('commerce')"><img src="./assets/img/header/shop.svg" alt="commerce">Commerce</a>
                     <a routerLink="../secteur" (click)="changeSecteur('luxe')"><img src="./assets/img/header/mode.svg" alt="luxe">Retail & luxe</a>
