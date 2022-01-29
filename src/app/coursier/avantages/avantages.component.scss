@@ -49,11 +49,14 @@ section{
                     color: #72efa8;
                     margin-bottom: 13px;
                 }
-                &:last-of-type{
+                &:nth-of-type(2){
                     color: #fff;
                     line-height: 1.1;
-                    &.show{
-                        display: block;
+                    &.mobile{
+                        display: none;
+                        &.show{
+                            display: block;
+                        }
                     }
                 }
                 fa-icon{
@@ -62,6 +65,9 @@ section{
                     transition: 0.8s;
                     animation: 1.5s moveChevron infinite;
                     display: none;
+                    &.mobile{
+                        display: inline-block;
+                    }
                     &.rotate{
                         transform: rotate(180deg) !important;
                         opacity: .5;
@@ -89,19 +95,13 @@ section{
             background: linear-gradient(90deg, rgba(0,14,34,1) 3%, rgba(17,63,113,1) 50%, rgba(0,14,34,1) 97%);
         }
         h2{
-            font-size: 22px;
+            font-size: 21px;
             margin-bottom: 30px;
         }
         div div{
-            width: 75% !important;
+            width: 80% !important;
             p:first-of-type{
                 cursor: pointer;
-                fa-icon{
-                    display: inline-block;
-                }
-            }
-            p:last-of-type{
-                display: none;
             }
         }
     }
@@ -114,7 +114,7 @@ section{
             div:not(.before_assist){
                 width: 40%;
                 margin-bottom: 30px;
-                p:first-of-type, p:last-of-type{
+                p:first-of-type, p:nth-of-type(2){
                     text-align: center; 
                 }
             }

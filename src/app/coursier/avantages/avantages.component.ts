@@ -8,6 +8,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./avantages.component.scss']
 })
 export class AvantagesComponent implements OnInit {
+  
   chevronDown = faChevronDown;
   avantages: Array<{image: string, titre: string, texte: string}> = [
     {image: "euro.svg",
@@ -35,10 +36,19 @@ export class AvantagesComponent implements OnInit {
     texte: "Nous vous fournissons tout l’équipement nécessaire (sac et tenue), totalement personnalisé pour apporter un côté fun à vos livraisons."
     }
   ];
-
+  getScreenWidth: any;
   constructor() {
-   }
+    this.getScreenWidth = window.innerWidth;
+  }
 
   ngOnInit(): void {}
 
+  showDetails(el: number, el2: number){
+    if(this.getScreenWidth < 700){
+      let chevron = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') fa-icon');
+      let detailsAvantages = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') p:last-of-type');
+      chevron.classList.toggle('rotate');
+      detailsAvantages.classList.toggle('show');
+    }
+  }
 }
