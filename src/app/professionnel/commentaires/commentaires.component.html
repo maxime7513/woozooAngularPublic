@@ -4,7 +4,7 @@
             <div ngxSlickItem *ngFor="let commentaire of commentaires">
                 <div class="card-commentaire">
                     <img src="./assets/img/commentaire/double-quote_bleu.png" alt="double quote">
-                    <img src="{{ commentaire.img }}" alt="photo client">
+                    <img src="./assets/img/commentaire/{{ commentaire.img }}" alt="photo client">
                     <p>{{ commentaire.texte }}</p>
                     <p>{{ commentaire.nom }} | {{commentaire.enseigne}}</p>
                 </div>
