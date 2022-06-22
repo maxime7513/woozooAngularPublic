@@ -65,7 +65,7 @@ header{
         background: white;
         opacity: 0.97;
         box-shadow: 0 0 4px 1px #96969680;
-        span{
+        span, a{
             color: var(--blue-primary);
         }
     }
@@ -253,7 +253,7 @@ header{
 #dropdown_nos-secteurs{
     left: 30px;
     img{
-        width: 30px;
+        width: 40px;
         vertical-align: middle;
         margin: 0 15px 5px 0;
         transition: .5s;

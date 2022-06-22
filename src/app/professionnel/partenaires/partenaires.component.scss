@@ -14,8 +14,8 @@ section{
             position: absolute;
             content: '';
             width: 500px;
-            height: 2px;
-            bottom: calc(50% - 4px);
+            height: 1px;
+            bottom: calc(50% - 1px);
             left: -560px;
             background: var(--blue-primary);
         }
@@ -23,8 +23,8 @@ section{
             position: absolute;
             content: '';
             width: 500px;
-            height: 2px;
-            bottom: calc(50% - 4px);
+            height: 1px;
+            bottom: calc(50% - 1px);
             right: -550px;
             background: var(--blue-secondary);
         }

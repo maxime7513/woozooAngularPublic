@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OffresService } from 'src/app/services/offres.service';
 
 @Component({
   selector: 'app-offres',
@@ -8,12 +7,9 @@ import { OffresService } from 'src/app/services/offres.service';
 })
 export class OffresComponent implements OnInit {
 
-  constructor(private offresService: OffresService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  contenuVisibleOffre(el: string) { // changer contenu visible offres-details
-    this.offresService.changeOffreDetails(el);
-  }
+  
 }

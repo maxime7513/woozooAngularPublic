@@ -9,20 +9,19 @@
                 <span (click)="solutionsSubMenu = !solutionsSubMenu">nos solutions</span>
                 <div id="dropdown_nos-solutions" [ngClass]="{'show': solutionsSubMenu}"> <!-- dropdown nos solutions -->
                     <div class="fleche-dropdown"></div>
-                    <a (click)="contenuVisibleOffre('demande')"><img src="./assets/img/professionnel/offre/mobile_course-demande3.png" alt="">Course à la demande</a>
-                    <a (click)="contenuVisibleOffre('securite')"><img src="./assets/img/professionnel/offre/sac-scelle2.png" alt="">Course haute sécurité</a>
-                    <a (click)="contenuVisibleOffre('disposition')"><img src="./assets/img/professionnel/offre/coursier_bleu.png" alt="">Mise à disposition</a>
-                    <a (click)="contenuVisibleOffre('optimisation')"><img src="./assets/img/professionnel/offre/mockup_tournee.png" alt="">Optimisation de tournées</a>
+                    <a (click)="scroll('offre',100)"><img src="./assets/img/professionnel/offre/mobile_course-demande3.png" alt="course à la demande">Course à la demande</a>
+                    <a (click)="scroll('mise_disposition',100)"><img src="./assets/img/professionnel/offre/livreur_header.png" alt="mise à disposition">Mise à disposition</a>
+                    <a (click)="contenuVisibleOffre('optimisation')"><img src="./assets/img/professionnel/offre/woozooBox.png" alt="publicité">Campagne publicitaire</a>
                 </div>
             </div>
             <div *ngIf="headerPage === 'professionnel'" id="secteurs_hover">
                 <span (click)="secteursSubMenu = !secteursSubMenu">nos secteurs d'activité</span>
                 <div id="dropdown_nos-secteurs" [ngClass]="{'show': secteursSubMenu}"> <!-- dropdown nos secteurs -->
                     <div class="fleche-dropdown"></div>
-                    <a routerLink="../secteur" (click)="changeSecteur('commerce')"><img src="./assets/img/header/shop.svg" alt="commerce">Commerce</a>
-                    <a routerLink="../secteur" (click)="changeSecteur('luxe')"><img src="./assets/img/header/mode.svg" alt="luxe">Retail & luxe</a>
-                    <a routerLink="../secteur" (click)="changeSecteur('e-commerce')"><img src="./assets/img/header/online.svg" alt="e-commerce">E-commerce</a>
-                    <a routerLink="../secteur" (click)="changeSecteur('restaurant')"><img src="./assets/img/header/restaurant.svg" alt="restaurant">Restaurant</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('commerce')"><img src="./assets/img/professionnel/secteurs/store.png" alt="commerce">Commerce</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('luxe')"><img src="./assets/img/professionnel/secteurs/luxe.png" alt="luxe">Retail & luxe</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('restaurant')"><img src="./assets/img/professionnel/secteurs/sushi_header.png" alt="restaurant">Restaurant</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('inter-magasin')"><img src="./assets/img/professionnel/secteurs/arrow.png" alt="inter-magasin">Inter-magasin</a>
                 </div>
             </div>
             <button (click)="openPopupFormulaire()">{{ boutonContact }}</button>

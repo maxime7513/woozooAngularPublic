@@ -8,7 +8,7 @@ section{
     padding: 70px 0 50px 0;
     z-index: 1;
     transition: .4s;
-    img:not(.info-card img){
+    img:not(.info-card img, .comming-soon){
         height: 130px;
         margin-top: -45px;
         transition: .4s;
@@ -45,7 +45,7 @@ section{
         p:last-of-type{
             opacity: 1;
         }
-        img:not(.info-card img){
+        img:not(.info-card img, .comming-soon){
             height: 85px !important;
             margin-top: 0 !important;
         }
@@ -184,6 +184,9 @@ section{
                 }
             }
         }
+    }
+    .comming-soon{
+        height: 60px;
     }
 }
 
