@@ -31,9 +31,9 @@ import { SecteursComponent } from './professionnel/secteurs/secteurs.component';
 import { CommentairesComponent } from './professionnel/commentaires/commentaires.component';
 import { ClientsSliderComponent } from './professionnel/clients-slider/clients-slider.component';
 import { DevisComponent } from './professionnel/devis/devis.component';
-import { OffresDetailsComponent } from './professionnel/offres/offres-details/offres-details.component';
 import { PartenairesComponent } from './professionnel/partenaires/partenaires.component';
 import { PopupLivraisonComponent } from './professionnel/popup-livraison/popup-livraison.component';
+import { MiseDispositionDetailsComponent } from './professionnel/mise-disposition-details/mise-disposition-details.component';
 
 // secteur
 import { SecteurComponent } from './secteur/secteur.component';
@@ -70,8 +70,8 @@ import { OffresService } from './services/offres.service';
     CommentairesComponent,
     ClientsSliderComponent,
     DevisComponent,
+    MiseDispositionDetailsComponent,
     PopupLivraisonComponent,
-    OffresDetailsComponent,
     PartenairesComponent,
     SecteurComponent,
     ContenuSecteurComponent,

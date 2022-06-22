@@ -1,0 +1,70 @@
+section{
+    position: relative;
+    background: var(--blanc-opac);
+    padding: 0 20px 20px;
+    h2{
+        position: relative;
+        font-size: 34px;
+        color: var(--blue-primary);
+        width: max-content;
+        margin-left: 7%;
+        margin-bottom: 20px;
+        z-index: 1;
+        &:after{
+            position: absolute;
+            content: '';
+            left: 50%;
+            bottom: -3px;
+            width: 100%;
+            height: 15px;
+            transform: skew(-12deg) translateX(-50%);
+            background: #9be8ff;
+            z-index: -1;
+        }
+    }
+    > div{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        img{
+            width: 37%;
+            margin: 0 25px 25px 0;
+        }
+        div{
+            width: 58%;
+            p{
+                color: var(--blue-primary);
+                color: #7e8da9;
+                font-size: 1.25rem;
+                margin-bottom: 13px;
+                line-height: 1.2;
+                span{
+                    color: var(--blue-secondary);
+                }
+            }
+            ul{
+                li{
+                    position: relative;
+                    color: #7e8da9;
+                    font-size: 18px;
+                    margin: 0 auto 20px 40px;
+                    line-height: 1.2;
+                    &:before{
+                        position: absolute;
+                        content: '';
+                        background-image: url(/assets/img/professionnel/offre/right-arrow.png);
+                        background-size: 40px 40px;
+                        top: -9px;
+                        left: -42px;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    strong{
+                        color: var(--blue-secondary);
+                    }
+                }
+            }
+        }
+    }
+}
