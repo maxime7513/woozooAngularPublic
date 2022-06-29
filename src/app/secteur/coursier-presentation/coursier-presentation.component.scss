@@ -1,0 +1,32 @@
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 13px;
+    padding: 0 15px;
+    background: var(--blanc-opac);
+    h4{
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: var(--blue-secondary);
+    }
+    > img{
+        width: 21%;
+        margin: 0 25px;
+        z-index: 0;
+    }
+    > div{
+        width: 50%;
+        margin: 0 25px;
+        p{
+            font-size: 19px;
+            color: #7e8da9;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+    }
+}

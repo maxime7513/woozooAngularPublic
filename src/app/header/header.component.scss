@@ -76,6 +76,10 @@ header{
             color: var(--blue-primary);
         }
     }
+    &.mentions_legales{
+        background: var(--blue-primary);
+        box-shadow: 0 0 4px 1px #96969680;
+    }
 }
 
 .header-dropdown{
@@ -96,7 +100,8 @@ header{
         margin: 0 10px;
         color: #fff;
         text-transform: capitalize;
-        font-size: 18px; 
+        font-size: 18px;
+        font-weight: 400;
         &:after{
             content: "";
             background: var(--blue-secondary);

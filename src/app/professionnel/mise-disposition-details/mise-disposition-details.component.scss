@@ -36,11 +36,12 @@ section{
             p{
                 color: var(--blue-primary);
                 color: #7e8da9;
-                font-size: 1.25rem;
+                font-size:  1.125rem;
                 margin-bottom: 13px;
                 line-height: 1.2;
                 span{
                     color: var(--blue-secondary);
+                    font-weight: 500;
                 }
             }
             ul{
@@ -62,6 +63,7 @@ section{
                     }
                     strong{
                         color: var(--blue-secondary);
+                        font-weight: 600;
                     }
                 }
             }
