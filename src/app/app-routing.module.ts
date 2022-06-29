@@ -15,9 +15,9 @@ const routes: Routes = [
   { path: 'secteur', component: SecteurComponent , data: {animation: 'Secteur'} },
   { path: 'coursier', component: CoursierComponent , data: {animation: 'Coursier'} },
   { path: 'woozooBox', component: WoozooBoxComponent , data: {animation: 'WoozooBox'} },
-  { path: 'mentionsLegales', component: MentionsLegalesComponent},
-  { path: 'confidentialite', component: ConfidentialiteComponent},
-  { path: 'conditionsGenerales', component: ConditionsGeneralesComponent},
+  { path: 'mentionsLegales', component: MentionsLegalesComponent , data: {animation: 'MentionsLegales'} },
+  { path: 'confidentialite', component: ConfidentialiteComponent , data: {animation: 'Confidentialite'}},
+  { path: 'conditionsGenerales', component: ConditionsGeneralesComponent , data: {animation: 'ConditionsGenerales'}},
 ];
 
 @NgModule({
