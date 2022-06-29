@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class SecteursService {
   secteur: string;
   constructor() { 
-    this.secteur = 'commerce';
+    this.secteur = 'restaurant';
   }
   
   changeSecteurService(el: string){

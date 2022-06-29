@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
+import { faBox, faLocationDot, faArrowRightArrowLeft, faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
+import { HotToastService } from '@ngneat/hot-toast';
 import { PopupService } from 'src/app/services/popup.service';
 
 @Component({
@@ -7,8 +8,12 @@ import { PopupService } from 'src/app/services/popup.service';
   templateUrl: './devis.component.html',
   styleUrls: ['./devis.component.scss']
 })
+
 export class DevisComponent implements OnInit {
   // icone fontawesome
+  boxIcon = faBox;
+  locationIcon = faLocationDot;
+  arrowIcon = faArrowRightArrowLeft;
   roadIcon = faRoad;
   clockIcon = faClock;
   cardIcon = faCreditCard;
@@ -16,144 +21,64 @@ export class DevisComponent implements OnInit {
   
   prixCourse: any;
   distance: any;
-  estimation: boolean;
+  estimation: boolean = false;
 
-  constructor(private PopupLivraisonService: PopupService) {
-    this.estimation = false;
-  }
+  constructor(private PopupLivraisonService: PopupService, private toast: HotToastService) { }
 
   ngOnInit(): void {
-  
-    function initMap(): void {
-      const map = new google.maps.Map(
-        document.getElementById("map") as HTMLElement,
-        {
-          mapTypeControl: false,
-          center: { lat: 43.2961743, lng: 5.3699525 },
-          zoom: 13,
-        }
-      );
-    
-      new AutocompleteDirectionsHandler(map);
-    }
-    
-    class AutocompleteDirectionsHandler {
-      map: google.maps.Map;
-      originPlaceId: string;
-      destinationPlaceId: string;
-      travelMode: google.maps.TravelMode;
-      directionsService: google.maps.DirectionsService;
-      directionsRenderer: google.maps.DirectionsRenderer;
-    
-      constructor(map: google.maps.Map) {
-        this.map = map;
-        this.originPlaceId = "";
-        this.destinationPlaceId = "";
-        this.travelMode = google.maps.TravelMode.DRIVING;
-        this.directionsService = new google.maps.DirectionsService();
-        this.directionsRenderer = new google.maps.DirectionsRenderer();
-        this.directionsRenderer.setMap(map);
-    
-        const originInput = document.getElementById("origin-input") as HTMLInputElement;
-        const destinationInput = document.getElementById("destination-input") as HTMLInputElement;
-    
-        const originAutocomplete = new google.maps.places.Autocomplete(originInput);
-        // Specify just the place data fields that you need.
-        originAutocomplete.setFields(["place_id"]);
-    
-        const destinationAutocomplete = new google.maps.places.Autocomplete(
-          destinationInput
-        );
-        // Specify just the place data fields that you need.
-        destinationAutocomplete.setFields(["place_id"]);
-    
-    
-        this.setupPlaceChangedListener(originAutocomplete, "ORIG");
-        this.setupPlaceChangedListener(destinationAutocomplete, "DEST");
-    
-      }
-    
-    
-      setupPlaceChangedListener(
-        autocomplete: google.maps.places.Autocomplete,
-        mode: string
-      ) {
-        autocomplete.bindTo("bounds", this.map);
-    
-        autocomplete.addListener("place_changed", () => {
-          const place = autocomplete.getPlace();
-    
-          if (!place.place_id) {
-            window.alert("Please select an option from the dropdown list.");
-            return;
-          }
-    
-          if (mode === "ORIG") {
-            this.originPlaceId = place.place_id;
-          } else {
-            this.destinationPlaceId = place.place_id;
-          }
-          this.route();
-        });
-      }
-    
-      route() {
-        if (!this.originPlaceId || !this.destinationPlaceId) {
-          return;
-        }
-        const me = this;
-    
-        this.directionsService.route(
-          {
-            origin: { placeId: this.originPlaceId },
-            destination: { placeId: this.destinationPlaceId },
-            travelMode: this.travelMode,
-          },
-          (response, status) => {
-            if (status === "OK") {
-              me.directionsRenderer.setDirections(response);
-            } else {
-              window.alert("Directions request failed due to " + status);
-            }
-          }
-        );
-      }
-    }
-
-    initMap(); // initialiser map
-
-    // map qui reste carré (responsive)
-    let map = document.getElementById("map") as HTMLElement;//
-    let mapWidth = map.clientWidth;//
-    let calcHeightMap:any = mapWidth * 0.685;//
-    map.style.height = calcHeightMap + "px";//
-    
+    this.initMap();
+    this.resizeMap();
   }
 
-  openPopup(){
-    this.PopupLivraisonService.openPopupLivraison();
+  initMap(): void {
+    const map = new google.maps.Map(
+      document.getElementById("map") as HTMLElement,
+      {
+        mapTypeControl: false,
+        center: { lat: 43.2961743, lng: 5.3699525 },
+        zoom: 13,
+      }
+    );
+  
+    new AutocompleteDirectionsHandler(map);
   }
 
   calculerDistance(){
-    const origin = (document.getElementById("origin-input") as HTMLInputElement).value;
-    const destination = (document.getElementById("destination-input") as HTMLInputElement).value;
-    const request = {
+    this.toast.close();
+
+    const origin = (document.getElementById("origin-input") as HTMLInputElement).value,
+    destination = (document.getElementById("destination-input") as HTMLInputElement).value,
+
+    request = {
       origins: [origin],
       destinations: [destination],
       travelMode: google.maps.TravelMode.DRIVING,
       unitSystem: google.maps.UnitSystem.METRIC,
       avoidHighways: false,
       avoidTolls: false,
-    };
-    const service = new google.maps.DistanceMatrixService();
+    },
+    service = new google.maps.DistanceMatrixService();
   
+    if(!origin){
+      this.toast.error('Renseigner l\'adresse de départ');
+      return
+    }else if(!destination){
+      this.toast.error('Renseigner l\'adresse de livraison');
+      return
+    }
+
+    if(!AutocompleteDirectionsHandler.adresseValide){
+      this.toast.error('Veuillez sélectionner une des adresses proposée')
+      return
+    }
+
     service.getDistanceMatrix(request).then((response) => {
-    var valueMetre = response["rows"][0]["elements"][0]["distance"]["value"];
-    // var distanceKm = Math.round(valueMetre / 1000);
-    this.distance = (valueMetre / 1000).toFixed(1);
-    console.log(this.distance);
-    this.calculerPrixCourse(this.distance);
-    this.estimation = true;
+      var valueMetre = response["rows"][0]["elements"][0]["distance"]["value"];
+      // var distanceKm = Math.round(valueMetre / 1000);
+      this.distance = (valueMetre / 1000).toFixed(1);
+      this.calculerPrixCourse(this.distance);
+      this.estimation = true;
+      this.resetValideAdresse();
     });
   }
 
@@ -220,19 +145,133 @@ export class DevisComponent implements OnInit {
     this.prixCourse = parseFloat((prix * 1.2).toFixed(2));
   }
   
-  inverserInputs(){ // function inverser valeurs inputs
-    let inputOrigin = document.getElementById("origin-input") as HTMLInputElement;
-    let inputDestination = document.getElementById("destination-input") as HTMLInputElement;
-    let enregristrerValeur = inputOrigin.value;
+  resizeMap(){ // map qui reste carré (responsive)
+    let map = document.getElementById("map") as HTMLElement,
+    mapWidth = map.clientWidth,
+    calcHeightMap:any = mapWidth * 0.685;
+    map.style.height = calcHeightMap + "px";
+  }
+
+  resetValideAdresse(){
+    AutocompleteDirectionsHandler.adresseValide = false;
+  }
+  
+  inverserInputs(){
+    let inputOrigin = document.getElementById("origin-input") as HTMLInputElement,
+    inputDestination = document.getElementById("destination-input") as HTMLInputElement,
+    enregristrerValeur = inputOrigin.value;
     inputOrigin.value = inputDestination.value;
     inputDestination.value = enregristrerValeur;
     this.calculerDistance();
   }
 
-  resetDevis(){ // function remmetre à zero devis
+  resetDevis(){
     (document.getElementById("origin-input") as HTMLInputElement).value = "";
     (document.getElementById("destination-input") as HTMLInputElement).value = "";
     this.estimation = false;
+    this.initMap();
+  }
+
+  openPopup(){
+    this.PopupLivraisonService.openPopupLivraison();
+  }
+
+}
+
+class AutocompleteDirectionsHandler {
+  map: google.maps.Map;
+  originPlaceId: string;
+  destinationPlaceId: string;
+  travelMode: google.maps.TravelMode;
+  directionsService: google.maps.DirectionsService;
+  directionsRenderer: google.maps.DirectionsRenderer;
+  static adresseValide: boolean = false;
+
+  constructor(map: google.maps.Map) {
+    this.map = map;
+    this.originPlaceId = "";
+    this.destinationPlaceId = "";
+    this.travelMode = google.maps.TravelMode.DRIVING;
+    this.directionsService = new google.maps.DirectionsService();
+    this.directionsRenderer = new google.maps.DirectionsRenderer();
+    this.directionsRenderer.setMap(map);
+
+    const center = { lat: 43.2961743, lng: 5.3699525 }; // MARSEILLE
+    // Create a bounding box with sides ~35km away from the center point
+    const marseilleBounds = {
+      north: center.lat + 0.35,
+      south: center.lat - 0.35,
+      east: center.lng + 0.35,
+      west: center.lng - 0.35,
+    };
+
+    // afficher zone de restriction
+    // var rectangle = new google.maps.Rectangle({
+    //   map: map,
+    //   bounds: marseilleBounds
+    // });
+
+    const originInput = document.getElementById("origin-input") as HTMLInputElement,
+          destinationInput = document.getElementById("destination-input") as HTMLInputElement;
+
+    const options = {
+      bounds: marseilleBounds,
+      componentRestrictions: { country: "fr" },
+      // fields: ["address_components", "geometry", "icon", "name"],
+      strictBounds: true,
+    };
+
+    const originAutocomplete = new google.maps.places.Autocomplete(originInput, options),
+          destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput, options);
+
+    this.setupPlaceChangedListener(originAutocomplete, "ORIG");
+    this.setupPlaceChangedListener(destinationAutocomplete, "DEST");
+
+  }
+
+  setupPlaceChangedListener(autocomplete: google.maps.places.Autocomplete, mode: string) {
+    // autocomplete.bindTo("bounds", this.map);
+
+    autocomplete.addListener("place_changed", () => {
+      const place = autocomplete.getPlace();
+      if (!place.place_id) {
+        return;
+      }
+
+      if (mode === "ORIG") {
+        this.originPlaceId = place.place_id;
+      } else {
+        this.destinationPlaceId = place.place_id;
+      }
+      this.route();
+    });
+  }
+
+  route() {
+    if (!this.originPlaceId || !this.destinationPlaceId) {
+      return;
+    }else{
+      // console.log('Deux adresse valident')
+      AutocompleteDirectionsHandler.adresseValide = true;
+    }
+
+    this.directionsService.route(
+      {
+        origin: { placeId: this.originPlaceId },
+        destination: { placeId: this.destinationPlaceId },
+        travelMode: this.travelMode,
+      },
+      (response, status) => {
+        if (status === "OK") {
+          this.directionsRenderer.setDirections(response);
+          // remettre à 0 pour 'adresseValide' validation
+          // this.originPlaceId = '';
+          // this.destinationPlaceId = '';
+        } else {
+          window.alert("Directions request failed due to " + status);
+        }
+      }
+    );
   }
 
 }

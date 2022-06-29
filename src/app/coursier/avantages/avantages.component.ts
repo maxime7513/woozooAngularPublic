@@ -23,7 +23,7 @@ export class AvantagesComponent implements OnInit {
     titre: "Optimisez vos revenus",
     texte: "Compléter vos revenus en livrant même pendant les heures creuses de livraison. Notre service est accessible de 7h00 à minuit 7 jours sur 7."
     },
-    {image: "axa2.png",
+    {image: "axa.png",
     titre: "Notre partenaire d'assurance",
     texte: "Vous bénéficiez de notre assurance professionnelle, elle vous couvrira en cas d'accidents pendant votre activité sur notre plateforme."
     },

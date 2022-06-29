@@ -8,6 +8,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
 // routing
 import { AppRoutingModule } from './app-routing.module';
@@ -17,11 +20,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popup-formulaire-contact.component';
 
 // home page
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { FooterHomePageComponent } from './home-page/footer-home-page/footer-home-page.component';
+
 // professionnel
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
 import { PresentationComponent } from './professionnel/presentation/presentation.component';
@@ -38,6 +43,8 @@ import { MiseDispositionDetailsComponent } from './professionnel/mise-dispositio
 // secteur
 import { SecteurComponent } from './secteur/secteur.component';
 import { ContenuSecteurComponent } from './secteur/contenu-secteur/contenu-secteur.component';
+import { AvantagesSecteurComponent } from './secteur/avantages-secteur/avantages-secteur.component';
+import { CoursierPresentationComponent } from './secteur/coursier-presentation/coursier-presentation.component';
 
 //coursier
 import { CoursierComponent } from './coursier/coursier.component';
@@ -46,14 +53,22 @@ import { BesoinsComponent } from './coursier/besoins/besoins.component';
 import { InscriptionCoursierComponent } from './coursier/inscription-coursier/inscription-coursier.component';
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
-import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popup-formulaire-contact.component';
+
+// woozooBox
+import { WoozooBoxComponent } from './woozoo-box/woozoo-box.component';
 
 // service
 import { PopupService } from './services/popup.service';
 import { SecteursService } from './services/secteurs.service';
-import { OffresService } from './services/offres.service';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
+import { ConditionsGeneralesComponent } from './conditions-generales/conditions-generales.component';
 
-
+// Note we need a separate function as it's required for LOTTIE
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -83,6 +98,12 @@ import { OffresService } from './services/offres.service';
     AvantagesComponent,
     PopupFormulaireContactComponent,
     FooterComponent,
+    AvantagesSecteurComponent,
+    CoursierPresentationComponent,
+    WoozooBoxComponent,
+    MentionsLegalesComponent,
+    ConfidentialiteComponent,
+    ConditionsGeneralesComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,9 +117,10 @@ import { OffresService } from './services/offres.service';
     MatButtonModule,
     MatToolbarModule,
     NgxPageScrollModule,
-    
+    HotToastModule.forRoot(),
+    LottieModule.forRoot({ player: playerFactory }),
   ],
-  providers: [ PopupService, SecteursService, OffresService],
+  providers: [ PopupService, SecteursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,17 +8,15 @@ import { annotate, annotationGroup } from 'rough-notation';
 })
 export class MiseDispositionDetailsComponent implements OnInit {
   scrolled: boolean = false;
-  // scrolledDepasse: boolean = false;
   notationOneTime: boolean = false;
   @HostListener("window:scroll", [])
-  onWindowScroll() { // classe active sur header au scroll
+  onWindowScroll() {
       let offreDetails = document.getElementById("mise_disposition") as HTMLCanvasElement,
-      miseDispositionOffset = offreDetails.offsetTop,
-      miseDispositionHeight = offreDetails.offsetHeight;
+      miseDispositionOffset = offreDetails.offsetTop;
+      // miseDispositionHeight = offreDetails.offsetHeight;
       this.scrolled = window.scrollY > (miseDispositionOffset - 100);
-      // this.scrolledDepasse = window.scrollY > (miseDispositionOffset + miseDispositionHeight - 200);
 
-      if(this.scrolled == true && this.notationOneTime == false){
+      if(this.scrolled && !this.notationOneTime){
         this.roughtNotation();
       }
   };
@@ -37,7 +35,7 @@ export class MiseDispositionDetailsComponent implements OnInit {
   roughtNotation(){
     const a1 = annotate(document.getElementById('besoins') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2 }),
     a2 = annotate(document.getElementById('forme') as HTMLElement, { type: 'box', color: 'var(--blue-secondary)', padding: [1, 3] }),
-    a3 = annotate(document.getElementById('gerer') as HTMLElement, { type: 'box', color: 'var(--blue-secondary)', padding: [1, 3] }),
+    a3 = annotate(document.getElementById('gerer') as HTMLElement, { type: 'underline', color: 'var(--blue-secondary)', padding: 2 }),
     a4 = annotate(document.getElementById('astreinte') as HTMLElement, { type: 'circle', color: '#0eb3b7', padding: [7, 10], animationDuration: 1000}),
     agroupe = annotationGroup([a1, a2, a3, a4]);
     

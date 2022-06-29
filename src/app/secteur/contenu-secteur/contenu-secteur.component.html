@@ -1,81 +1,82 @@
 <section>
     <div id="header_secteurs_details">
-        <p [class.active]="secteurVisible == 'commerce'" (click)="changeSecteur('commerce')">Commerce</p>
-        <p [class.active]="secteurVisible == 'luxe'" (click)="changeSecteur('luxe')">Retails & Luxe</p>
-        <p [class.active]="secteurVisible == 'e-commerce'" (click)="changeSecteur('e-commerce')">E-commerce</p>
         <p [class.active]="secteurVisible == 'restaurant'" (click)="changeSecteur('restaurant')">Restaurant</p>
+        <p [class.active]="secteurVisible == 'luxe'" (click)="changeSecteur('luxe')">Retails & Luxe</p>
+        <p [class.active]="secteurVisible == 'liberale'" (click)="changeSecteur('liberale')">Profession libérale</p>
         <p [class.active]="secteurVisible == 'inter-magasin'" (click)="changeSecteur('inter-magasin')">Inter-magasin</p>
     </div>
-    <div *ngIf="secteurVisible == 'commerce'">
-        <div>
-            <h4>La solution de livraison 100% digitalisé</h4>
-            <p>Grâce à notre service de coursiers de proximité disponible 7j/7 , offrez à l'ensemble de vos consommateurs un mode de livraison à la demande , extrêmement rapide et équitable.</p>
-            <h4>0% de commission, 0€ frais d'installation</h4>
-            <p>Premier service de livraison express au tarif du standard : à partir de 5,50€*</p>
-            <p>(*Tarif HT valable dans Marseille, voir conditions auprès de nos équipes)</p>
-        </div>
-        <img src="./assets/img/professionnel/solutions/li55.png" alt="">
-    </div>
-    <div *ngIf="secteurVisible == 'luxe'">
-        <div>
-            <h4>Proposer une livraison haut de gamme, unique et sur-mesure</h4>
-            <p>Ne passez plus à côté des besoins de vos clients, offrez leur une expérience inégalé avec une livraison garantie haut de gamme et sécurisée, à l'image de votre marque.</p>
-            <h4>Renforcez votre image de marque</h4>
-            <p>WOOZOO sélectionnent les meilleurs coursiers pour réaliser des livraisons de qualités, fidèles à vos valeurs et votre marque.</p>
-            <p>Choisissez un créneau de livraison qui vous conviens et suivez votre livraison en temps réel.</p>
-        </div>
-        <img src="./assets/img/professionnel/solutions/li99.jpg" alt="">
-    </div>
-    <div *ngIf="secteurVisible == 'e-commerce'">
-        <div>
-            <h4>Connectez-vous à notre API WooZoo®</h4>
-            <!-- <h4>Boostez votre site marchand avec la livraison express grâce à notre API</h4> -->
-            <p>Offrez à vos clients la livraison la plus rapide de votre ville en intégrant notre API à votre site e-commerce.</p>
-            <h4>La puissance de livraison en toute simplicitée</h4>
-            <p>Accélérez le temps de livraison de vos commandes en ligne en vous connectant en temps-réel à la plus grande flotte de coursiers indépendants - vélo, 
-                véhicules thermique et électrique de votre ville.</p>
-        </div>
-        <img src="./assets/img/professionnel/solutions/li8.jpg" alt="">
-    </div>
+
     <div *ngIf="secteurVisible == 'restaurant'">
         <div>
-            <h4>Resto</h4>
-            <p>Une solution économique pour toutes vos livraisons urgentes, nous livrons vos plis et colis en un temps record selon vos impératifs.</p>
-            <h4>Un coursier express de proximité,<br>où vous voulez et quand vous voulez ! </h4>
-            <p>Choisissez un créneau de livraison et suivez votre livraison en temps réel. Livraison de colis de moins de 30 kg.</p>
+            <h3>Externaliser votre logistique, déchargez-vous de sa gestion</h3>
+            <p>Différents services afin de s'adapter au mieux à vos besoins</p>
+            <ul>
+                <li>
+                    <span>Livraison à la demande</span><br>Commander un coursier à la demande pour chacune de vos livraisons, et suivez les en temps réel grâce à notre application.<br>
+                    <b>Tarification à la course.</b>
+                </li>
+                <li>
+                    <span>Mise à disposition de coursiers</span><br>Ce service s’adapte à vos besoins et met à votre disposition un ou plusieurs livreurs, <span>entièrement dédié à votre activité</span>.
+                    Mieux qu’un simple service de livraison, un coursier formé à vos méthodes est mis à votre disposition et travaille <span>selon vos besoins</span>.<br>
+                    <b>Tarification à la demi-heure.</b>
+                </li>
+            </ul>
+ 
+            <p>Notre service est accessible de <span id="restaurant">7h00 à minuit, 7j/7</span>.</p>
         </div>
-        <img src="assets/img/professionnel/solutions/li7.jpg" alt="" class="engagement_image">
-    </div>
-    <div *ngIf="secteurVisible == 'inter-magasin'">
-        <div>
-            <h4>Rapprochez vos produits de vos clients</h4>
-            <p>Accélérez le temps de livraison de vos commandes en ligne et Simplifiez le transfert de marchandises entre points de vente.</p>
-            <p>Service de livraison express entre vos magasins par nos coursiers partenaires.</p>
-            <h4>Départ entrepot urbain</h4>
-            <p>Une solution de livraison innovante pour les professionnels de la logistique.</p>
-            <p>Lancez des livraisons express ou programmé pour transférer des stocks d'un magasin à un autre.</p>
-        </div>
-        <img src="./assets/img/professionnel/solutions/li11.png" alt="">
-    </div>
-
-    <div id="messagerie-express">
-        <img src="assets/img/professionnel/solutions/li77.png" alt="" class="engagement_image">
-        <div>
-            <h4>Une livraison spécial urgente?</h4>
-            <p>Une solution économique pour toutes vos livraisons urgentes, nous livrons vos plis et colis en un temps record selon vos impératifs.</p>
-            <h4>Un coursier express de proximité,<br>où vous voulez et quand vous voulez ! </h4>
-            <p>Choisissez un créneau de livraison et suivez votre livraison en temps réel.</p>
-            <p>* Livraison de colis de moins de 30 kg uniquement</p>
-        </div>
+        <img src="assets/img/professionnel/solutions/restaurant.png" alt="photo restaurant">
     </div>
 
-    <div id="solutions_coursier">
+    <div *ngIf="secteurVisible == 'luxe'">
         <div>
-            <h4>Des coursiers professionnels et géolocalisés sur demande</h4>
-            <p>Tous nos coursiers partenaires sont formé afin de vous fournir le meilleur service possible. 
-            Une assurance de base est incluse dans les services des transporteurs.
+            <h3>Proposer une livraison haut de gamme, unique et sur-mesure</h3>
+            <p>
+                Ne passez plus à côté des besoins de vos clients, offrez leur une expérience inégalé avec une livraison garantie <span>haut de gamme et sécurisée, à l'image de votre marque</span>.
+                Grâce à notre service de coursiers de proximité disponible 7j/7, offrez à l'ensemble de vos consommateurs un mode de livraison à la demande, extrêmement rapide et équitable.
+            </p>
+            <h4 id="luxe">Renforcez votre image de marque</h4>
+            <p>
+                Woozoo sélectionne les meilleurs coursiers pour réaliser des <span>livraisons de qualités, fidèles à vos valeurs et votre marque</span>.
+                Choisissez un créneau de livraison qui vous convient et suivez votre livraison en temps réel.
             </p>
         </div>
-        <img src="./assets/img/professionnel/solutions/li62.png" alt="">
+        <img src="./assets/img/professionnel/solutions/luxe.png" alt="photo luxe">
+    </div>
+    
+    <div *ngIf="secteurVisible == 'liberale'">
+        <div>
+            <h3>Connectez-vous à la meilleur flotte de livreurs de votre ville</h3>
+            <p>
+                <strong>Vous êtes avocat ou notaire</strong> et vous avez <span>un pli très urgent à livrer?</span> Grâce à notre livraison express à la demande, votre pli sera chez son destinataire
+                en moins de deux heures.
+            </p>
+            <p>
+                <strong>Vous êtes prothésiste dentaire</strong> et vous souhaitez livrer plusieurs cabinets de dentiste en même temps? Grâce à notre plateforme vous pouvez <span>créer votre tournée
+                de livraison en quelque clics</span>.
+            </p>
+            <p>
+                <strong>Vous êtes tailleur-couturier</strong> et vous souhaitez livrer vos clients à interval régulier? Notre plateforme vous offre la possibilité de <span>créer très
+                    facilement des <u id="liberale">tournées récurrentes.</u></span>
+            </p>
+        </div>
+        <img src="./assets/img/professionnel/solutions/liberale.png" alt="photo profession liberale">
+    </div>
+
+    <div *ngIf="secteurVisible == 'inter-magasin'">
+        <div>
+            <h3>Rapprochez vos produits de vos clients</h3>
+            <p>Simplifiez le transfert de marchandises entre vos magasins, grâce à notre service de livraison.</p>
+            <h4>Départ entrepot urbain</h4>
+            <p>
+                Une solution de livraison innovante pour les professionnels de la logistique.
+                Fini les ruptures de stocks, choisissez la bonne stratégie pour <u id="inter-magasin">réapprovisionnez vos points de vente</u> :
+            </p>
+            <p></p>
+            <ul>
+                <li>Optez pour une <span>livraison express à la demande</span> pour transferez vos marchandise entre points de vente</li>
+                <li><span id="programmer">programmez vos tournées</span> à l'avance sur notre plateforme spécialement dédié, en quelques clics.</li>
+            </ul>
+        </div>
+        <img src="./assets/img/professionnel/solutions/inter-magasin.png" class="inter-magasin_photo" alt="ordinateur portable">
     </div>
 </section>

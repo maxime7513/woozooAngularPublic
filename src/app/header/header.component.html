@@ -1,4 +1,4 @@
-<header [class.active]="scrolled" [ngClass]="{'secteur': headerSecteur}">
+<header [class.active]="scrolled && this.headerPage != 'mentionsLegales'" [ngClass]="{'secteur': this.headerPage == 'secteur', 'mentions_legales': this.headerPage == 'mentionsLegales' }">
     <a routerLink=""><img src="./assets/img/header/{{logoWoozoo}}.png" alt="logo woozoo"></a>
     <nav>
         <button *ngIf="getScreenWidth < 700" (click)="dropdownHeader()" id="menu-hamburger"><fa-icon [icon]="barreIcon"></fa-icon></button>
@@ -9,19 +9,19 @@
                 <span (click)="solutionsSubMenu = !solutionsSubMenu">nos solutions</span>
                 <div id="dropdown_nos-solutions" [ngClass]="{'show': solutionsSubMenu}"> <!-- dropdown nos solutions -->
                     <div class="fleche-dropdown"></div>
-                    <a (click)="scroll('offre',100)"><img src="./assets/img/professionnel/offre/mobile_course-demande3.png" alt="course à la demande">Course à la demande</a>
-                    <a (click)="scroll('mise_disposition',100)"><img src="./assets/img/professionnel/offre/livreur_header.png" alt="mise à disposition">Mise à disposition</a>
-                    <a (click)="contenuVisibleOffre('optimisation')"><img src="./assets/img/professionnel/offre/woozooBox.png" alt="publicité">Campagne publicitaire</a>
+                    <a (click)="scroll('offre',100)"><img src="./assets/img/professionnel/offre/mobile_course-demande.png" alt="course à la demande">Course à la demande</a>
+                    <a (click)="scroll('mise_disposition',100)"><img src="./assets/img/header/livreur.png" alt="mise à disposition">Mise à disposition</a>
+                    <a routerLink="../woozooBox"><img src="./assets/img/professionnel/offre/woozooBox.png" alt="publicité">Campagne publicitaire</a>
                 </div>
             </div>
             <div *ngIf="headerPage === 'professionnel'" id="secteurs_hover">
                 <span (click)="secteursSubMenu = !secteursSubMenu">nos secteurs d'activité</span>
                 <div id="dropdown_nos-secteurs" [ngClass]="{'show': secteursSubMenu}"> <!-- dropdown nos secteurs -->
                     <div class="fleche-dropdown"></div>
-                    <a routerLink="../secteur" (click)="changeSecteur('commerce')"><img src="./assets/img/professionnel/secteurs/store.png" alt="commerce">Commerce</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('restaurant')"><img src="./assets/img/header/sushi.png" alt="restaurant">Restaurant</a>
                     <a routerLink="../secteur" (click)="changeSecteur('luxe')"><img src="./assets/img/professionnel/secteurs/luxe.png" alt="luxe">Retail & luxe</a>
-                    <a routerLink="../secteur" (click)="changeSecteur('restaurant')"><img src="./assets/img/professionnel/secteurs/sushi_header.png" alt="restaurant">Restaurant</a>
-                    <a routerLink="../secteur" (click)="changeSecteur('inter-magasin')"><img src="./assets/img/professionnel/secteurs/arrow.png" alt="inter-magasin">Inter-magasin</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('liberale')"><img src="./assets/img/header/liberale_header.png" alt="profession libérale">Profession libérale</a>
+                    <a routerLink="../secteur" (click)="changeSecteur('inter-magasin')"><img src="./assets/img/professionnel/secteurs/double_arrow.png" alt="inter-magasin">Inter-magasin</a>
                 </div>
             </div>
             <button (click)="openPopupFormulaire()">{{ boutonContact }}</button>

@@ -4,13 +4,13 @@
         <h3>Estimez le prix de votre livraison<br>en quelques clics</h3>
         <div id="form-devis" [ngClass]="{'opacite': estimation}">
             <label>
-                <img src="./assets/img/professionnel/devis/colis.png" alt="adresse de retrait">
-                <input type="text" name="adresse1" id="origin-input" required placeholder="Adresse de retrait" maxlength="160">
-                <img (click)="inverserInputs()" src="./assets/img/professionnel/devis/double-arrow.png" alt="inverser adresses" id="double-arrow">
+                <fa-icon [icon]="boxIcon"></fa-icon>
+                <input (change)="resetValideAdresse()" type="text" name="adresse1" id="origin-input" required placeholder="Adresse de retrait" maxlength="160">
+                <fa-icon [icon]="arrowIcon" id="double-arrow" (click)="inverserInputs()"></fa-icon>
             </label>
             <label>
-                <img src="./assets/img/professionnel/devis/position.png" alt="adresse de livraison">
-                <input type="text" name="adresse2" id="destination-input" required placeholder="Adresse de livraison" maxlength="160">
+                <fa-icon [icon]="locationIcon"></fa-icon>
+                <input (change)="resetValideAdresse()" type="text" name="adresse2" id="destination-input" required placeholder="Adresse de livraison" maxlength="160">
             </label>
             <button *ngIf="!estimation" (click)="calculerDistance()" id="estimer">Estimez Livraison</button>
 

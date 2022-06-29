@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { OffresService } from '../services/offres.service';
 import { PopupService } from '../services/popup.service';
 import { SecteursService } from '../services/secteurs.service';
 import {Location} from "@angular/common";
@@ -21,18 +20,16 @@ export class HeaderComponent implements OnInit {
   scrolled: boolean;
   boutonContact : string = '';
   cheminRouterLink : string = '';
-  headerSecteur : boolean;
   @HostListener("window:scroll", [])
   onWindowScroll() { // classe active sur header au scroll
       this.scrolled = window.scrollY > 50;
   };
   constructor(private PopupLivraisonService: PopupService, 
               private secteursService: SecteursService,
-              private offresService: OffresService, 
               private location: Location)
   {
     this.scrolled = false;
-    this.headerSecteur = false;
+    // this.headerSecteur = false;
     this.headerMobileShow = false;
     this.solutionsSubMenu = false;
     this.secteursSubMenu = false;
@@ -74,11 +71,6 @@ export class HeaderComponent implements OnInit {
     this.dropdownHeader(); //fermer header mobile
   }
 
-  contenuVisibleOffre(el: string) { // changer contenu visible offres-details
-    this.offresService.changeOffreDetails(el);
-    this.dropdownHeader(); //fermer header mobile
-  }
-
   changeSecteur(el: string) {
     this.secteursService.changeSecteurService(el);
     this.dropdownHeader(); //fermer header mobile
@@ -97,7 +89,11 @@ export class HeaderComponent implements OnInit {
       this.headerPage = 'secteur';
       this.boutonContact = 'Contactez un commercial';
       this.cheminRouterLink = '../professionnel';
-      this.headerSecteur = true;
+      // this.headerSecteur = true;
+    }else if('mentionsLegales'.includes(path) || 'confidentialite'.includes(path) || 'conditionsGenerales'.includes(path)){
+      this.headerPage = 'mentionsLegales';
+      this.boutonContact = 'Contactez-nous';
+      this.cheminRouterLink = '';
     }
   }
 

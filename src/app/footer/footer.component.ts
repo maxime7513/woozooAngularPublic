@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { PopupService } from '../services/popup.service';
 import { SecteursService } from '../services/secteurs.service';
-import { OffresService } from '../services/offres.service';
 import { Location } from '@angular/common';
+import { AnimationOptions } from 'ngx-lottie';
+import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-footer',
@@ -16,11 +17,15 @@ export class FooterComponent implements OnInit {
   cheminRouterLink : string = '';
   titreLinkFooter : string = '';
   @Input() popupInscription: any;
-
+  options: AnimationOptions = {    
+    path: '/assets/lottie/woozoo_loop.json',
+    rendererSettings: {
+      viewBoxSize: '100 200 500 500'
+    }
+  }; 
 
   constructor(private PopupService: PopupService,
               private secteursService: SecteursService,
-              private offreService: OffresService,
               private location: Location) { }
 
   ngOnInit(): void {
@@ -37,7 +42,8 @@ export class FooterComponent implements OnInit {
 
   changeOffre(el: string) { // page professionnel
     setTimeout(() => {
-      this.offreService.changeOffreDetails(el);
+      let offre = document.getElementById(el) as HTMLCanvasElement;
+      window.scrollTo({top: offre.offsetTop - 90, behavior: 'smooth'});
     }, 1000);
   }
 
@@ -61,5 +67,5 @@ export class FooterComponent implements OnInit {
       this.titreLinkFooter = 'nos solutions';
     }
   }
-
+  
 }
