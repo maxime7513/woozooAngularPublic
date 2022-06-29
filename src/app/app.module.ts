@@ -8,6 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
@@ -57,12 +59,15 @@ import { AvantagesComponent } from './coursier/avantages/avantages.component';
 // woozooBox
 import { WoozooBoxComponent } from './woozoo-box/woozoo-box.component';
 
-// service
-import { PopupService } from './services/popup.service';
-import { SecteursService } from './services/secteurs.service';
+// mentions
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
 import { ConditionsGeneralesComponent } from './conditions-generales/conditions-generales.component';
+
+// service
+import { PopupService } from './services/popup.service';
+import { SecteursService } from './services/secteurs.service';
+import { EmailService } from './services/email.service';
 
 // Note we need a separate function as it's required for LOTTIE
 // by the AOT compiler.
@@ -110,6 +115,8 @@ export function playerFactory() {
     AppRoutingModule,
     BrowserAnimationsModule,
     GoogleMapsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     SlickCarouselModule,
     FontAwesomeModule,
     MatDialogModule,
@@ -120,7 +127,7 @@ export function playerFactory() {
     HotToastModule.forRoot(),
     LottieModule.forRoot({ player: playerFactory }),
   ],
-  providers: [ PopupService, SecteursService],
+  providers: [ PopupService, SecteursService, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
