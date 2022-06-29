@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { faPhoneSquareAlt, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 import { HotToastService } from '@ngneat/hot-toast';
 import { EmailService } from '../services/email.service';
@@ -13,19 +14,25 @@ import { EmailService } from '../services/email.service';
 export class PopupFormulaireContactComponent implements OnInit {
   phoneIcon = faPhoneSquareAlt;
   paperPlaneIcon = faPaperPlane;
-  contactForm: FormGroup = new FormGroup(
-    {
-      nom: new FormControl('', Validators.required),
-      raisonSociale: new FormControl(''),
-      phone: new FormControl(''),
-      email: new FormControl("", [Validators.required, Validators.email]),
-      message: new FormControl("", Validators.required),
-    }
-  );
+  contactForm: FormGroup;
 
-  constructor(private emailService: EmailService, private toast: HotToastService) { }
+  constructor(private emailService: EmailService, private toast: HotToastService, public dialogRef: MatDialogRef<PopupFormulaireContactComponent>) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(){
+    this.contactForm = new FormGroup(
+      {
+        nom: new FormControl('', Validators.required),
+        raisonSociale: new FormControl(''),
+        phone: new FormControl(''),
+        email: new FormControl("", [Validators.required, Validators.email]),
+        message: new FormControl("", Validators.required),
+      }
+    );
+  }
 
   // getter for error
   get nom() {
@@ -42,9 +49,9 @@ export class PopupFormulaireContactComponent implements OnInit {
     this.toast.close();
 
     if(this.nom?.hasError('required')){
-      this.toast.error('Veuillez renseigner un nom')
+      this.toast.error('Veuillez renseigner votre nom')
     }else if(this.email?.hasError('required')){
-      this.toast.error('Veuillez renseigner un email')
+      this.toast.error('Veuillez renseigner votre email')
     }else if(this.email?.hasError('email')){
       this.toast.error('Veuillez renseigner un email valide')
     }else if(this.message?.hasError('required')){
@@ -75,7 +82,8 @@ export class PopupFormulaireContactComponent implements OnInit {
     this.emailService.send_mail(req);
 
     toastValid.afterClosed.subscribe((e) => {
-      this.toast.success('Formulaire envoyé avec succès')
+      this.dialogRef.close();
+      this.toast.success('Formulaire envoyé avec succès');
     });
   }
 
