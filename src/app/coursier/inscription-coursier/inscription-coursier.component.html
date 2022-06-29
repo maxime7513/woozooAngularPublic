@@ -1,21 +1,21 @@
-<form method="POST" action="" id="form_coursier" [ngClass]="{'popup': afficherPopup}">
+<form [formGroup]="signupForm" (ngSubmit)="submit()" [ngClass]="{'popup': afficherPopup}">
     <div class="popup-formulaire_coursier">
         <p>Remplir ce formulaire d'inscription pour faire partie de l'équipe Woozoo</p>
     </div>
     <h4>Rejoins nous dès maintenant !</h4>
     <div>
-        <input type="text" name="nom" id="nom" required placeholder="Nom" maxlength="160">
-        <input type="text" name="prenom" id="prenom" required placeholder="Prenom" maxlength="160">
+        <input type="text" formControlName="nom" placeholder="Nom">
+        <input type="text" formControlName="prenom" placeholder="Prenom">
     </div>
     <div>
-        <input type="text" name="email" id="email" required placeholder="Email" maxlength="160">
-        <input type="text" name="telephone" id="telephone" required placeholder="Téléphone" maxlength="160">
+        <input type="text" formControlName="email" placeholder="Email">
+        <input type="text" formControlName="phone" placeholder="Téléphone">
     </div>
     <div>
-        <input type="text" name="ville" id="ville" required placeholder="Ville" maxlength="160">
-        <input type="text" name="code_postal" id="code_postal" required placeholder="Code postal" maxlength="160">
+        <input type="text" formControlName="ville" placeholder="Ville">
+        <input type="text" formControlName="code_postal" placeholder="Code postal">
     </div>
-    <select name="vehicule" id="vehicule" required>
+    <select formControlName="vehicule">
         <option value="">Sélectionne un véhicule</option>
         <option value="velo">Vélo</option>
         <option value="scooter">Scooter</option>
@@ -23,7 +23,7 @@
         <option value="voiture">Voiture</option>
         <option value="utilitaire">Utilitaire</option>
     </select>
-    <select name="statut_pro" id="statut_pro" required>
+    <select formControlName="statut_pro">
         <option value="">Sélectionne un statut pro</option>
         <option value="auto-entrepreneur">Auto-entrepreneur</option>
         <option value="micro-entreprise">Micro-entreprise(SASU,EURL)</option>
@@ -33,14 +33,13 @@
     <div id="capacite">
         <p>Detenez vous l'attestation de capacité de transport?</p>
         <div>
-            <input type="radio" id="capacite1" name="capacite_transport" value="oui">
-            <label for="capacite1">Oui</label>
+            <input type="radio" formControlName="capacite_transport" value="oui">
+            <label>Oui</label>
         </div>
         <div>
-            <input type="radio" id="capacite2" name="capacite_transport" value="non">
-            <label for="capacite2">Non</label>
+            <input type="radio" formControlName="capacite_transport" value="non">
+            <label>Non</label>
         </div>
     </div>
     <button type="submit">S'inscrire</button>
-    <input type="hidden" name="formIdentifiant" value="inscription_coursier">
 </form>
