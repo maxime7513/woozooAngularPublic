@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
     this.secteursSubMenu = false;
     this.barreIcon = faBars;
     this.getScreenWidth = window.innerWidth;
-    if(this.getScreenWidth > 700){
+    if(this.getScreenWidth > 800){
       this.logoWoozoo = 'logo-woozoo';
     }else{
       this.logoWoozoo = 'logo-woozoo_mobile';
