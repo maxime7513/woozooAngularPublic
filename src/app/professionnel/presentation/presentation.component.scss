@@ -7,6 +7,9 @@ section{
     overflow: hidden;
     z-index: 10;
     box-shadow: inset 0px -6px 9px rgba(0,0,0,.2);
+    @media screen and (max-width : 800px){
+        padding: 75px 0 50px;
+    }
     &:before {
         content: '';
         width: 58%;
@@ -20,6 +23,13 @@ section{
         // top: 40%;
         top: 45%;
         box-shadow: 0px 3px 10px 8px rgba(0,0,0,.2);
+        @media screen and (max-width : 800px){
+            width: 100%;
+            transform: none;
+            right: 0;
+            top: 50%;
+            border-radius: 25px 0rem 0rem 0px;
+        }
     }
     > div:not(.dot_nav){
         width: 100%;
@@ -29,6 +39,9 @@ section{
         align-items: center;
         opacity: 0;
         transition: .7s;
+        @media screen and (max-width : 800px){
+            flex-direction: column;
+        }
         &.active{
         opacity: 1;
         }
@@ -39,11 +52,14 @@ section{
             // margin-top: 6%;
             margin-top: 7.5%;
             position: relative;
+            @media screen and (max-width : 800px){
+                width: 90%;
+                margin-top: 0;
+            }
+            @media screen and (min-width : 801px) and (max-width : 860px){
+                margin-top: 5.5%;
+            }
         }
-    }
-    img:not(.card-commentaire_presentation img){
-        width: 32%;
-        height: auto;
     }
     h2{
         color: var(--blue-primary);
@@ -51,6 +67,19 @@ section{
         font-weight: 400;
         text-align: center;
         margin-left: 5%;
+        @media screen and (max-width : 540px){
+            font-size: 22px;
+            margin-left: 0;
+        }
+        @media screen and (min-width: 541px) and (max-width : 1050px){
+            font-size: 24px;
+        }
+        @media screen and (min-width: 1051px) and (max-width : 1200px){
+            font-size: 28px;
+        }
+        @media screen and (min-width : 1700px){
+            font-size: 40px;
+        }
     }
     button{
         position: relative;
@@ -59,14 +88,23 @@ section{
         width: max-content;
         font-size: 18px;
         border: none;
-        // height: 35px;
-        // margin: 20px auto;
         margin: 25px auto 15px auto;
         padding: 7px 14px;
         border-radius: 5px;
         cursor: pointer;
         transition: .4s;
         z-index: 1;
+        @media screen and (max-width : 800px){
+            font-size: 15px;
+            margin-top: 13px;
+        }
+        @media screen and (min-width : 801px) and (max-width : 1050px){
+            margin: 15px auto 15px auto;
+            font-size: 16px;
+        }
+        @media screen and (min-width : 1700px){
+            font-size: 24px;
+        }
         &:after{
             content: url(/assets/img/professionnel/go.svg);
             position: absolute;
@@ -86,20 +124,45 @@ section{
 }
 .presentation_commercant{ /* presentation1 */
     img{
-        width: 40% !important;
+        width: 40%;
+        @media screen and (max-width : 800px){
+            width: 75%;
+            max-width: 400px;
+            margin-left: 40px;
+        }
     }
 }
 .presentation_commercant2{ /* presentation2 */
     position: absolute;
     top: 90px;
     bottom: 0;
+    @media screen and (max-width : 800px){
+        top: 20px;
+        > div{
+            margin-top: -50px !important;
+        }
+    }
+    img{
+        width: 32%;
+    }
 }
 .presentation_commercant3{ /* presentation3 */
     position: absolute;
     top: 90px;
     bottom: 0;
+    @media screen and (max-width : 800px){
+        top: 10px;
+        div{
+            margin-top: -15px !important;
+        }
+    }
     img{
-        width: 40% !important;
+        width: 32%;
+        @media screen and (max-width : 800px){
+            width: 70%;
+            max-width: 350px;
+            margin-left: 30px;
+        }
     }
 }
 .dot_nav{ /* dots naviguation slider */
@@ -109,6 +172,13 @@ section{
     display: flex;
     flex-direction: row;
     width: max-content;
+    @media screen and (max-width : 800px){
+        top: 52%;
+        left: 5px;
+    }
+    @media screen and (min-width : 801px) and (max-width : 1050px){
+        bottom: 2px;
+    }
     div{
         width: 10px;
         height: 10px;
@@ -121,8 +191,13 @@ section{
         }
     }
 }
+
 #slider-commentaire_presentation{ /* commentaire clients */
     width: 40%;
+    @media screen and (max-width : 800px){
+        width: 100%;
+        // margin-left: 20px;
+    }
 }
 .card-commentaire_presentation{ /* card commentaire clients */
     position: relative;
@@ -133,12 +208,37 @@ section{
     font-size: 8px;
     text-align: center;
     border-radius: 7px;
+    @media screen and (max-width : 500px){
+        width: 80px !important;
+        padding: 7px 7px 7px 7px;
+        font-size: 5px;
+    }
+    @media screen and (min-width: 501px) and (max-width : 800px){
+        width: 120px !important;
+        padding: 7px 7px 7px 7px;
+        font-size: 6px;
+    }
+    @media screen and (min-width: 801px) and (max-width : 1250px){
+        width: 250px !important;
+        padding: 20px 10px 10px 10px;
+        font-size: 12px;
+    }
     img{
         &:first-of-type{
-        position: absolute;
-        width: 13px !important;
-        top: 3px;
-        left: 3px;
+            position: absolute;
+            width: 13px !important;
+            top: 3px;
+            left: 3px;
+            @media screen and (max-width : 500px){
+                width: 5px !important;
+            }
+            @media screen and (min-width: 501px) and (max-width : 800px){
+                width: 8px !important;
+                top: 2px;
+            }
+            @media screen and (min-width: 801px) and (max-width : 1250px){
+                width: 18px;
+            }
         }
         &:last-of-type{
             position: absolute;
@@ -149,13 +249,30 @@ section{
             object-fit: cover;
             border-radius: 50%;
             z-index: 1;
+            @media screen and (max-width : 500px){
+                bottom: -7px;
+                width: 20px;
+                height: 20px;
+            }
+            @media screen and (min-width: 501px) and (max-width : 800px){
+                bottom: -7px;
+                width: 25px;
+                height: 25px;
+            }
+            @media screen and (min-width: 801px) and (max-width : 1250px){
+                width: 50px;
+                height: 50px;
+            }
         }
     }
     p{
         &:first-of-type{
-        color: #7e8da9;
-        font-weight: 600;
-        line-height: 1.2;
+            color: #7e8da9;
+            font-weight: 600;
+            line-height: 1.2;
+            @media screen and (min-width: 801px) and (max-width : 1250px){
+                font-size: 14px;
+            }
         }
         &:last-of-type{
             color: var(--blue-primary);
@@ -163,6 +280,13 @@ section{
             padding-right: 10px;
             position: relative;
             z-index: 1;
+            @media screen and (max-width : 800px){
+                margin-top: 5px;
+                padding-right: 7px;
+            }
+            @media screen and (min-width: 801px) and (max-width : 1250px){
+                font-size: 15px;
+            }
         }
     }
 }

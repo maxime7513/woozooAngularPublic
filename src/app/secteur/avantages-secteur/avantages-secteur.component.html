@@ -24,7 +24,8 @@
 
         <div *ngIf="avantagesVisible != 'luxe'">
             <img src="./assets/img/professionnel/secteurs/avantages/flexible.png" alt="icone securise">
-            <p>Optez pour une livraison express, programmée ou une mise à disposition de livreurs.</p>
+            <p *ngIf="avantagesVisible == 'restaurant'">Optez pour une livraison express, programmée ou une mise à disposition de livreurs.</p>
+            <p *ngIf="avantagesVisible == 'liberale' || avantagesVisible == 'inter-magasin'">Optez pour une livraison express, programmée ou une tournée.</p>
         </div>
     </div>
 </section>
