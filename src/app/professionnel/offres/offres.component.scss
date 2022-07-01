@@ -4,10 +4,14 @@ section{
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     background: var(--blanc-opac);
     padding: 70px 0 50px 0;
     z-index: 1;
     transition: .4s;
+    @media screen and (max-width : 800px){
+        padding-top: 40px;
+    }
     img:not(.info-card img, .comming-soon){
         height: 130px;
         margin-top: -45px;
@@ -35,6 +39,16 @@ section{
     transition: .4s;
     /* overflow: hidden; */
     cursor: pointer;
+    @media screen and (max-width : 650px){
+        width: 68%;
+        margin-bottom: 60px;
+    }
+    @media screen and (min-width : 651px) and (max-width : 999px){
+        width: 40%;
+    }
+    @media screen and (min-width : 1000px) and (max-width : 1200px){
+        width: 24%;
+    }
     &:hover{
         transform: scale(1.1);
         .container_card-offre_hover{
@@ -58,7 +72,7 @@ section{
             transition: .5s !important;
         }
     }
-    &:first-of-type{
+    &:nth-of-type(odd){
         h2{
             color: var(--blue-primary);
         }
@@ -74,23 +88,7 @@ section{
             }
         }
     }
-    &:nth-of-type(2){
-        h2{
-            color: var(--blue-primary);
-        }
-        .info-card{
-            background: var(--blue-primary);
-        }
-        .card-offre_hover{
-            p:last-of-type, button{
-                background: var(--blue-primary);
-            }
-            li{
-                color: var(--blue-primary);
-            }
-        }
-    }
-    &:nth-of-type(1n+3){
+    &:nth-of-type(even){
         h2{
             color: var(--blue-secondary);     
         }
@@ -104,6 +102,11 @@ section{
             li{
                 color: var(--blue-secondary);
             }
+        }
+    }
+    &:last-of-type{
+        @media screen and (min-width : 651px) and (max-width : 999px){
+            margin-top: 60px;
         }
     }
     li{
