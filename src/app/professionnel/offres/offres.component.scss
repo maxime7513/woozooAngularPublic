@@ -42,7 +42,9 @@ section{
     cursor: pointer;
     @media screen and (max-width : 650px){
         width: 68%;
-        margin-bottom: 60px;
+        &:not(:last-of-type){
+            margin-bottom: 60px;
+        }
     }
     @media screen and (min-width : 651px) and (max-width : 1000px){
         width: 40%;
