@@ -68,7 +68,6 @@ section{
         text-align: center;
         margin-left: 5%;
         @media screen and (max-width : 540px){
-            font-size: 22px;
             margin-left: 0;
         }
         @media screen and (min-width: 541px) and (max-width : 1050px){
@@ -136,11 +135,18 @@ section{
     position: absolute;
     top: 90px;
     bottom: 0;
-    @media screen and (max-width : 800px){
-        top: 20px;
+    @media screen and (max-width : 390px){
+        > div{
+            margin-top: -20px !important;
+        }
+    }
+    @media screen and (min-width: 391px) and (max-width : 800px){
         > div{
             margin-top: -50px !important;
         }
+    }
+    @media screen and (max-width : 800px){
+        top: 20px;
     }
     img{
         width: 32%;
