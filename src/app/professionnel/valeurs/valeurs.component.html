@@ -1,42 +1,14 @@
 <section>
-    <div>
-        <div class="badge_valeurs">
-            <img src="./assets/img/professionnel/valeurs/badge_bleu.png" alt="icone securise">
-            <div>
-            <img src="./assets/img/professionnel/valeurs/securite.png" alt="">
-            <h4>Sécurité</h4>
+    <ngx-slick-carousel #slickModal="slick-carousel" id="slider-valeurs" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let valeur of valeurs" class="avantage">
+            <div class="badge_valeurs">
+                <img src="./assets/img/professionnel/valeurs/badge_bleu.png" alt="icone securise">
+                <div>
+                    <img src="./assets/img/professionnel/valeurs/{{valeur.img}}.png" alt="">
+                    <h4>{{valeur.titre}}</h4>
+                </div>
             </div>
+            <p>{{valeur.texte}}</p>
         </div>
-        <p>Nous vous garantissons une livraison 100% sécurisée, grâce à un process établie</p>
-    </div>
-    <div>
-        <div class="badge_valeurs"> 
-            <img src="./assets/img/professionnel/valeurs/badge_bleu.png" alt="icone securise">
-            <div>
-            <img src="./assets/img/professionnel/valeurs/qualite.png" alt="">
-            <h4>Qualité</h4>
-            </div>
-        </div>
-        <p>Nous formons nos coursiers partenaires pour vous assurer une livraison de qualité</p>
-    </div>
-    <div>
-        <div class="badge_valeurs">
-            <img src="./assets/img/professionnel/valeurs/badge_bleu.png" alt="icone securise">
-            <div>
-                <img src="./assets/img/professionnel/valeurs/urgence.png" alt="">
-                <h4>Urgence</h4>
-            </div>
-        </div>
-        <p>La réactivité de notre service, vous garantie une livraison toujours plus rapide</p>
-    </div>
-    <div>
-        <div class="badge_valeurs">
-            <img src="./assets/img/professionnel/valeurs/badge_bleu.png" alt="icone securise">
-            <div>
-                <img src="./assets/img/professionnel/valeurs/equitable.png" alt="">
-                <h4>Equité</h4>
-            </div>
-        </div>
-        <p>Le bien être et la valorisation de nos coursier sont au coeur de nos préoccupations</p>
-    </div>
+    </ngx-slick-carousel>
 </section>
