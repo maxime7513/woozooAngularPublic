@@ -19,8 +19,21 @@ form{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        &.conditions{
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 13px;
+            input{
+                margin-right: 7px;
+                cursor: pointer;
+            }
+            label{
+                color: var(--blue-primary);
+                font-size: 13px;
+            }
+        }
     }
-    input:not([type=radio]){
+    input:not([type=radio], [type=checkbox]){
         width: 45%;
         height: 40px;
         background: #fff;
@@ -46,6 +59,11 @@ form{
         border-radius: 50px;
         cursor: pointer;
     }
+    span{
+        color: #7e8da9;
+        font-size: 12px;
+        margin-top: 13px;
+    }
     button{
         position: relative;
         width: max-content;
@@ -53,7 +71,7 @@ form{
         color: #fff;
         font-size: 18px;
         font-weight: 600;
-        margin: 15px auto auto auto;
+        margin: 20px auto auto auto;
         padding: 10px 20px;
         border: none;
         border-radius: 50px;
@@ -139,7 +157,7 @@ form{
         h4{
             font-size: 26px;
         }
-        input:not(input[type='radio']){
+        input:not(input[type='radio'], [type=checkbox]){
             width: 42%;
             height: 30px;
         }

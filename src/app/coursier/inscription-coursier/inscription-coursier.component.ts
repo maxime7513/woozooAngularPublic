@@ -33,6 +33,7 @@ export class InscriptionCoursierComponent implements OnInit {
       vehicule: new FormControl("", Validators.required),
       statut_pro: new FormControl("", Validators.required),
       capacite_transport: new FormControl("", Validators.required),
+      conditions: new FormControl(false),
     }
   );
   }
@@ -43,7 +44,7 @@ export class InscriptionCoursierComponent implements OnInit {
 
   submit(){
     this.toast.close();
-
+    console.log(this.signupForm.get('conditions').value)
     if(this.signupForm.get('nom')?.hasError('required')){
       this.toast.error('Veuillez renseigner votre nom')
     }else if(this.signupForm.get('prenom')?.hasError('required')){
@@ -68,6 +69,9 @@ export class InscriptionCoursierComponent implements OnInit {
       this.toast.error('Veuillez renseigner votre statut professionnel')
     }else if(this.signupForm.get('capacite_transport')?.hasError('required')){
       this.toast.error('Veuillez renseigner si vous detenez l\'attestation de capacité de transport')
+    }else if(this.signupForm.get('conditions').value == false){
+      this.toast.error('Vous devez accepter les conditions générales')
+      return
     }
 
     if (!this.signupForm.valid) {
