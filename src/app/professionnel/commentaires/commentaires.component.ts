@@ -8,7 +8,19 @@ import { CommentairesService } from 'src/app/services/commentaires.service';
 })
 export class CommentairesComponent implements OnInit {
   commentaires: Array<{nom: string, enseigne: string, img: string, texte: string}>
-  slideConfig = {"slidesToShow": 3, "slidesToScroll": 1, "autoplay": true};
+  slideConfig = {
+    "slidesToShow": 3,
+    "slidesToScroll": 1,
+    "autoplay": true,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  };
 
   constructor(private data: CommentairesService) {
     this.commentaires = this.data.clients;

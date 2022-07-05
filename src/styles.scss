@@ -171,6 +171,7 @@ h2{
     .slick-current{
         &+ .slick-active{ /* card du milieu */
             transform: scale(1.65);
+            z-index: 1;
             img:first-of-type{ /* double quote */
                 animation: 3s quoteMove infinite;
             }
@@ -188,6 +189,20 @@ h2{
     15% {transform: rotate(30deg);}
     20% {transform: rotate(0deg);}
     100% {transform: rotate(0deg);}
+}
+
+#slider-valeurs{ // slider valeurs
+    .slick-track{
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .slick-slide{
+        margin: auto;
+    }
+    .slick-arrow{
+        display: none !important;
+    }
 }
 
 #valider_estimation{ // animation redo devis
