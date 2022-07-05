@@ -9,10 +9,12 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { environment } from 'src/environments/environment';
 
 // routing
 import { AppRoutingModule } from './app-routing.module';
@@ -117,6 +119,7 @@ export function playerFactory() {
     GoogleMapsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RecaptchaV3Module,
     SlickCarouselModule,
     FontAwesomeModule,
     MatDialogModule,
@@ -127,7 +130,8 @@ export function playerFactory() {
     HotToastModule.forRoot(),
     LottieModule.forRoot({ player: playerFactory }),
   ],
-  providers: [ PopupService, SecteursService, EmailService],
+  providers: [ PopupService, SecteursService, EmailService, {provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha.siteKey}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

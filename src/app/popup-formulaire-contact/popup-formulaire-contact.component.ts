@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { faPhoneSquareAlt, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 import { HotToastService } from '@ngneat/hot-toast';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { EmailService } from '../services/email.service';
 
 
@@ -16,7 +17,7 @@ export class PopupFormulaireContactComponent implements OnInit {
   paperPlaneIcon = faPaperPlane;
   contactForm: FormGroup;
 
-  constructor(private emailService: EmailService, private toast: HotToastService, public dialogRef: MatDialogRef<PopupFormulaireContactComponent>) { }
+  constructor(private emailService: EmailService, private recaptchaV3Service: ReCaptchaV3Service, private toast: HotToastService, public dialogRef: MatDialogRef<PopupFormulaireContactComponent>) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -45,7 +46,16 @@ export class PopupFormulaireContactComponent implements OnInit {
     return this.contactForm.get('message');
   }
 
-  submit(){
+  get recaptchaToken$(){
+    return new Promise(resolve => {
+      this.recaptchaV3Service.execute('importantAction')
+      .subscribe((token: string) => {
+        resolve(token)
+      });
+    });
+  }
+
+  async submit(){
     this.toast.close();
 
     if(this.nom?.hasError('required')){
@@ -61,7 +71,7 @@ export class PopupFormulaireContactComponent implements OnInit {
     if (!this.contactForm.valid) {
       return;
     }
-
+    
     const toastValid = this.toast.loading('envoie en cours...',{duration: 2500});
 
     const {nom, raisonSociale, phone, email, message} = this.contactForm.value;
@@ -72,18 +82,19 @@ export class PopupFormulaireContactComponent implements OnInit {
                     <p style="color: #046497"; margin: 5px 0;><span style="color: #7e8da9;">Email: </span>` + email + `</p>
                     <p style="color: #046497"; margin: 5px 0;><span style="color: #7e8da9;">Message: </span><br>` + message + `</p>
                   </b>`;
-    
+    const tokenRecaptcha = await this.recaptchaToken$;
     let req = {
       to: 'blnmax@yahoo.com',
       subject: 'Message provenant du site vitrine',
-      html: html
+      html: html,
+      tokenRecaptcha: tokenRecaptcha,
     }
 
-    this.emailService.send_mail(req);
+    this.emailService.send_mail_recaptcha(req);
 
     toastValid.afterClosed.subscribe((e) => {
       this.dialogRef.close();
-      this.toast.success('Formulaire envoyé avec succès');
+      this.toast.success('Message envoyé avec succès');
     });
   }
 

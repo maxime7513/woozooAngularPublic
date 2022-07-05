@@ -108,3 +108,8 @@ form{
         }
     }
 }
+
+// recaptcha google
+::ng-deep .grecaptcha-badge{
+    z-index: 1001;
+}
