@@ -12,7 +12,7 @@ section{
     @media screen and (max-width : 800px){
         padding-top: 40px;
     }
-    img:not(.info-card img, .comming-soon){
+    img:not(.info-card img, .comming-soon, .comming-soon2){
         height: 130px;
         margin-top: -45px;
         transition: .4s;
@@ -60,10 +60,10 @@ section{
         .info-card{
             opacity: 0;
         }
-        p:last-of-type{
+        p:last-of-type:not(.woozooBox){
             opacity: 1;
         }
-        img:not(.info-card img, .comming-soon){
+        img:not(.info-card img, .comming-soon, .comming-soon2){
             height: 85px !important;
             margin-top: 0 !important;
         }
@@ -75,7 +75,7 @@ section{
             transition: .5s !important;
         }
     }
-    &:nth-of-type(odd){
+    &:nth-of-type(even){
         h2{
             color: var(--blue-primary);
         }
@@ -91,7 +91,7 @@ section{
             }
         }
     }
-    &:nth-of-type(even){
+    &:nth-of-type(odd){
         h2{
             color: var(--blue-secondary);     
         }
@@ -141,7 +141,7 @@ section{
     background: rgba(255,255,255,.95);
     transition: .25s;
     cursor: default;
-    p:last-of-type{
+    p:last-of-type:not(.woozooBox){
         color: #fff;
         font-size: 15px;
         padding: 10px;
@@ -193,7 +193,10 @@ section{
         }
     }
     .comming-soon{
-        height: 60px;
+        width: 45%;
+    }
+    .comming-soon2{
+        width: 75%;
     }
 }
 
