@@ -157,17 +157,16 @@ section{
     top: 90px;
     bottom: 0;
     @media screen and (max-width : 800px){
-        top: 10px;
+        top: 60px;
         div{
-            margin-top: -15px !important;
+            margin-top: -22px !important;
         }
     }
     img{
-        width: 32%;
+        width: 36%;
         @media screen and (max-width : 800px){
             width: 70%;
             max-width: 350px;
-            margin-left: 30px;
         }
     }
 }
