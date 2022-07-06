@@ -58,9 +58,6 @@ import { InscriptionCoursierComponent } from './coursier/inscription-coursier/in
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
 
-// woozooBox
-import { WoozooBoxComponent } from './woozoo-box/woozoo-box.component';
-
 // mentions
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
@@ -107,7 +104,6 @@ export function playerFactory() {
     FooterComponent,
     AvantagesSecteurComponent,
     CoursierPresentationComponent,
-    WoozooBoxComponent,
     MentionsLegalesComponent,
     ConfidentialiteComponent,
     ConditionsGeneralesComponent,
