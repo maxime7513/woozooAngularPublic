@@ -11,8 +11,6 @@ export class PresentationComponent implements OnInit {
   tabSliderPresentation : Array<string>;
   iSlider : any;
   commentaires: Array<{nom: string, enseigne: string, img: string, texte: string}>
-  getScreenWidth: any = window.innerWidth;
-  imgBox: string;
   slideConfig = {
     "slidesToShow": 3,
     "slidesToScroll": 1,
@@ -38,12 +36,6 @@ export class PresentationComponent implements OnInit {
     this.tabSliderPresentation= ["presentation1", "presentation2", "presentation3"];
     this.iSlider = 1;
     this.commentaires = this.data.clients;
-
-    if(this.getScreenWidth > 800){
-      this.imgBox = 'mockup-box';
-    }else{
-      this.imgBox = 'mockup-box_mobile';
-    }
   }
 
   ngOnInit(): void {

@@ -2,28 +2,28 @@
     <h5>Les avantages</h5>
     <div>
         <div *ngIf="avantagesVisible == 'inter-magasin'">
-            <img src="./assets/img/professionnel/secteurs/avantages/efficace.png" alt="icone securise">
+            <img src="./assets/img/professionnel/valeurs/efficace.png" alt="icone securise">
             <p>Choisissez le mode de transport adapté à vos besoins.</p>
         </div>
 
         <div *ngIf="avantagesVisible == 'luxe'">
-            <img src="./assets/img/professionnel/secteurs/avantages/securite.png" class="securite" alt="icone securise">
+            <img src="./assets/img/professionnel/valeurs/securite.png" class="securite" alt="icone securise">
             <p>Nous formons nos coursiers partenaires pour vous assurer une livraison de qualité.</p>
         </div>
 
         <div *ngIf="avantagesVisible != 'inter-magasin'">
-            <img src="./assets/img/professionnel/secteurs/avantages/qualite.png" alt="icone securise">
+            <img src="./assets/img/professionnel/valeurs/qualite.png" alt="icone securise">
             <p *ngIf="avantagesVisible != 'restaurant'">Nous formons nos coursiers partenaires pour vous assurer une livraison de qualité.</p>
             <p *ngIf="avantagesVisible == 'restaurant'">Tous nos coursiers partenaires sont formés et livrent avec un sac isotherme.</p>
         </div>
 
         <div >
-            <img src="./assets/img/professionnel/secteurs/avantages/rapide.png" alt="icone securise">
+            <img src="./assets/img/professionnel/valeurs/rapide.png" alt="icone securise">
             <p>La réactivité de notre service, vous garantie une livraison toujours plus rapide.</p>
         </div>
 
         <div *ngIf="avantagesVisible != 'luxe'">
-            <img src="./assets/img/professionnel/secteurs/avantages/flexible.png" alt="icone securise">
+            <img src="./assets/img/professionnel/valeurs/flexible.png" alt="icone securise">
             <p *ngIf="avantagesVisible == 'restaurant'">Optez pour une livraison express, programmée ou une mise à disposition de livreurs.</p>
             <p *ngIf="avantagesVisible == 'liberale' || avantagesVisible == 'inter-magasin'">Optez pour une livraison express, programmée ou une tournée.</p>
         </div>
