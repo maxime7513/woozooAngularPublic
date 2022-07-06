@@ -68,7 +68,8 @@ export class DevisComponent implements OnInit {
     }
 
     if(!AutocompleteDirectionsHandler.adresseValide){
-      this.toast.error('Veuillez sélectionner une des adresses proposée')
+      this.toast.error('Veuillez sélectionner une des adresses proposée');
+      this.toast.info('service uniquement disponible dans la région PACA')
       return
     }
 
