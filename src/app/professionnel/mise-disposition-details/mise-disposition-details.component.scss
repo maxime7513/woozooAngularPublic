@@ -2,24 +2,34 @@ section{
     position: relative;
     background: var(--blanc-opac);
     padding: 0 20px 20px;
+    @media screen and (max-width : 650px){
+        padding-top: 15px;
+    }
     h2{
         position: relative;
-        font-size: 34px;
+        font-size: 32px;
         color: var(--blue-primary);
-        width: max-content;
+        width: fit-content;
         margin-left: 7%;
         margin-bottom: 20px;
         z-index: 1;
+        @media screen and (max-width : 500px){
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
         &:after{
             position: absolute;
             content: '';
-            left: 50%;
+            left: 0;
             bottom: -3px;
             width: 100%;
             height: 15px;
-            transform: skew(-12deg) translateX(-50%);
+            transform: skew(-12deg);
             background: #9be8ff;
             z-index: -1;
+            @media screen and (max-width : 306px){
+                width: 60%;
+            }
         }
     }
     > div{
@@ -30,9 +40,23 @@ section{
         img{
             width: 37%;
             margin: 0 25px 25px 0;
+            @media screen and (max-width : 500px){
+                width: 80%;
+                margin-top: 15px;
+            }
+            @media screen and (min-width: 501px) and (max-width : 900px){
+                width: 60%;
+                margin-top: 15px;
+            }
         }
         div{
             width: 58%;
+            @media screen and (max-width : 700px){
+                width: 100%;
+            }
+            @media screen and (min-width: 701px) and (max-width : 900px){
+                width: 80%;
+            }
             p{
                 color: var(--blue-primary);
                 color: #7e8da9;

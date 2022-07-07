@@ -1,7 +1,7 @@
 section{
-    // padding-top: 70px;
     background: var(--blanc-opac);
     overflow: hidden;
+    padding-top: 30px;
     h2{
         position: relative;
         width: max-content;
@@ -18,6 +18,9 @@ section{
             bottom: calc(50% - 1px);
             left: -560px;
             background: var(--blue-primary);
+            @media screen and (max-width : 450px){
+                left: -515px;
+            }
         }
         &:after{
             position: absolute;
@@ -27,6 +30,9 @@ section{
             bottom: calc(50% - 1px);
             right: -550px;
             background: var(--blue-secondary);
+            @media screen and (max-width : 450px){
+                right: -515px;
+            }
         }
     }
     div{
@@ -34,9 +40,20 @@ section{
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        padding: 50px 0 60px 0;
+        flex-wrap: wrap;
+        padding: 50px 0 40px 0;
+        @media screen and (max-width : 550px){
+            padding-top: 35px;
+        }
+        @media screen and (max-width : 735px){
+            padding-bottom: 7px;
+        }
         img{
             height: 80px;
+            margin: 0 25px 20px;
+            @media screen and (max-width : 550px){
+                height: 50px;
+            }
         }
     }
 }

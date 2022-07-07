@@ -133,10 +133,7 @@ h2{
     .slick-track{
         display: flex;
         padding: 50px 0;
-        @media screen and (max-width : 399px){
-            padding-bottom: 20px;
-        }
-        @media screen and (min-width: 400px) and (max-width : 899px){
+        @media screen and (max-width : 899px){
             padding: 20px 0;
         }
     }
@@ -162,8 +159,7 @@ h2{
         right: 22%;
         top: -20%;
         @media screen and (max-width : 400px){
-            right: 60%;
-            top: 3%;
+            display: none !important;
         }
         @media screen and (min-width: 400px) and (max-width : 600px){
             right: 24%;
@@ -182,8 +178,7 @@ h2{
         right: 18%;
         top: -20%;
         @media screen and (max-width : 400px){
-            right: 48%;
-            top: 3%;
+            display: none !important;
         }
         @media screen and (min-width: 400px) and (max-width : 600px){
             right: 16%;
