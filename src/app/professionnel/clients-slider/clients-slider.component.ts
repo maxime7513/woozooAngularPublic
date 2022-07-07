@@ -14,7 +14,37 @@ export class ClientsSliderComponent implements OnInit {
     {img: "./assets/img/professionnel/partenaire/onlyPro.png"},
     {img: "./assets/img/professionnel/partenaire/homeStudio.png"},
   ];
-  slideConfig = {"slidesToShow": 5, "slidesToScroll": 1, "autoplay": true};
+  slideConfig = {
+    "slidesToShow": 5,
+    "slidesToScroll": 1,
+    "autoplay": true,
+    responsive: [
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+    ]
+  };
     
   constructor() { }
 

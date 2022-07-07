@@ -3,26 +3,38 @@ section{
     background: var(--blanc-opac);
     padding-top: 50px;
     overflow: hidden;
+    @media screen and (max-width : 900px){
+        padding-top: 20px;
+    }
     h2{
         position: relative;
-        width: max-content;
+        width: fit-content;
         color: var(--blue-primary);
         margin: 0 auto 50px 7%;
+        padding: 0 15px;
         z-index: 0;
+        @media screen and (max-width : 500px){
+            margin-left: auto;
+        }
         &:after{
             position: absolute;
             content: '';
-            left: 50%;
+            left: 15px;
             bottom: -3px;
-            width: 100%;
+            width: 95%;
             height: 15px;
-            transform: skew(-12deg) translateX(-50%);
+            transform: skew(-12deg);
             background: #9be8ff;
             z-index: -1;
+            @media screen and (max-width : 385px){
+                width: 45%;
+            }
+            @media screen and (min-width: 386px) and (max-width : 468px){
+                width: 35%;
+            }
         }
     }
     img{
-        height: 67px;
-        width: auto;
+        width: 120px;
     }
 }

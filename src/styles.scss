@@ -133,6 +133,12 @@ h2{
     .slick-track{
         display: flex;
         padding: 50px 0;
+        @media screen and (max-width : 399px){
+            padding-bottom: 20px;
+        }
+        @media screen and (min-width: 400px) and (max-width : 899px){
+            padding: 20px 0;
+        }
     }
     .slick-slide{
         width: max-content !important;
@@ -155,6 +161,18 @@ h2{
         left: unset;
         right: 22%;
         top: -20%;
+        @media screen and (max-width : 400px){
+            right: 60%;
+            top: 3%;
+        }
+        @media screen and (min-width: 400px) and (max-width : 600px){
+            right: 24%;
+            top: -22%;
+        }
+        @media screen and (min-width: 601px) and (max-width : 899px){
+            right: 26%;
+            top: -25%;
+        }
         &:hover{
             transform: scale(1.15);
             transition: .4s;
@@ -163,6 +181,18 @@ h2{
     .slick-next{
         right: 18%;
         top: -20%;
+        @media screen and (max-width : 400px){
+            right: 48%;
+            top: 3%;
+        }
+        @media screen and (min-width: 400px) and (max-width : 600px){
+            right: 16%;
+            top: -22%;
+        }
+        @media screen and (min-width: 601px) and (max-width : 899px){
+            right: 20%;
+            top: -25%;
+        }
         &:hover{
             transform: scale(1.15);
             transition: .4s;
