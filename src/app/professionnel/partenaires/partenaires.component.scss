@@ -2,37 +2,21 @@ section{
     background: var(--blanc-opac);
     overflow: hidden;
     padding-top: 30px;
+    padding: 30px 20px;
+    @media screen and (max-width : 775px){
+        padding-bottom: 7px;
+    }
     h2{
         position: relative;
         width: max-content;
         color: var(--blue-primary);
         text-align: start;
-        margin-left: 10%;
         margin-bottom: 60px;
         margin: auto;
-        &:before{
-            position: absolute;
-            content: '';
-            width: 500px;
-            height: 1px;
-            bottom: calc(50% - 1px);
-            left: -560px;
-            background: var(--blue-primary);
-            @media screen and (max-width : 450px){
-                left: -515px;
-            }
-        }
-        &:after{
-            position: absolute;
-            content: '';
-            width: 500px;
-            height: 1px;
-            bottom: calc(50% - 1px);
-            right: -550px;
-            background: var(--blue-secondary);
-            @media screen and (max-width : 450px){
-                right: -515px;
-            }
+        margin-left: 7%;
+        @media screen and (max-width: 500px){
+            font-size: 30px;
+            margin: auto;
         }
     }
     div{
@@ -41,12 +25,9 @@ section{
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
-        padding: 50px 0 40px 0;
+        padding-top: 57px;
         @media screen and (max-width : 550px){
             padding-top: 35px;
-        }
-        @media screen and (max-width : 735px){
-            padding-bottom: 7px;
         }
         img{
             height: 80px;
