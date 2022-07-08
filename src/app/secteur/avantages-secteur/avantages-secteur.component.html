@@ -1,31 +1,27 @@
 <section id="avantages">
     <h5>Les avantages</h5>
-    <div>
-        <div *ngIf="avantagesVisible == 'inter-magasin'">
+    <ngx-slick-carousel #slickModal="slick-carousel" id="slider-avantages" [config]="slideConfig">
+        <div ngxSlickItem *ngIf="avantagesVisible == 'inter-magasin'" class="avantage">
             <img src="./assets/img/professionnel/valeurs/efficace.png" alt="icone securise">
             <p>Choisissez le mode de transport adapté à vos besoins.</p>
         </div>
-
-        <div *ngIf="avantagesVisible == 'luxe'">
+        <div ngxSlickItem *ngIf="avantagesVisible == 'luxe'" class="avantage">
             <img src="./assets/img/professionnel/valeurs/securite.png" class="securite" alt="icone securise">
             <p>Nous formons nos coursiers partenaires pour vous assurer une livraison de qualité.</p>
         </div>
-
-        <div *ngIf="avantagesVisible != 'inter-magasin'">
+        <div ngxSlickItem *ngIf="avantagesVisible != 'inter-magasin'" class="avantage">
             <img src="./assets/img/professionnel/valeurs/qualite.png" alt="icone securise">
             <p *ngIf="avantagesVisible != 'restaurant'">Nous formons nos coursiers partenaires pour vous assurer une livraison de qualité.</p>
             <p *ngIf="avantagesVisible == 'restaurant'">Tous nos coursiers partenaires sont formés et livrent avec un sac isotherme.</p>
         </div>
-
-        <div >
+        <div ngxSlickItem class="avantage">
             <img src="./assets/img/professionnel/valeurs/rapide.png" alt="icone securise">
             <p>La réactivité de notre service, vous garantie une livraison toujours plus rapide.</p>
         </div>
-
-        <div *ngIf="avantagesVisible != 'luxe'">
+        <div ngxSlickItem *ngIf="avantagesVisible != 'luxe'" class="avantage">
             <img src="./assets/img/professionnel/valeurs/flexible.png" alt="icone securise">
             <p *ngIf="avantagesVisible == 'restaurant'">Optez pour une livraison express, programmée ou une mise à disposition de livreurs.</p>
             <p *ngIf="avantagesVisible == 'liberale' || avantagesVisible == 'inter-magasin'">Optez pour une livraison express, programmée ou une tournée.</p>
         </div>
-    </div>
+    </ngx-slick-carousel>
 </section>

@@ -20,7 +20,27 @@ export class AvantagesSecteurComponent implements OnInit {
         this.roughtNotation();
       }
   };
-  
+  slideConfig = {
+    "slidesToShow": 3,
+    "slidesToScroll": 1,
+    "autoplay": true,
+    "arrows": false,
+    responsive: [
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+    ]
+  };
+
   constructor(private data: SecteursService) {
     this.avantagesVisible = this.data.secteur;
   }
