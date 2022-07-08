@@ -10,10 +10,48 @@ import { SecteursService } from 'src/app/services/secteurs.service';
 export class ContenuSecteurComponent implements OnInit {
   secteurVisible: string;
   @Input() avantagesVisible: any;
+  secteurs: Array<{value: string, viewValue: string}> = [
+    {value: "restaurant",
+    viewValue: "Restaurant"
+    },
+    {value: "luxe",
+    viewValue: "Retails & Luxe"
+    },
+    {value: "liberale",
+    viewValue: "Profession libérale"
+    },
+    {value: "inter-magasin",
+    viewValue: "Inter-magasin"
+    }
+  ];
+
   constructor(private data: SecteursService) {
     this.secteurVisible = this.data.secteur;
   }
-
+  slideConfig = {
+    "slidesToShow": 4,
+    "slidesToScroll": 1,
+    "arrows": false,
+    "autoplay": false,
+    responsive: [
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          arrows: true,
+          centerMode: true,
+          variableWidth: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          arrows: true,
+        }
+      }
+    ]
+  }
   ngOnInit(): void {}
   
   ngAfterViewInit(): void {
@@ -45,9 +83,9 @@ export class ContenuSecteurComponent implements OnInit {
     setTimeout(() => {
       let underline;
       if(elementId == 'luxe'){
-        underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'box', color: '#0eb3b7', padding: [7,10] });
+        underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'box', color: '#0eb3b7', padding: [7,10], multiline: true });
       }else{
-        underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2 });
+        underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true });
       }
       underline.show();
     }, 3500);

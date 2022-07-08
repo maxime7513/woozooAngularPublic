@@ -15,6 +15,7 @@ export class PresentationComponent implements OnInit {
     "slidesToShow": 3,
     "slidesToScroll": 1,
     "autoplay": true,
+    "arrows": false,
     responsive: [
       {
         breakpoint: 801,

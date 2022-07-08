@@ -18,6 +18,7 @@ export class ClientsSliderComponent implements OnInit {
     "slidesToShow": 5,
     "slidesToScroll": 1,
     "autoplay": true,
+    "arrow": false,
     responsive: [
       {
         breakpoint: 300,

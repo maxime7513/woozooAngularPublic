@@ -1,16 +1,16 @@
 #header_secteurs_details{ /* header secteurs */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     position: fixed;
     top: 60px;
     width: 100%;
-    padding: 24px 20px 24px 20px;
+    padding: 24px 20px 4px;
     background: rgba(255,255,255,.97);
     box-shadow: 0 9px 16px rgba(16,82,133,.1);
     transform-origin: top;
     transition: .5s;
     z-index: 10;
+    @media screen and (max-width : 799px){
+        top: 50px;
+    }
     p{
         font-size: 16px;
         color: #7e8da9;
@@ -48,16 +48,28 @@ section{
         align-items: center;
         flex-wrap: wrap;
         padding: 80px 15px 0 15px;
+        @media screen and (max-width : 600px){
+            padding-top: 40px !important;
+        }
+        @media screen and (max-width : 900px){
+            flex-direction: column-reverse;
+            padding-top: 60px;
+        }
         > img{
             width: 30%;
-            // align-self: flex-start;
+            min-width: 250px;
             &.inter-magasin_photo{
                 width: 43%;
             }
         }
         > div{
             width: 50%;
-            // align-self: flex-start;
+            @media screen and (max-width : 450px){
+                width: 100% !important;
+            }
+            @media screen and (max-width : 900px){
+                width: 90%;
+            }
             > span{
                 color: #7e8da9;
                 font-size: 16px;
@@ -69,6 +81,10 @@ section{
         font-weight: 500;
         color: var(--blue-secondary);
         margin-bottom: 30px;
+        @media screen and (max-width : 600px){
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
     }
     h4{
         font-size: 28px;
@@ -76,12 +92,18 @@ section{
         margin-bottom: 15px;
         color: var(--blue-secondary);
         width: max-content;
+        @media screen and (max-width : 600px){
+            font-size: 22px;
+        }
     }
     p:not(#header_secteurs_details p), li{
         font-size: 18px;
         color: #7e8da9;
         line-height: 1.2;
         margin-bottom: 15px;
+        @media screen and (max-width : 600px){
+            font-size: 16px;
+        }
         span{
             color: var(--blue-secondary);
             font-weight: 500;
@@ -89,6 +111,9 @@ section{
         b{
             font-size: 16px;
             font-weight: 400;
+            @media screen and (max-width : 600px){
+                font-size: 13px;
+            }
         }
         strong{
             font-weight: 600;

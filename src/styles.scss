@@ -88,9 +88,6 @@ h2{
         margin: auto;
         width: auto !important;
     }
-    .slick-arrow{
-        display: none !important;
-    }
 }
 
 #slider-commentaire_presentation{ // slider commentaires presentation
@@ -102,9 +99,6 @@ h2{
     .slick-slide{
         width: max-content !important;
         margin: auto;
-    }
-    .slick-arrow{
-        display: none !important;
     }
     .slick-active{
         transition: .5s;
@@ -225,8 +219,35 @@ h2{
     .slick-slide{
         margin: auto;
     }
+}
+
+#header_secteurs_details{ // slider header secteurs
+    .slick-track{
+        display: flex;
+    }
+    .slick-slide{
+        width: max-content !important;
+        margin: auto;
+        padding-bottom: 20px;
+    }
     .slick-arrow{
-        display: none !important;
+        border: none;
+        width: 0;
+        font-size: 0;
+        transform: none;
+        &:before {
+            opacity: 1;
+            font-size: 25px;
+            color: var(--blue-primary);
+        }
+    }
+    .slick-prev{
+        left: 7px;
+        top: 22.5px;
+    }
+    .slick-next{
+        right: 35px;
+        top: 22.5px;
     }
 }
 
