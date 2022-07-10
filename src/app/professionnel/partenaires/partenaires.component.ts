@@ -23,7 +23,7 @@ export class PartenairesComponent implements OnInit {
   }
 
   roughtNotationTittle(){
-    let underline = annotate(document.querySelector('#partenaires h2') as HTMLHeadingElement , { type: 'underline', color: '#0eb3b7', strokeWidth: 2, padding: 2, iterations: 1, multiline: true });
+    let underline = annotate(document.querySelector('#partenaires h2') as HTMLHeadingElement , { type: 'underline', color: '#97eab4', strokeWidth: 15, padding: -4, iterations: 1, multiline: true });
     underline.show();
     this.notationOneTime = true; // la fonction est effectué et ne peut pas etre relancé
   }

@@ -124,6 +124,7 @@ section{
 .presentation_commercant{ /* presentation1 */
     img{
         width: 40%;
+        max-width: 575px;
         @media screen and (max-width : 800px){
             width: 75%;
             max-width: 400px;
@@ -164,6 +165,7 @@ section{
     }
     img{
         width: 36%;
+        max-width: 575px;
         @media screen and (max-width : 800px){
             width: 70%;
             max-width: 350px;

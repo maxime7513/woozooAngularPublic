@@ -1,21 +1,30 @@
 section{
     position: relative;
     background: var(--blanc-opac);
-    padding-top: 50px;
+    padding: 50px 0 13px;
     overflow: hidden;
     @media screen and (max-width : 900px){
-        padding-top: 20px;
         padding: 20px 0 35px;
     }
     h2{
         position: relative;
-        width: fit-content;
+        width: max-content;
+        display: flex;
         color: var(--blue-primary);
-        margin: 0 auto 50px 7%;
-        z-index: 1;
+        margin: 0 auto 45px 7%;
         @media screen and (max-width : 500px){
             font-size: 30px;
             margin-bottom: 35px;
+        }
+        @media screen and (max-width : 550px){
+            flex-direction: column;
+        }
+        span{
+            margin-left: 7px;
+            z-index: 1;
+            @media screen and (max-width : 550px){
+                margin-left: 0;
+            }
         }
     }
     img{

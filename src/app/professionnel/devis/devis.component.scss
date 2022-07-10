@@ -49,6 +49,7 @@ section{
 #map{
     width: 40%;
     max-width: 700px;
+    max-height: 400px;
     border-radius: 20px;
     @media screen and (max-width : 550px){
         width: 100%;

@@ -1,7 +1,7 @@
 section{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 13px;
@@ -19,6 +19,7 @@ section{
     > img{
         width: 21%;
         min-width: 210px;
+        max-width: 300px;
         margin: 0 25px;
         z-index: 0;
     }

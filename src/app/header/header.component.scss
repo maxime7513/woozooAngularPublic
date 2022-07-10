@@ -195,8 +195,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #11a8da;
-    background-color: var(--blue-secondary);
+    background: var(--blue-secondary);
     color: white;
     border: 1px solid #fff;
     width: 38px;

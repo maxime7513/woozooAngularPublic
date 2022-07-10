@@ -14,7 +14,7 @@ export class ClientsSliderComponent implements OnInit {
       let partenaires = document.querySelector("#clients") as HTMLElement;
       this.scrolled = window.scrollY > (partenaires.offsetTop - 400);
       if(this.scrolled && !this.notationOneTime){
-        this.roughtNotationTittle();
+        this.roughtNotationTitle();
       }
   };
   slides = [
@@ -58,13 +58,13 @@ export class ClientsSliderComponent implements OnInit {
     ]
   };
     
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
-  roughtNotationTittle(){
-    let underline = annotate(document.querySelector('#clients h2') as HTMLHeadingElement , { type: 'underline', color: '#0eb3b7', strokeWidth: 2, padding: 2, iterations: 1, multiline: true });
+  roughtNotationTitle(){
+    let underline = annotate(document.querySelector('#clients h2 span') as HTMLHeadingElement , { type: 'underline', color: '#97eab4', strokeWidth: 15, padding: -3, iterations: 1, multiline: true });
     underline.show();
     this.notationOneTime = true; // la fonction est effectué et ne peut pas etre relancé
   }
