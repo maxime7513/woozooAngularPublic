@@ -231,10 +231,12 @@ h2{
         padding-bottom: 20px;
     }
     .slick-arrow{
+        height: 50px;
+        width: 50px;
         border: none;
-        width: 0;
         font-size: 0;
         transform: none;
+        z-index: 1;
         &:before {
             opacity: 1;
             font-size: 25px;
@@ -242,12 +244,18 @@ h2{
         }
     }
     .slick-prev{
-        left: 7px;
-        top: 22.5px;
+        left: 0;
+        top: 10px;
+        &:before{
+            content: url("assets/img/chevron_prev.svg");
+        }
     }
     .slick-next{
-        right: 35px;
-        top: 22.5px;
+        right: 0;
+        top: 10px;
+        &:before{
+            content: url("assets/img/chevron_next.svg");
+        }
     }
 }
 

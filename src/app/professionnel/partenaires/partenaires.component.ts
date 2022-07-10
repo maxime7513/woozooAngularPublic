@@ -14,7 +14,7 @@ export class PartenairesComponent implements OnInit {
       let partenaires = document.querySelector("#partenaires") as HTMLElement;
       this.scrolled = window.scrollY > (partenaires.offsetTop - 400);
       if(this.scrolled && !this.notationOneTime){
-        this.roughtNotation();
+        this.roughtNotationTittle();
       }
   };
   constructor() { }
@@ -22,8 +22,8 @@ export class PartenairesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  roughtNotation(){
-    let underline = annotate(document.querySelector('#partenaires h2') as HTMLHeadingElement , { type: 'underline', color: '#9be8ff', strokeWidth: 4, padding: 10 });
+  roughtNotationTittle(){
+    let underline = annotate(document.querySelector('#partenaires h2') as HTMLHeadingElement , { type: 'underline', color: '#0eb3b7', strokeWidth: 2, padding: 2, iterations: 1, multiline: true });
     underline.show();
     this.notationOneTime = true; // la fonction est effectué et ne peut pas etre relancé
   }

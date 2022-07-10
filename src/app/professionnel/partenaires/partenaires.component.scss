@@ -9,11 +9,14 @@ section{
     h2{
         position: relative;
         width: max-content;
+        color: #9be8ff;
+        color: var(--blue-secondary);
         color: var(--blue-primary);
         text-align: start;
         margin-bottom: 60px;
         margin: auto;
         margin-left: 7%;
+        z-index: 1;
         @media screen and (max-width: 500px){
             font-size: 30px;
             margin: auto;

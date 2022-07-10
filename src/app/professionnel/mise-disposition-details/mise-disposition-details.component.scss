@@ -17,20 +17,6 @@ section{
             margin: 0 auto 20px;
             font-size: 30px;
         }
-        &:after{
-            position: absolute;
-            content: '';
-            left: 0;
-            bottom: -3px;
-            width: 100%;
-            height: 15px;
-            transform: skew(-12deg);
-            background: #9be8ff;
-            z-index: -1;
-            @media screen and (max-width : 306px){
-                width: 60%;
-            }
-        }
     }
     > div{
         display: flex;

@@ -12,25 +12,10 @@ section{
         width: fit-content;
         color: var(--blue-primary);
         margin: 0 auto 50px 7%;
-        padding: 0 15px;
-        z-index: 0;
+        z-index: 1;
         @media screen and (max-width : 500px){
             font-size: 30px;
             margin-bottom: 35px;
-        }
-        &:after{
-            position: absolute;
-            content: '';
-            left: 15px;
-            bottom: -3px;
-            width: 95%;
-            height: 15px;
-            transform: skew(-12deg);
-            background: #9be8ff;
-            z-index: -1;
-            @media screen and (max-width : 474px){
-                width: 45%;
-            }
         }
     }
     img{

@@ -8,14 +8,20 @@ import { annotate, annotationGroup } from 'rough-notation';
 })
 export class MiseDispositionDetailsComponent implements OnInit {
   scrolled: boolean = false;
+  scrolledTittle: boolean = false;
   notationOneTime: boolean = false;
+  notationOneTimeTittle: boolean = false;
   @HostListener("window:scroll", [])
   onWindowScroll() {
       let offreDetails = document.getElementById("mise_disposition") as HTMLCanvasElement,
       miseDispositionOffset = offreDetails.offsetTop;
       // miseDispositionHeight = offreDetails.offsetHeight;
       this.scrolled = window.scrollY > (miseDispositionOffset - 100);
+      this.scrolledTittle = window.scrollY > (miseDispositionOffset - 400);
 
+      if(this.scrolledTittle && !this.notationOneTimeTittle){
+        this.roughtNotationTittle();
+      }
       if(this.scrolled && !this.notationOneTime){
         this.roughtNotation();
       }
@@ -36,7 +42,7 @@ export class MiseDispositionDetailsComponent implements OnInit {
     const a1 = annotate(document.getElementById('besoins') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true }),
     a2 = annotate(document.getElementById('forme') as HTMLElement, { type: 'box', color: 'var(--blue-secondary)', padding: [1, 3] }),
     a3 = annotate(document.getElementById('gerer') as HTMLElement, { type: 'underline', color: 'var(--blue-secondary)', padding: 2, multiline: true }),
-    a4 = annotate(document.getElementById('astreinte') as HTMLElement, { type: 'circle', color: '#0eb3b7', padding: [7, 10], animationDuration: 1000}),
+    a4 = annotate(document.getElementById('astreinte') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, animationDuration: 1000}),
     agroupe = annotationGroup([a1, a2, a3, a4]);
     
     agroupe.show();
@@ -51,4 +57,9 @@ export class MiseDispositionDetailsComponent implements OnInit {
     }
   }
 
+  roughtNotationTittle(){
+    let underline = annotate(document.querySelector('#mise_disposition h2') as HTMLHeadingElement , { type: 'underline', color: '#9be8ff', strokeWidth: 15, padding: -4, iterations: 1 });
+    underline.show();
+    this.notationOneTimeTittle = true; // la fonction est effectué et ne peut pas etre relancé
+  }
 }

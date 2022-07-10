@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { annotate } from 'rough-notation';
 
 @Component({
   selector: 'app-clients-slider',
@@ -6,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clients-slider.component.scss']
 })
 export class ClientsSliderComponent implements OnInit {
+  notationOneTime = false;
+  scrolled: boolean = false;
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+      let partenaires = document.querySelector("#clients") as HTMLElement;
+      this.scrolled = window.scrollY > (partenaires.offsetTop - 400);
+      if(this.scrolled && !this.notationOneTime){
+        this.roughtNotationTittle();
+      }
+  };
   slides = [
     {img: "./assets/img/professionnel/partenaire/kyoSushi.png"},
     {img: "./assets/img/professionnel/partenaire/rocket.png"},
@@ -52,4 +63,9 @@ export class ClientsSliderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  roughtNotationTittle(){
+    let underline = annotate(document.querySelector('#clients h2') as HTMLHeadingElement , { type: 'underline', color: '#0eb3b7', strokeWidth: 2, padding: 2, iterations: 1, multiline: true });
+    underline.show();
+    this.notationOneTime = true; // la fonction est effectué et ne peut pas etre relancé
+  }
 }

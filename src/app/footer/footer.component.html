@@ -21,7 +21,6 @@
                     <div *ngIf="footerPage === 'secteur'">
                         <a routerLink="{{ cheminRouterLink }}" (click)="changeOffre('offre')">Course à la demande</a>
                         <a routerLink="{{ cheminRouterLink }}" (click)="changeOffre('mise_disposition')">Mise à disposition</a>
-                        <a routerLink="../woozooBox">Campagne Publicitaire</a>
                     </div>
                     <div *ngIf="footerPage === 'coursier'">
                         <a pageScroll [pageScrollOffset]="100" [pageScrollDuration]="500" href="#avantages">nos avantages</a>

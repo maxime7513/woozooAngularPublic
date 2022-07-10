@@ -18,24 +18,13 @@ section{
     }
     h2{
         position: relative;
-        width: max-content;
+        width: fit-content;
         color: var(--blue-primary);
         margin: auto auto 50px;
         z-index: 1;
         @media screen and (max-width : 500px){
             font-size: 30px;
             margin-bottom: 40px;
-        }
-        &:after{
-            position: absolute;
-            content: '';
-            left: 50%;
-            bottom: -3px;
-            width: 100%;
-            height: 15px;
-            transform: skew(-12deg) translateX(-50%);
-            background: #9be8ff;
-            z-index: -1;
         }
     }
     > div{
