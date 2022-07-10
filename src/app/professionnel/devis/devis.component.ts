@@ -46,7 +46,61 @@ export class DevisComponent implements OnInit {
         mapTypeControl: false,
         center: { lat: 43.2961743, lng: 5.3699525 },
         zoom: 13,
-        // styles:
+        styles:
+        [
+          {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "transit",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          }
+        ]
       }
     );
   
@@ -79,7 +133,7 @@ export class DevisComponent implements OnInit {
 
     if(!AutocompleteDirectionsHandler.adresseValide){
       this.toast.error('Veuillez sélectionner une des adresses proposée');
-      this.toast.info('service uniquement disponible dans la région PACA')
+      this.toast.info('service disponible uniquement 35km autour de Marseille')
       return
     }
 
