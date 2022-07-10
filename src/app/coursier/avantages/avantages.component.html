@@ -3,14 +3,14 @@
         <div>
             <div *ngFor="let avantage of avantages | slice:0:3; index as i">
                 <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="icone avantages">
-                <p (click)="showDetails(1,i+1)">{{ avantage.titre }}<fa-icon [icon]="chevronDown" [ngClass]="{'mobile': getScreenWidth < 700}"></fa-icon></p>
+                <p (click)="showDetails(1,i+1)">{{ avantage.titre }}<fa-icon [icon]="chevronDown" *ngIf="getScreenWidth < 700"></fa-icon></p>
                 <p [ngClass]="{'mobile': getScreenWidth < 700}">{{ avantage.texte }}</p>
             </div>
         </div>    
         <div>
             <div *ngFor="let avantage of avantages | slice:3:6; index as i">
                 <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="icone avantages">
-                <p (click)="showDetails(2,i+1)">{{ avantage.titre }}<fa-icon [icon]="chevronDown" [ngClass]="{'mobile': getScreenWidth < 700}"></fa-icon></p>
+                <p (click)="showDetails(2,i+1)">{{ avantage.titre }}<fa-icon [icon]="chevronDown" *ngIf="getScreenWidth < 700"></fa-icon></p>
                 <p [ngClass]="{'mobile': getScreenWidth < 700}">{{ avantage.texte }}</p>
             </div>
         </div>

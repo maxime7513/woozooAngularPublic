@@ -28,7 +28,7 @@ form{
                 cursor: pointer;
             }
             label{
-                color: var(--blue-primary);
+                color: var(--blue-secondary);
                 font-size: 13px;
             }
         }
@@ -114,37 +114,6 @@ form{
     label{
         color: var(--blue-secondary);
         margin-left: 7px;
-    }
-}
-
-.popup-formulaire_coursier{ /* popup formulaire inscription coursier */
-    position: absolute;
-    bottom: 125px;
-    left: -225px;
-    width: 200px;
-    text-align: center;
-    padding: 5px;
-    background: rgba(17,63,113,1);
-    /* background: var(--blue-primary); */
-    color: #fff;
-    border-radius: 7px;
-    opacity: 0;
-    transition: 1s;
-    z-index: 1;
-    &:after{
-        content: '';
-        position: absolute;
-        bottom: calc(50% - 6.5px);
-        right: -5px;
-        width: 13px;
-        height: 13px;
-        background: rgba(17,63,113,1);
-        border-radius: 3px;
-        transform: rotate(-45deg);
-        z-index: -1;
-    }
-    p{
-        line-height: 1.15;
     }
 }
 

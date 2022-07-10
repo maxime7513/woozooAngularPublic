@@ -45,7 +45,7 @@ export class AvantagesComponent implements OnInit {
 
   showDetails(el: number, el2: number){
     if(this.getScreenWidth < 700){
-      let chevron = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') fa-icon');
+      let chevron = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') fa-icon svg');
       let detailsAvantages = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') p:last-of-type');
       chevron.classList.toggle('rotate');
       detailsAvantages.classList.toggle('show');

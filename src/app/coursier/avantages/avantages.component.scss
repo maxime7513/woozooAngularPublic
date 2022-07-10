@@ -16,6 +16,14 @@ section{
         top: -580px;
         left: 0;
         z-index: -1;
+        @media screen and (min-width : 1400px) and (max-width : 1600px){
+            height: 650px;
+            top: -650px;
+        }
+        @media screen and (min-width : 1601px){
+            height: 750px;
+            top: -750px;
+        }
     }
     h2{
         color: #fff;
@@ -62,25 +70,19 @@ section{
                 fa-icon{
                     margin-left: 5px;
                     vertical-align: middle;
-                    transition: 0.8s;
-                    animation: 1.5s moveChevron infinite;
-                    display: none;
-                    &.mobile{
-                        display: inline-block;
-                    }
-                    &.rotate{
-                        transform: rotate(180deg) !important;
-                        opacity: .5;
+                    ::ng-deep{
+                        svg{
+                            transition: 0.8s;
+                        }
+                        .rotate{
+                            transform: rotate(180deg);
+                            opacity: .5;
+                        }
                     }
                 }
             }
         }
     }
-}
-@keyframes moveChevron{
-    0%{transform: translateY(0);}
-    25%{transform: translateY(4px);}
-    100%{transform: translateY(0);}
 }
 
 // responsive
@@ -107,6 +109,7 @@ section{
     }
     
 }
+
 @media screen and (max-width : 900px){
     section{
         > div{
@@ -135,15 +138,4 @@ section{
     }
 }
 
-@media screen and (min-width : 1400px) and (max-width : 1600px){
-    section::before{
-        height: 650px;
-        top: -650px;
-    }
-}
-@media screen and (min-width : 1601px){
-    section::before{
-        height: 750px;
-        top: -750px;
-    }
-}
+
