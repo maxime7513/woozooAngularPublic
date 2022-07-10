@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBox, faLocationDot, faArrowRightArrowLeft, faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
+import { Loader } from '@googlemaps/js-api-loader';
 import { HotToastService } from '@ngneat/hot-toast';
 import { PopupService } from 'src/app/services/popup.service';
 
@@ -26,8 +27,16 @@ export class DevisComponent implements OnInit {
   constructor(private PopupLivraisonService: PopupService, private toast: HotToastService) { }
 
   ngOnInit(): void {
-    this.initMap();
-    this.resizeMap();
+    let loader = new Loader({
+      apiKey: "AIzaSyCwEtZWTM3zQsdXs2XA0q3s5qo52OLcips",
+      version: "weekly",
+      libraries: ["places"]
+    })
+
+    loader.load().then(() => {
+      this.initMap();
+      this.resizeMap();
+    })
   }
 
   initMap(): void {
@@ -37,6 +46,7 @@ export class DevisComponent implements OnInit {
         mapTypeControl: false,
         center: { lat: 43.2961743, lng: 5.3699525 },
         zoom: 13,
+        // styles:
       }
     );
   
