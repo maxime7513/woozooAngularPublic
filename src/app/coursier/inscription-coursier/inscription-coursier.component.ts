@@ -11,7 +11,7 @@ import { EmailService } from 'src/app/services/email.service';
 export class InscriptionCoursierComponent implements OnInit {
   afficherPopup: boolean;
   signupForm: FormGroup;
-  numberRegEx = /\-?\d*\.?\d{1,2}/;
+  numberRegEx = new RegExp('^[0-9]+$');
 
   constructor(private emailService: EmailService,private toast: HotToastService) {
     this.afficherPopup = false;
@@ -98,7 +98,7 @@ export class InscriptionCoursierComponent implements OnInit {
                         </b>`;
                 
     let reqWoozoo = {
-      to: 'blnmax@yahoo.com',
+      to: 'contact@woozoo.io',
       subject: 'Demande d\'inscription livreur',
       html: htmlWoozoo
     }
