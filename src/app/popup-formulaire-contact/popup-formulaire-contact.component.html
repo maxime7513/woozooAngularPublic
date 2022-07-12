@@ -8,15 +8,42 @@
         <h4>ou Ecrivez-nous</h4>
         <form [formGroup]="contactForm" (ngSubmit)="submit()">
             <div>
-                <input type="text" formControlName="nom" placeholder="Votre nom">
-                <input type="text" formControlName="raisonSociale" placeholder="Raison sociale">
+                <mat-form-field>
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="nom" type="text">
+                    <mat-error *ngIf="formSend && nom.hasError('required')">
+                        Nom obligatoire
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Raison sociale</mat-label>
+                    <input matInput formControlName="raisonSociale" type="text">
+                </mat-form-field>
             </div>
             <div>
-                <input type="text" formControlName="phone" placeholder="Numéro de telephone">
-                <input type="email" formControlName="email" placeholder="Votre email">
+                <mat-form-field>
+                    <mat-label>Téléphone</mat-label>
+                    <input matInput formControlName="phone" type="text">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="text">
+                    <mat-error *ngIf="formSend && email.hasError('email') && !email.hasError('required')">
+                        Merci de renseignez une adresse mail valide
+                    </mat-error>
+                    <mat-error *ngIf="formSend && email.hasError('required')">
+                        Email obligatoire
+                    </mat-error>
+                </mat-form-field>
             </div>
             <div>
-                <textarea formControlName="message" cols="12" rows="6" placeholder="Votre message ..."></textarea>
+                <mat-form-field class="message">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput formControlName="message" placeholder="Votre message ..."></textarea>
+                    <mat-error *ngIf="formSend && message.hasError('required')">
+                        Message obligatoire
+                    </mat-error>
+                  </mat-form-field>
             </div>
             <button type="submit">Envoyer<fa-icon [icon]="paperPlaneIcon"></fa-icon></button>
         </form>

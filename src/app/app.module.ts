@@ -5,6 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input'; 
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -119,6 +120,7 @@ export function playerFactory() {
     SlickCarouselModule,
     FontAwesomeModule,
     MatDialogModule,
+    MatInputModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,

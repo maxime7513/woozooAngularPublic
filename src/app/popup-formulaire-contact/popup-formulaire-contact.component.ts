@@ -16,6 +16,7 @@ export class PopupFormulaireContactComponent implements OnInit {
   phoneIcon = faPhoneSquareAlt;
   paperPlaneIcon = faPaperPlane;
   contactForm: FormGroup;
+  formSend: boolean = false;
 
   constructor(private emailService: EmailService, private recaptchaV3Service: ReCaptchaV3Service, private toast: HotToastService, public dialogRef: MatDialogRef<PopupFormulaireContactComponent>) { }
 
@@ -57,21 +58,13 @@ export class PopupFormulaireContactComponent implements OnInit {
 
   async submit(){
     this.toast.close();
-
-    if(this.nom?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre nom')
-    }else if(this.email?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre email')
-    }else if(this.email?.hasError('email')){
-      this.toast.error('Veuillez renseigner un email valide')
-    }else if(this.message?.hasError('required')){
-      this.toast.error('Veuillez saisir un message')
-    }
+    this.formSend = true;
 
     if (!this.contactForm.valid) {
+      this.toast.error('Formulaire invalide');
       return;
     }
-    
+   
     const toastValid = this.toast.loading('envoie en cours...',{duration: 2500});
 
     const {nom, raisonSociale, phone, email, message} = this.contactForm.value;
@@ -84,7 +77,8 @@ export class PopupFormulaireContactComponent implements OnInit {
                   </b>`;
     const tokenRecaptcha = await this.recaptchaToken$;
     let req = {
-      to: 'blnmax@yahoo.com',
+      from: email,
+      to: 'contact@woozoo.io',
       subject: 'Message provenant du site vitrine',
       html: html,
       tokenRecaptcha: tokenRecaptcha,
