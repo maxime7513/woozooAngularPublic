@@ -19,7 +19,7 @@ export class ClientsSliderComponent implements OnInit {
   };
   slides = [
     {img: "./assets/img/professionnel/partenaire/kyoSushi.png"},
-    {img: "./assets/img/professionnel/partenaire/rocket.png"},
+    // {img: "./assets/img/professionnel/partenaire/rocket.png"},
     {img: "./assets/img/professionnel/partenaire/roseBaie.png"},
     {img: "./assets/img/professionnel/partenaire/blackPearlMusic.png"},
     {img: "./assets/img/professionnel/partenaire/onlyPro.png"},
