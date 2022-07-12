@@ -4,15 +4,16 @@ section{
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
-    padding: 40px 20px 75px 20px;
+    padding: 35px 20px;
     z-index: 1;
     @media screen and (max-width : 550px){
-        padding: 10px 20px 45px 20px;
+        padding: 10px 20px;
     }
     &:before{
         content: "";
         position: absolute;
-        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        // clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        clip-path: polygon(0 0, 100% 33px, 100% 100%, 0% 100%);
         background: #054572;
         background: url(/assets/img/noir-bleu_min.jpg);
         background-size: cover;
@@ -20,7 +21,21 @@ section{
         background-attachment: fixed;
         width: 100%;
         height: 35px;
-        top: -35px;
+        top: -34px;
+        left: 0;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 2px);
+        background: #054572;
+        background: url(/assets/img/noir-bleu_min.jpg);
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        width: 100%;
+        height: 35px;
+        bottom: -34px;
         left: 0;
     }
 }
