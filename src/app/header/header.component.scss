@@ -4,13 +4,15 @@ header{
     flex-direction: row;
     align-items: center;
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0 10px;
     z-index: 20;
+    @media screen and (max-width : 800px){
+        padding-top: 10px;
+    }
     img{
-        width: 200px;
+        width: 153px;
         @media screen and (max-width : 800px){
             width: 150px;
-            height: 29px;
         }
     }
     nav{
@@ -21,6 +23,7 @@ header{
     }
     > a{
         display: flex;
+        margin-left: 23px;
         @media screen and (max-width : 800px){
             margin-left: calc(50% - 75px);
         }
