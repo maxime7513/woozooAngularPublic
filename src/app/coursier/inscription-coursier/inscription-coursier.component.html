@@ -1,46 +1,98 @@
 <form id="form_coursier" [formGroup]="signupForm" (ngSubmit)="submit()" [ngClass]="{'popup': afficherPopup}">
     <h4>Rejoins nous dès maintenant !</h4>
     <div>
-        <input type="text" formControlName="nom" placeholder="Nom">
-        <input type="text" formControlName="prenom" placeholder="Prenom">
+        <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput formControlName="nom" type="text">
+            <mat-error *ngIf="signupFormSend && nom.hasError('required')">
+                Nom obligatoire
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Prénom</mat-label>
+            <input matInput formControlName="prenom" type="text">
+            <mat-error *ngIf="signupFormSend && prenom.hasError('required')">
+                Prénom obligatoire
+            </mat-error>
+        </mat-form-field>
     </div>
     <div>
-        <input type="text" formControlName="email" placeholder="Email">
-        <input type="text" formControlName="phone" placeholder="Téléphone">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="text">
+            <mat-error *ngIf="signupFormSend && email.hasError('email') && !email.hasError('required')">
+                Renseignez une adresse mail valide
+            </mat-error>
+            <mat-error *ngIf="signupFormSend && email.hasError('required')">
+                Email obligatoire
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Téléphone</mat-label>
+            <input matInput formControlName="phone" type="text">
+            <mat-error *ngIf="signupFormSend && (phone.hasError('pattern') || phone.hasError('minlength') || phone.hasError('maxlength'))">
+                Mauvais format de téléphone
+            </mat-error>
+            <mat-error *ngIf="signupFormSend && phone.hasError('required')">
+                Téléphone obligatoire
+            </mat-error>
+        </mat-form-field>
     </div>
     <div>
-        <input type="text" formControlName="ville" placeholder="Ville">
-        <input type="text" formControlName="code_postal" placeholder="Code postal">
+        <mat-form-field>
+            <mat-label>Ville</mat-label>
+            <input matInput formControlName="ville" type="text">
+            <mat-error *ngIf="signupFormSend && ville.hasError('required')">
+                Ville obligatoire
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Code postal</mat-label>
+            <input matInput formControlName="code_postal" type="text">
+            <mat-error *ngIf="signupFormSend && (code_postal.hasError('pattern') || code_postal.hasError('minlength') || code_postal.hasError('maxlength'))">
+                Mauvais format de code postal
+            </mat-error>
+            <mat-error *ngIf="signupFormSend && code_postal.hasError('required')">
+                Code postal obligatoire
+            </mat-error>
+            
+        </mat-form-field>
     </div>
-    <select formControlName="vehicule">
-        <option value="">Sélectionne un véhicule</option>
-        <option value="velo">Vélo</option>
-        <option value="scooter">Scooter</option>
-        <option value="scooter-electrique">Scooter éléctrique</option>
-        <option value="voiture">Voiture</option>
-        <option value="utilitaire">Utilitaire</option>
-    </select>
-    <select formControlName="statut_pro">
-        <option value="">Sélectionne un statut pro</option>
-        <option value="auto-entrepreneur">Auto-entrepreneur</option>
-        <option value="micro-entreprise">Micro-entreprise(SASU,EURL)</option>
-        <option value="sarl">SARL, SAS, SA</option>
-        <option value="autre">Autre</option>
-    </select>
+    <mat-form-field>
+        <mat-label>Sélectionne un véhicule</mat-label>
+        <mat-select formControlName="vehicule">
+          <mat-option *ngFor="let vehicule of vehicules" [value]="vehicule.value">
+            {{vehicule.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="signupFormSend && vehicule.hasError('required')">
+          Renseigner un véhicule
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Sélectionne un statut pro</mat-label>
+        <mat-select formControlName="statut_pro">
+          <mat-option *ngFor="let statut of statuts" [value]="statut.value">
+            {{statut.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="signupFormSend && statut_pro.hasError('required')">
+          Renseigner un statut professionnel
+        </mat-error>
+    </mat-form-field>
     <div id="capacite">
         <p>Detenez vous l'attestation de capacité de transport?</p>
-        <div>
-            <input type="radio" formControlName="capacite_transport" value="oui">
-            <label>Oui</label>
-        </div>
-        <div>
-            <input type="radio" formControlName="capacite_transport" value="non">
-            <label>Non</label>
-        </div>
+        <mat-radio-group formControlName="capacite_transport">
+            <mat-radio-button value="oui" checked>Oui</mat-radio-button>
+            <mat-radio-button value="non">Non</mat-radio-button>
+        </mat-radio-group>
     </div>
+    <mat-error *ngIf="signupFormSend && capacite_transport.hasError('required')">
+        Renseigner si vous detenez l'attestation de capacité de transport
+    </mat-error>
+
     <div class="conditions">
-        <input type="checkbox" name="conditions" formControlName="conditions">
-        <label for="conditions">J'ai lu et accepté les Conditions Générales d'Utilisation</label>
+        <mat-checkbox formControlName="conditions">J'ai lu et accepté les Conditions Générales d'Utilisation</mat-checkbox>
     </div>
     <span>En continuant, vous acceptez les <a routerLink="/conditionsGenerales">conditions générales</a>, et la <a routerLink="/confidentialite">politique de confidentialité</a> de Woozoo.</span>
 

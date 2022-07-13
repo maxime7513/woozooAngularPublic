@@ -11,7 +11,21 @@ import { EmailService } from 'src/app/services/email.service';
 export class InscriptionCoursierComponent implements OnInit {
   afficherPopup: boolean;
   signupForm: FormGroup;
+  signupFormSend: boolean = false;
   numberRegEx = new RegExp('^[0-9]+$');
+  vehicules: Array<{value: string, viewValue: string}> = [
+    {value: 'velo', viewValue: 'Vélo'},
+    {value: 'scooter', viewValue: 'Scooter'},
+    {value: 'scooter-electrique', viewValue: 'Scooter éléctrique'},
+    {value: 'voiture', viewValue: 'Voiture'},
+    {value: 'utilitaire', viewValue: 'Utilitaire'},
+  ];
+  statuts: Array<{value: string, viewValue: string}> = [
+    {value: 'auto-entrepreneur', viewValue: 'Auto-entrepreneur'},
+    {value: 'micro-entreprise', viewValue: 'Micro-entreprise(SASU,EURL)'},
+    {value: 'sarl', viewValue: 'SARL, SAS, SA'},
+    {value: 'autre', viewValue: 'Autre'},
+  ];
 
   constructor(private emailService: EmailService,private toast: HotToastService) {
     this.afficherPopup = false;
@@ -22,8 +36,7 @@ export class InscriptionCoursierComponent implements OnInit {
   }
 
   initForm(){
-    this.signupForm =  new FormGroup(
-    {
+    this.signupForm =  new FormGroup({
       nom: new FormControl("", Validators.required),
       prenom: new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -33,9 +46,37 @@ export class InscriptionCoursierComponent implements OnInit {
       vehicule: new FormControl("", Validators.required),
       statut_pro: new FormControl("", Validators.required),
       capacite_transport: new FormControl("", Validators.required),
-      conditions: new FormControl(false),
-    }
-  );
+      conditions: new FormControl("", Validators.required),
+    });
+  }
+
+  // getter for mat-error
+  get nom() {
+    return this.signupForm.get('nom');
+  }
+  get prenom() {
+    return this.signupForm.get('prenom');
+  }
+  get email() {
+    return this.signupForm.get('email');
+  }
+  get phone() {
+    return this.signupForm.get('phone');
+  }
+  get ville() {
+    return this.signupForm.get('ville');
+  }
+  get code_postal() {
+    return this.signupForm.get('code_postal');
+  }
+  get vehicule() {
+    return this.signupForm.get('vehicule');
+  }
+  get statut_pro() {
+    return this.signupForm.get('statut_pro');
+  }
+  get capacite_transport() {
+    return this.signupForm.get('capacite_transport');
   }
 
   activerPopup(){
@@ -46,37 +87,13 @@ export class InscriptionCoursierComponent implements OnInit {
 
   submit(){
     this.toast.close();
-    console.log(this.signupForm.get('conditions').value)
-    if(this.signupForm.get('nom')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre nom')
-    }else if(this.signupForm.get('prenom')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre prenom')
-    }else if(this.signupForm.get('email')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre email')
-    }else if(this.signupForm.get('email')?.hasError('email')){
-      this.toast.error('Veuillez renseigner un email valide')
-    }else if(this.signupForm.get('phone')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre numéro de téléphone')
-    }else if(this.signupForm.get('phone')?.hasError('pattern') || this.signupForm.get('phone')?.hasError('minlength') || this.signupForm.get('phone')?.hasError('maxlength')){
-      this.toast.error('Numéro de téléphone au mauvais format')
-    }else if(this.signupForm.get('ville')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre ville')
-    }else if(this.signupForm.get('code_postal')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre code postal')
-    }else if(this.signupForm.get('code_postal')?.hasError('pattern') || this.signupForm.get('code_postal')?.hasError('minlength') || this.signupForm.get('code_postal')?.hasError('maxlength')){
-      this.toast.error('Code postal au mauvais format')
-    }else if(this.signupForm.get('vehicule')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre moyen de transport')
-    }else if(this.signupForm.get('statut_pro')?.hasError('required')){
-      this.toast.error('Veuillez renseigner votre statut professionnel')
-    }else if(this.signupForm.get('capacite_transport')?.hasError('required')){
-      this.toast.error('Veuillez renseigner si vous detenez l\'attestation de capacité de transport')
-    }else if(this.signupForm.get('conditions').value == false){
-      this.toast.error('Vous devez accepter les conditions générales')
-      return
-    }
+    this.signupFormSend = true
 
     if (!this.signupForm.valid) {
+      if(this.signupForm.get('conditions').value == false){
+        this.toast.info('Vous devez accepter les conditions générales')
+      }
+      this.toast.error('Formulaire incomplet')
       return;
     }
 
@@ -131,6 +148,7 @@ export class InscriptionCoursierComponent implements OnInit {
     this.emailService.send_mail(reqLivreur);
 
     toastValid.afterClosed.subscribe((e) => {
+      this.signupFormSend = false;
       this.toast.success('Demande d\'inscription envoyé avec succès, notre équipe vous recontacte dès que possible');
       this.initForm();
     });
