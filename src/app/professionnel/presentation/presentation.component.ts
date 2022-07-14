@@ -34,7 +34,7 @@ export class PresentationComponent implements OnInit {
 
   constructor(private data: CommentairesService) {
     this.dotNav = 'presentation1';
-    this.tabSliderPresentation= ["presentation1", "presentation2", "presentation3"];
+    this.tabSliderPresentation= ["presentation1", "presentation2"];
     this.iSlider = 1;
     this.commentaires = this.data.clients;
   }

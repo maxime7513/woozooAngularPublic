@@ -23,18 +23,18 @@
         </div>
     </div>
 
-    <div [class.active]="dotNav == 'presentation3'" class="presentation_commercant3">
+    <!-- <div [class.active]="dotNav == 'presentation3'" class="presentation_commercant3">
         <img src="./assets/img/professionnel/presentation/map_devis.png" alt="carte">
         <div>
             <h2>Estimez le prix de votre livraison en quelques clics</h2>
             <button pageScroll [pageScrollOffset]="30" [pageScrollDuration]="500" href="#devis">Estimation en ligne</button>
         </div>
-    </div>
+    </div> -->
 
     <div class="dot_nav">
         <div (click)="dotNav = 'presentation1'" [class.active]="dotNav == 'presentation1'"></div>
         <div (click)="dotNav = 'presentation2'" [class.active]="dotNav == 'presentation2'"></div>
-        <div (click)="dotNav = 'presentation3'" [class.active]="dotNav == 'presentation3'"></div>
+        <!-- <div (click)="dotNav = 'presentation3'" [class.active]="dotNav == 'presentation3'"></div> -->
     </div>
     
 </section>

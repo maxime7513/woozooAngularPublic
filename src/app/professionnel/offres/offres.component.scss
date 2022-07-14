@@ -132,7 +132,7 @@ section{
         border-radius: 20px 20px 0 0;
         opacity: 0;
     }
-    div{
+    div:not(.countdown){
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -205,26 +205,20 @@ section{
 
 // compte a rebourd
 .countdown{
-    padding-bottom: 0 !important;
-    > div{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0;
-        div{
-            justify-content: center;
-            padding: 0 10px;
-            span{
-                &:first-of-type{
-                    font-size: 24px;
-                    font-weight: 600;
-                    color: #0eb3b7;
-                }
-                &:last-of-type{
-                    color: var(--blue-secondary);
-                    font-size: 13px;
-                }
-            }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    span{
+        font-weight: 600;
+        &:first-of-type{
+            font-size: 24px;
+            color: var(--blue-primary);
+            color: #0eb3b7;
+        }
+        &:last-of-type{
+            color: var(--blue-primary);
+            font-size: 13px;
         }
     }
 }

@@ -20,7 +20,6 @@ section{
         transform: skew(-20deg, 0) translateX(0rem);
         bottom: -1px;
         right: -5%;
-        // top: 40%;
         top: 45%;
         box-shadow: 0px 3px 10px 8px rgba(0,0,0,.2);
         @media screen and (max-width : 800px){
@@ -63,21 +62,12 @@ section{
     }
     h2{
         color: var(--blue-primary);
-        font-size: 34px;
+        font-size: clamp(24px, 2.7vw, 40px);
         font-weight: 400;
         text-align: center;
         margin-left: 5%;
         @media screen and (max-width : 540px){
             margin-left: 0;
-        }
-        @media screen and (max-width : 1050px){
-            font-size: 24px;
-        }
-        @media screen and (min-width: 1051px) and (max-width : 1200px){
-            font-size: 28px;
-        }
-        @media screen and (min-width : 1700px){
-            font-size: 40px;
         }
     }
     button{
@@ -98,8 +88,8 @@ section{
             margin-top: 13px;
         }
         @media screen and (min-width : 801px) and (max-width : 1050px){
-            margin: 15px auto 15px auto;
             font-size: 16px;
+            margin: 15px auto;
         }
         @media screen and (min-width : 1700px){
             font-size: 24px;
@@ -153,25 +143,25 @@ section{
         width: 32%;
     }
 }
-.presentation_commercant3{ /* presentation3 */
-    position: absolute;
-    top: 90px;
-    bottom: 0;
-    @media screen and (max-width : 800px){
-        top: 60px;
-        div{
-            margin-top: -22px !important;
-        }
-    }
-    img{
-        width: 36%;
-        max-width: 575px;
-        @media screen and (max-width : 800px){
-            width: 70%;
-            max-width: 350px;
-        }
-    }
-}
+// .presentation_commercant3{ /* presentation3 */
+//     position: absolute;
+//     top: 90px;
+//     bottom: 0;
+//     @media screen and (max-width : 800px){
+//         top: 60px;
+//         div{
+//             margin-top: -22px !important;
+//         }
+//     }
+//     img{
+//         width: 36%;
+//         max-width: 575px;
+//         @media screen and (max-width : 800px){
+//             width: 70%;
+//             max-width: 350px;
+//         }
+//     }
+// }
 .dot_nav{ /* dots naviguation slider */
     position: absolute;
     bottom: 10px;
@@ -181,7 +171,7 @@ section{
     width: max-content;
     @media screen and (max-width : 800px){
         top: 52%;
-        left: 5px;
+        left: 7px;
     }
     @media screen and (min-width : 801px) and (max-width : 1050px){
         bottom: 2px;
@@ -203,7 +193,6 @@ section{
     width: 40%;
     @media screen and (max-width : 800px){
         width: 100%;
-        // margin-left: 20px;
     }
 }
 .card-commentaire_presentation{ /* card commentaire clients */
