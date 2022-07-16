@@ -24,7 +24,6 @@ export class ContenuSecteurComponent implements OnInit, AfterViewInit {
     viewValue: "Inter-magasin"
     }
   ];
-
   slideConfig = {
     "slidesToShow": 4,
     "slidesToScroll": 1,
@@ -50,57 +49,24 @@ export class ContenuSecteurComponent implements OnInit, AfterViewInit {
       }
     ]
   }
-  getScreenWidth: any;
 
   constructor(private data: SecteursService) {
     this.secteurVisible = this.data.secteur;
-    this.getScreenWidth = window.innerWidth;
   }
 
   ngOnInit(): void {
+    this.reorderTab()
   }
 
   ngAfterViewInit(): void {
     this.roughtNotation(this.secteurVisible);
-    if(this.getScreenWidth < 600){
-      const prevButton = document.querySelector('#header_secteurs_details .slick-prev') as HTMLElement;
-      const nextButton = document.querySelector('#header_secteurs_details .slick-next') as HTMLElement;
-      prevButton.addEventListener('click', async () => {
-        prevButton.style.opacity = '0.3';
-        prevButton.style.pointerEvents = 'none';
-        this.prevSecteur();
-        setTimeout(() => {
-          prevButton.style.opacity = '1';
-          prevButton.style.pointerEvents = 'all';
-        }, 1000);
-      });
-      nextButton.addEventListener('click', () => {
-        nextButton.style.opacity = '0.3';
-        nextButton.style.pointerEvents = 'none';
-        this.nextSecteur();
-        setTimeout(() => {
-          nextButton.style.opacity = '1';
-          nextButton.style.pointerEvents = 'all';
-        }, 1000);
-      })
-    }
   }
 
-  prevSecteur(){
-      let indiceCurrentSecteur = this.secteurs.findIndex(element => element.value == this.secteurVisible);
-      if(indiceCurrentSecteur == 0){
-        indiceCurrentSecteur = 4;
-      }
-      const prevSecteur = this.secteurs[indiceCurrentSecteur - 1].value;
-      this.changeSecteur(prevSecteur)
-  }
-  nextSecteur(){
+  reorderTab(){
     let indiceCurrentSecteur = this.secteurs.findIndex(element => element.value == this.secteurVisible);
-    if(indiceCurrentSecteur == 3){
-      indiceCurrentSecteur = -1;
-    }
-    const nextSecteur = this.secteurs[indiceCurrentSecteur + 1].value;
-    this.changeSecteur(nextSecteur)
+    let secteurData = this.secteurs[indiceCurrentSecteur];
+    this.secteurs.splice(indiceCurrentSecteur,1) // supprimer du tableau
+    this.secteurs.unshift(secteurData); // le remettre au début du tableau
   }
 
   changeSecteur(el:string){
