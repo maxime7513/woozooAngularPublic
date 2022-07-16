@@ -1,12 +1,14 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { annotate, annotationGroup } from 'rough-notation';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mise-disposition-details',
   templateUrl: './mise-disposition-details.component.html',
   styleUrls: ['./mise-disposition-details.component.scss']
 })
-export class MiseDispositionDetailsComponent implements OnInit {
+export class MiseDispositionDetailsComponent implements OnInit, OnDestroy {
+  private subscription: Subscription;
   scrolled: boolean = false;
   scrolledTittle: boolean = false;
   notationOneTime: boolean = false;
@@ -33,9 +35,8 @@ export class MiseDispositionDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.caroussel();
-    }, 3000);
+    this.subscription = interval(3000)
+    .subscribe(x => { this.caroussel(); });
   }
 
   roughtNotation(){
@@ -61,5 +62,9 @@ export class MiseDispositionDetailsComponent implements OnInit {
     let underline = annotate(document.querySelector('#mise_disposition h2') as HTMLHeadingElement , { type: 'underline', color: '#9be8ff', strokeWidth: 15, padding: -4, iterations: 1 });
     underline.show();
     this.notationOneTimeTittle = true; // la fonction est effectué et ne peut pas etre relancé
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

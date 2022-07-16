@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { CommentairesService } from 'src/app/services/commentaires.service';
 
 @Component({
@@ -6,10 +7,11 @@ import { CommentairesService } from 'src/app/services/commentaires.service';
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.scss']
 })
-export class PresentationComponent implements OnInit {
+export class PresentationComponent implements OnInit, OnDestroy {
   dotNav: string;
   tabSliderPresentation : Array<string>;
   iSlider : any;
+  private subscription: Subscription;
   // commentaires: Array<{nom: string, enseigne: string, img: string, texte: string}>
   // slideConfig = {
   //   "slidesToShow": 3,
@@ -40,13 +42,19 @@ export class PresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(() => { // slider presentation
-      this.dotNav = this.tabSliderPresentation[this.iSlider];
-      this.iSlider++;
-      if(this.iSlider >= this.tabSliderPresentation.length){
-        this.iSlider = 0;
-      }
-    }, 5000);
+    this.subscription = interval(5000)
+    .subscribe(x => { this.sliderAuto(); });
   }
 
+  sliderAuto(){
+    this.dotNav = this.tabSliderPresentation[this.iSlider];
+    this.iSlider++;
+    if(this.iSlider >= this.tabSliderPresentation.length){
+      this.iSlider = 0;
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

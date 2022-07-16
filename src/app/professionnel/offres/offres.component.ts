@@ -8,7 +8,6 @@ import { interval, Observable, Subscription } from 'rxjs';
 })
 export class OffresComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
-  
   public dateNow = new Date();
   public dDay = new Date('2022-09-20T12:00:00');
 

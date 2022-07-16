@@ -1,11 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-csm',
   templateUrl: './csm.component.html',
   styleUrls: ['./csm.component.scss']
 })
-export class CsmComponent implements OnInit {
+export class CsmComponent implements OnInit, OnDestroy {
+  private subscription: Subscription;
   csmEtape : string;
   cmsTab : Array<string>;
   iSlider : any;
@@ -21,15 +23,8 @@ export class CsmComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    setInterval(() => { // autoplay changeEtape()
-      if(!this.stopAutoplay){ 
-        this.changeEtape(this.cmsTab[this.iSlider]);
-        this.iSlider++;
-        if(this.iSlider >= this.cmsTab.length){
-          this.iSlider = 0;
-        }
-      }
-    }, 5000);
+    this.subscription = interval(5000)
+    .subscribe(x => { this.autoSlider(); });
   }
 
   changeEtape(el:string){
@@ -51,4 +46,17 @@ export class CsmComponent implements OnInit {
     this.stopAutoplay = true; // arreter autoplay slider
   }
 
+  autoSlider(){
+    if(!this.stopAutoplay){ 
+      this.changeEtape(this.cmsTab[this.iSlider]);
+      this.iSlider++;
+      if(this.iSlider >= this.cmsTab.length){
+        this.iSlider = 0;
+      }
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }
