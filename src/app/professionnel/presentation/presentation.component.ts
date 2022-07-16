@@ -10,33 +10,33 @@ export class PresentationComponent implements OnInit {
   dotNav: string;
   tabSliderPresentation : Array<string>;
   iSlider : any;
-  commentaires: Array<{nom: string, enseigne: string, img: string, texte: string}>
-  slideConfig = {
-    "slidesToShow": 3,
-    "slidesToScroll": 1,
-    "autoplay": true,
-    "arrows": false,
-    responsive: [
-      {
-        breakpoint: 801,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 1251,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  };
+  // commentaires: Array<{nom: string, enseigne: string, img: string, texte: string}>
+  // slideConfig = {
+  //   "slidesToShow": 3,
+  //   "slidesToScroll": 1,
+  //   "autoplay": true,
+  //   "arrows": false,
+  //   responsive: [
+  //     {
+  //       breakpoint: 801,
+  //       settings: {
+  //         slidesToShow: 3
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 1251,
+  //       settings: {
+  //         slidesToShow: 1
+  //       }
+  //     }
+  //   ]
+  // };
 
   constructor(private data: CommentairesService) {
     this.dotNav = 'presentation1';
     this.tabSliderPresentation= ["presentation1", "presentation2"];
     this.iSlider = 1;
-    this.commentaires = this.data.clients;
+    // this.commentaires = this.data.clients;
   }
 
   ngOnInit(): void {

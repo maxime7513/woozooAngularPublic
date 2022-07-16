@@ -1,10 +1,11 @@
 section{
     position: relative;
     background: var(--blanc-opac);
-    padding: 50px 0 65px 0;
-    @media screen and (max-width : 500px){
-        padding-bottom: 50px;
-    }
+    // padding: 50px 0 65px 0;
+    padding: 50px 0 13px 0;
+    // @media screen and (max-width : 500px){
+    //     padding-bottom: 50px;
+    // }
     h2{
         position: relative;
         width: fit-content;

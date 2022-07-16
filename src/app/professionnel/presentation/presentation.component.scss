@@ -126,42 +126,23 @@ section{
     position: absolute;
     top: 90px;
     bottom: 0;
-    @media screen and (max-width : 390px){
-        > div{
-            margin-top: -20px !important;
-        }
-    }
-    @media screen and (min-width: 391px) and (max-width : 800px){
-        > div{
-            margin-top: -50px !important;
-        }
+    img{
+        width: 40%;
+        max-width: 575px;
     }
     @media screen and (max-width : 800px){
-        top: 60px;
-    }
-    img{
-        width: 32%;
+        top: 55px;
+        > div{
+            margin-top: -30px !important;
+        }
+        img{
+            width: 80%;
+            max-width: 400px;
+            margin-left: 20px;
+        }
     }
 }
-// .presentation_commercant3{ /* presentation3 */
-//     position: absolute;
-//     top: 90px;
-//     bottom: 0;
-//     @media screen and (max-width : 800px){
-//         top: 60px;
-//         div{
-//             margin-top: -22px !important;
-//         }
-//     }
-//     img{
-//         width: 36%;
-//         max-width: 575px;
-//         @media screen and (max-width : 800px){
-//             width: 70%;
-//             max-width: 350px;
-//         }
-//     }
-// }
+
 .dot_nav{ /* dots naviguation slider */
     position: absolute;
     bottom: 10px;

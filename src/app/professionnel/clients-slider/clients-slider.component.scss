@@ -1,10 +1,10 @@
 section{
     position: relative;
     background: var(--blanc-opac);
-    padding: 50px 0 65px;
+    padding: 50px 0 30px;
     overflow: hidden;
     @media screen and (max-width : 900px){
-        padding: 20px 0 85px;
+        padding-top: 25px;
     }
     h2{
         position: relative;
