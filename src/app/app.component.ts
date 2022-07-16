@@ -4,6 +4,7 @@ import { slideInAnimation } from './route-animation';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { SEOService } from './services/seo.service';
 import { filter, map, mergeMap } from 'rxjs/operators';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,16 @@ export class AppComponent {
     return outlet?.activatedRouteData?.['animation'];
   }
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private seoService: SEOService){}
+  constructor(private metaTagService: Meta, private router: Router, private activatedRoute: ActivatedRoute, private seoService: SEOService){}
 
   ngOnInit(): void {
+    this.metaTagService.addTags([
+      { name: 'author', content: 'Maxime Bleunven' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:image', content: 'https://www.woozoo.io/assets/img/woozoo-meta_img.png' },
+      { charset: 'UTF-8' },
+    ]);
+
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd),
       map(e => this.activatedRoute),
