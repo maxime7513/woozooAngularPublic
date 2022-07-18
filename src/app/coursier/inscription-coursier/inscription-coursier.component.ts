@@ -125,11 +125,8 @@ export class InscriptionCoursierComponent implements OnInit {
     // Envoie d'un mail au livreur
     let contenueMessage;
     if(code_postal >= 13000 && code_postal < 14000){
-      console.log('ok')
       contenueMessage = 'Notre équipe va étudier ta demande et revenir vers toi très vite!';
     }else{
-      console.log('pas ok')
-
       contenueMessage = 'Malheureusement notre service de livraison n\'est pas encore disponible dans ta ville, nous reprendrons contact avec toi dès que Woozoo arrive près de chez toi!';
     }
 
