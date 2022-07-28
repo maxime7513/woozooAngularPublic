@@ -1,7 +1,8 @@
 <section id="mise_disposition">
     <h2>Mise à disposition</h2>
     <div>
-        <img src="./assets/img/professionnel/presentation/{{imageShowSlides}}.png" alt="image application">
+        <img [defaultImage]="defautImage" [lazyLoad]="imageShowSlides" alt="image application">
+        <!-- <img src="./assets/img/professionnel/presentation/{{imageShowSlides}}.png" alt="image application"> -->
         <div>
             <p>
                 La mise à disposition de coursiers est un service qui s’adapte à vos besoins et met à votre disposition un ou plusieurs livreurs,

@@ -138,6 +138,9 @@ form{
             }
         }
     }
+    mat-error{
+        color: red;
+    }
     > mat-error{
         font-size: 12px;
     }

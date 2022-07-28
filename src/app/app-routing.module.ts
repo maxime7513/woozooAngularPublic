@@ -4,9 +4,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
 import { SecteurComponent } from './secteur/secteur.component';
 import { CoursierComponent } from './coursier/coursier.component';
-import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
-import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
-import { ConditionsGeneralesComponent } from './conditions-generales/conditions-generales.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent ,
@@ -61,9 +58,21 @@ const routes: Routes = [
       }
     }
   },
-  { path: 'mentionsLegales', component: MentionsLegalesComponent , data: {animation: 'MentionsLegales'} },
-  { path: 'confidentialite', component: ConfidentialiteComponent , data: {animation: 'Confidentialite'}},
-  { path: 'conditionsGenerales', component: ConditionsGeneralesComponent , data: {animation: 'ConditionsGenerales'}},
+  {
+    path: 'mentionsLegales',
+    loadChildren: () => import('./modules/mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule),
+    data: {animation: 'MentionsLegales'}
+  },
+  {
+    path: 'confidentialite',
+    loadChildren: () => import('./modules/confidentialite/confidentialite.module').then(m => m.ConfidentialiteModule),
+    data: {animation: 'Confidentialite'}
+  },
+  {
+    path: 'conditionsGenerales',
+    loadChildren: () => import('./modules/conditions/conditions.module').then(m => m.ConditionsModule),
+    data: {animation: 'ConditionsGenerales'}
+  },
 ];
 
 @NgModule({

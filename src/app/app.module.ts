@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleMapsModule } from '@angular/google-maps';
+
+// routing
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// module
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,22 +18,16 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
-import { LottieModule } from 'ngx-lottie';
-import player from 'lottie-web';
-import { environment } from 'src/environments/environment';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
-// routing
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// mes modules
+import { HeaderModule } from './modules/header/header.module';
+import { FooterModule } from './modules/footer/footer.module';
 
 // component
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { PopupFormulaireContactComponent } from './popup-formulaire-contact/popup-formulaire-contact.component';
 
 // home page
 import { HomePageComponent } from './home-page/home-page.component';
@@ -62,21 +61,9 @@ import { InscriptionCoursierComponent } from './coursier/inscription-coursier/in
 import { CsmComponent } from './coursier/csm/csm.component';
 import { AvantagesComponent } from './coursier/avantages/avantages.component';
 
-// mentions
-import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
-import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
-import { ConditionsGeneralesComponent } from './conditions-generales/conditions-generales.component';
-
 // service
-import { PopupService } from './services/popup.service';
 import { SecteursService } from './services/secteurs.service';
-import { EmailService } from './services/email.service';
 
-// Note we need a separate function as it's required for LOTTIE
-// by the AOT compiler.
-export function playerFactory() {
-  return player;
-}
 
 @NgModule({
   declarations: [
@@ -84,7 +71,6 @@ export function playerFactory() {
     HomePageComponent,
     HomeComponent,
     FooterHomePageComponent,
-    HeaderComponent,
     ProfessionnelComponent,
     PresentationComponent,
     OffresComponent,
@@ -104,22 +90,17 @@ export function playerFactory() {
     InscriptionCoursierComponent,
     CsmComponent,
     AvantagesComponent,
-    PopupFormulaireContactComponent,
-    FooterComponent,
     AvantagesSecteurComponent,
     CoursierPresentationComponent,
-    MentionsLegalesComponent,
-    ConfidentialiteComponent,
-    ConditionsGeneralesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    GoogleMapsModule,
     HttpClientModule,
+    HeaderModule,
+    FooterModule,
     ReactiveFormsModule,
-    RecaptchaV3Module,
     SlickCarouselModule,
     FontAwesomeModule,
     MatDialogModule,
@@ -131,11 +112,10 @@ export function playerFactory() {
     MatButtonModule,
     MatToolbarModule,
     NgxPageScrollModule,
+    LazyLoadImageModule,
     HotToastModule.forRoot(),
-    LottieModule.forRoot({ player: playerFactory }),
   ],
-  providers: [ PopupService, SecteursService, EmailService, {provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha.siteKey}
-  ],
+  providers: [SecteursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

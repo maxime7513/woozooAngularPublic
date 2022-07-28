@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PresentationCoursierComponent implements OnInit {
   @Input() popupInscription: any;
-  
+  defaultImage: string = '/assets/img/coursier/phones_lazy.png';
+  image: string = '/assets/img/coursier/phones.png';
+
   constructor() {
    }
 

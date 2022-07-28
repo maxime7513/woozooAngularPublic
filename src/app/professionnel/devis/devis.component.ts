@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 import { faBox, faLocationDot, faArrowRightArrowLeft, faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
 import { Loader } from '@googlemaps/js-api-loader';
 import { HotToastService } from '@ngneat/hot-toast';
@@ -10,7 +10,7 @@ import { PopupService } from 'src/app/services/popup.service';
   styleUrls: ['./devis.component.scss']
 })
 
-export class DevisComponent implements OnInit {
+export class DevisComponent implements OnInit, AfterViewInit {
   // icone fontawesome
   boxIcon = faBox;
   locationIcon = faLocationDot;
@@ -25,8 +25,8 @@ export class DevisComponent implements OnInit {
   estimation: boolean = false;
 
   constructor(private PopupLivraisonService: PopupService, private toast: HotToastService) { }
-
-  ngOnInit(): void {
+  
+  ngAfterViewInit(): void {
     let loader = new Loader({
       apiKey: "AIzaSyCwEtZWTM3zQsdXs2XA0q3s5qo52OLcips",
       version: "weekly",
@@ -39,6 +39,9 @@ export class DevisComponent implements OnInit {
     })
   }
 
+  ngOnInit(): void {
+  }
+  
   initMap(): void {
     const map = new google.maps.Map(
       document.getElementById("map") as HTMLElement,

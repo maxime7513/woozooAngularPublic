@@ -50,6 +50,16 @@ export class ContenuSecteurComponent implements OnInit, AfterViewInit {
     ]
   }
 
+  cheminSrc: string = "assets/img/professionnel/solutions/"
+  defaultImageRestaurant: string = this.cheminSrc + "restaurant_lazy.png";
+  imageRestaurant: string = this.cheminSrc + "restaurant.png";
+  defaultImageLuxe: string = this.cheminSrc + "luxe_lazy.png";
+  imageLuxe: string = this.cheminSrc + "luxe.png";
+  defaultImageLiberale: string = this.cheminSrc + "liberale_lazy.png";
+  imageLiberale: string = this.cheminSrc + "liberale.png";
+  defaultImageInterMagasin: string = this.cheminSrc + "inter-magasin_lazy.png";
+  imageInterMagasin: string = this.cheminSrc + "inter-magasin.png";
+
   constructor(private data: SecteursService) {
     this.secteurVisible = this.data.secteur;
   }

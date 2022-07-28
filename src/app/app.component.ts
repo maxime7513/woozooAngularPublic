@@ -13,8 +13,62 @@ import { Meta } from '@angular/platform-browser';
   animations: [ slideInAnimation ]
 })
 export class AppComponent {
-  // title = 'woozooAngular';
-  title = 'got-prerender-demo';
+  imgPreloadTab : string[] = [
+    "./assets/img/header/logo-woozoo.png",
+    // professionnel
+    "./assets/img/map.png",
+    "./assets/img/professionnel/presentation/mockup-scoot.png",
+    "./assets/img/professionnel/presentation/appMockup.png",
+    "./assets/img/professionnel/offre/mobile_course-demande.png",
+    "./assets/img/professionnel/offre/mobile_course-demande.png",
+    "./assets/img/professionnel/offre/livreur.png",
+    "./assets/img/professionnel/offre/logo_woozooBox.png",
+    "./assets/img/professionnel/valeurs/securite.png",
+    "./assets/img/professionnel/valeurs/rapide.png",
+    "./assets/img/professionnel/valeurs/qualite.png",
+    "./assets/img/professionnel/valeurs/equitable.png",
+    "./assets/img/professionnel/secteurs/luxe.png",
+    "./assets/img/professionnel/secteurs/sushi.png",
+    "./assets/img/professionnel/secteurs/liberale.png",
+    "./assets/img/professionnel/secteurs/double_arrow.png",
+    "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
+    "./assets/img/professionnel/presentation/mockup-mise_a_disposition2.png",
+    "./assets/img/professionnel/presentation/mockup-mise_a_disposition3.png",
+    "./assets/img/professionnel/partenaire/french-tech.png",
+    "./assets/img/professionnel/partenaire/accelerateur.png",
+    "./assets/img/professionnel/partenaire/axa.png",
+    "./assets/img/professionnel/partenaire/cci.png",
+    "./assets/img/noir-bleu_min.jpg",
+    // header
+    "./assets/img/header/livreur.png",
+    "./assets/img/header/sushi.png",
+    "./assets/img/header/liberale_header.png",
+    // coursier
+    "/assets/img/coursier/phones.png",
+    "./assets/img/coursier/mockup_csm/mockup_notification.png",
+    "./assets/img/coursier/mockup_csm/mockup_coordonnees.png",
+    "./assets/img/coursier/mockup_csm/mockup_recuperation.png",
+    "./assets/img/coursier/mockup_csm/mockup_livraison.png",
+    "./assets/img/coursier/avantages/euro.svg",
+    "./assets/img/coursier/avantages/calendrier.svg",
+    "./assets/img/coursier/avantages/euro3.svg",
+    "./assets/img/coursier/avantages/axa.png",
+    "./assets/img/coursier/avantages/call-center.svg",
+    "./assets/img/coursier/avantages/tenue.svg",
+    // footer
+    "./assets/lottie/woozoo_loop.json",
+    "./assets/img/footer/facebook.svg",
+    "./assets/img/footer/instagram.svg",
+    "./assets/img/footer/linkedin.svg",
+    // secteur
+    "./assets/img/professionnel/solutions/restaurant.png",
+    "./assets/img/professionnel/solutions/luxe.png",
+    "./assets/img/professionnel/solutions/liberale.png",
+    "./assets/img/professionnel/solutions/inter-magasin.png",
+    "./assets/img/professionnel/valeurs/efficace.png",
+    "./assets/img/professionnel/valeurs/flexible.png",
+    "./assets/img/professionnel/solutions/livreur.png"
+  ]
 
   prepareRoute(outlet: RouterOutlet) { // animation router
     return outlet?.activatedRouteData?.['animation'];
@@ -44,7 +98,17 @@ export class AppComponent {
       this.seoService.updateTitle(seoData['title']);
       this.seoService.updateMetaTags(seoData['metaTags']);
     });
+
+    this.preloadImages();
   }
+
+  preloadImages(){
+    this.imgPreloadTab.forEach(imgSrc => {
+      let img = new Image();
+      img.src = imgSrc
+    })
+  }
+
 }
 
 

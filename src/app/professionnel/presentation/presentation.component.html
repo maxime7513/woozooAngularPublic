@@ -1,6 +1,7 @@
 <section>
     <div [class.active]="dotNav == 'presentation1'" class="presentation_commercant">
-        <img src="./assets/img/professionnel/presentation/mockup-scoot.png" alt="scooter livraison">
+        <!-- <img src="./assets/img/professionnel/presentation/mockup-scoot.png" alt="scooter livraison"> -->
+        <img [defaultImage]="defaultImage1" [lazyLoad]="image1" alt="scooter livraison">
         <div>
             <h2>Le service de livraison instantané pour tous les commerces & entreprises</h2>
         </div>
@@ -17,7 +18,7 @@
                 </div>
             </div>
         </ngx-slick-carousel> -->
-        <img src="./assets/img/professionnel/presentation/appMockup.png" alt="sac livraison">
+        <img [defaultImage]="defaultImage2" [lazyLoad]="image2" alt="sac livraison">
         <div>
             <h2>Connectez-vous à la meilleure flotte de livreurs de votre ville</h2>
             <button pageScroll [pageScrollOffset]="120" [pageScrollDuration]="500" href="#devis">Estimation en ligne</button>

@@ -17,6 +17,15 @@ export class PartenairesComponent implements OnInit {
         this.roughtNotationTittle();
       }
   };
+  defautImage1: string = './assets/img/professionnel/partenaire/french-tech_lazy.png';
+  image1: string = './assets/img/professionnel/partenaire/french-tech.png';
+  defautImage2: string = './assets/img/professionnel/partenaire/accelerateur_lazy.png';
+  image2: string = './assets/img/professionnel/partenaire/accelerateur.png';
+  defautImage3: string = './assets/img/professionnel/partenaire/axa_lazy.png';
+  image3: string = './assets/img/professionnel/partenaire/axa.png';
+  defautImage4: string = './assets/img/professionnel/partenaire/cci_lazy.png';
+  image4: string = './assets/img/professionnel/partenaire/cci.png';
+  
   constructor() { }
 
   ngOnInit(): void {

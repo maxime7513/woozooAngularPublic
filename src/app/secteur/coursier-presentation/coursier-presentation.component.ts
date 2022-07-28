@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coursier-presentation.component.scss']
 })
 export class CoursierPresentationComponent implements OnInit {
+  defaultImage: string = "./assets/img/professionnel/solutions/livreur_lazy.png";
+  image: string = "./assets/img/professionnel/solutions/livreur.png";
 
   constructor() { }
 

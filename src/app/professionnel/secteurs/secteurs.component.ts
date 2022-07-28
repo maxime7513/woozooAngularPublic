@@ -18,6 +18,15 @@ export class SecteursComponent implements OnInit {
         this.roughtNotationTittle();
       }
   };
+  defaultImageLuxe: string = 'assets/img/professionnel/secteurs/luxe_lazy.png';
+  imageLuxe: string = 'assets/img/professionnel/secteurs/luxe.png';
+  defautImageRestaurant: string = 'assets/img/professionnel/secteurs/sushi_lazy.png';
+  imageRestaurant: string = 'assets/img/professionnel/secteurs/sushi.png';
+  defautImageLiberale: string = 'assets/img/professionnel/secteurs/liberale_lazy.png';
+  imageLiberale: string = 'assets/img/professionnel/secteurs/liberale.png';
+  defautImageInter: string = 'assets/img/professionnel/secteurs/double_arrow_lazy.png';
+  imageInter: string = 'assets/img/professionnel/secteurs/double_arrow.png';
+
   constructor(private data: SecteursService) { }
 
   ngOnInit(): void {

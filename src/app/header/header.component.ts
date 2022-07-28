@@ -3,6 +3,7 @@ import { PopupService } from '../services/popup.service';
 import { SecteursService } from '../services/secteurs.service';
 import {Location} from "@angular/common";
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { ContactService } from '../shared/contact-dialog/contact.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,8 @@ export class HeaderComponent implements OnInit {
   onWindowScroll() { // classe active sur header au scroll
       this.scrolled = window.scrollY > 50;
   };
-  constructor(private PopupLivraisonService: PopupService, 
+  constructor(private contactService: ContactService,
+              private PopupLivraisonService: PopupService,
               private secteursService: SecteursService,
               private location: Location)
   {
@@ -62,7 +64,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openPopupFormulaire(){ // formulaire de contact
-    this.PopupLivraisonService.openPopupFormulaireContact();
+    this.contactService.openPopupFormulaireContact();
     this.dropdownHeader(); //fermer header mobile
   }
 

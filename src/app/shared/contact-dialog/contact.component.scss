@@ -4,6 +4,7 @@ div{
         top: 0;
         right: 0;
         color: rgba(255,255,255,.9);
+        background: none;
         &:hover{
             color: #fff;
         }
@@ -127,6 +128,9 @@ form{
                 transition: .3s;
             }
         }
+    }
+    mat-error{
+        color: red;
     }
 }
 

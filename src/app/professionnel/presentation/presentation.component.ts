@@ -33,6 +33,10 @@ export class PresentationComponent implements OnInit, OnDestroy {
   //     }
   //   ]
   // };
+  defaultImage1: string = './assets/img/professionnel/presentation/mockup-scoot_lazy.png';
+  image1: string = './assets/img/professionnel/presentation/mockup-scoot.png';
+  defaultImage2: string = './assets/img/professionnel/presentation/appMockup_lazy.png';
+  image2: string = './assets/img/professionnel/presentation/appMockup.png';
 
   constructor(private data: CommentairesService) {
     this.dotNav = 'presentation1';

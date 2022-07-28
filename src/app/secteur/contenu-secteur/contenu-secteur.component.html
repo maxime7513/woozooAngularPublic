@@ -23,7 +23,7 @@
  
             <p>Notre service est accessible de <span id="restaurant">7h00 à minuit, 7j/7</span>.</p>
         </div>
-        <img src="assets/img/professionnel/solutions/restaurant.png" alt="photo restaurant">
+        <img [defaultImage]="defaultImageRestaurant" [lazyLoad]="imageRestaurant" alt="restaurant">
     </div>
 
     <div *ngIf="secteurVisible == 'luxe'">
@@ -39,7 +39,7 @@
                 Choisissez un créneau de livraison qui vous convient et suivez votre livraison en temps réel.
             </p>
         </div>
-        <img src="./assets/img/professionnel/solutions/luxe.png" alt="photo luxe">
+        <img [defaultImage]="defaultImageLuxe" [lazyLoad]="imageLuxe" alt="luxe">
     </div>
     
     <div *ngIf="secteurVisible == 'liberale'">
@@ -58,7 +58,7 @@
                     facilement des <u id="liberale">tournées récurrentes.</u></span>
             </p>
         </div>
-        <img src="./assets/img/professionnel/solutions/liberale.png" alt="photo profession liberale">
+        <img [defaultImage]="defaultImageLiberale" [lazyLoad]="imageLiberale" alt="liberale">
     </div>
 
     <div *ngIf="secteurVisible == 'inter-magasin'">
@@ -76,6 +76,6 @@
                 <li><span id="programmer">programmez vos tournées</span> à l'avance sur notre plateforme spécialement dédié, en quelques clics.</li>
             </ul>
         </div>
-        <img src="./assets/img/professionnel/solutions/inter-magasin.png" class="inter-magasin_photo" alt="ordinateur portable">
+        <img [defaultImage]="defaultImageInterMagasin" [lazyLoad]="imageInterMagasin" alt="inter-magasin">
     </div>
 </section>

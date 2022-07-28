@@ -4,21 +4,21 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { faPhoneSquareAlt, faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 import { HotToastService } from '@ngneat/hot-toast';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
-import { EmailService } from '../services/email.service';
+import { EmailService } from 'src/app/services/email.service';
 
 
 @Component({
-  selector: 'app-popup-formulaire-contact',
-  templateUrl: './popup-formulaire-contact.component.html',
-  styleUrls: ['./popup-formulaire-contact.component.scss']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
 })
-export class PopupFormulaireContactComponent implements OnInit {
+export class ContactComponent implements OnInit {
   phoneIcon = faPhoneSquareAlt;
   paperPlaneIcon = faPaperPlane;
   contactForm: FormGroup;
   formSend: boolean = false;
 
-  constructor(private emailService: EmailService, private recaptchaV3Service: ReCaptchaV3Service, private toast: HotToastService, public dialogRef: MatDialogRef<PopupFormulaireContactComponent>) { }
+  constructor(private emailService: EmailService, private recaptchaV3Service: ReCaptchaV3Service, private toast: HotToastService, public dialogRef: MatDialogRef<ContactComponent>) { }
 
   ngOnInit(): void {
     this.initForm();

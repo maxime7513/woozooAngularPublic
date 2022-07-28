@@ -1,9 +1,8 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { PopupService } from '../services/popup.service';
 import { SecteursService } from '../services/secteurs.service';
 import { Location } from '@angular/common';
 import { AnimationOptions } from 'ngx-lottie';
-import { AnimationItem } from 'lottie-web';
+import { ContactService } from '../shared/contact-dialog/contact.service';
 
 @Component({
   selector: 'app-footer',
@@ -24,7 +23,7 @@ export class FooterComponent implements OnInit {
     }
   }; 
 
-  constructor(private PopupService: PopupService,
+  constructor(private contactService: ContactService,
               private secteursService: SecteursService,
               private location: Location) { }
 
@@ -33,7 +32,7 @@ export class FooterComponent implements OnInit {
   }
 
   openPopupFormulaire(){
-    this.PopupService.openPopupFormulaireContact();
+    this.contactService.openPopupFormulaireContact();
   }
   
   changeSecteur(el: string) { // page secteur

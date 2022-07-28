@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./professionnel.component.scss']
 })
 export class ProfessionnelComponent implements OnInit {
-
+  defaultImage: string = '/assets/img/bg_lazy.jpg';
+  image: string = '/assets/img/map.png';
   constructor() {
   }
 

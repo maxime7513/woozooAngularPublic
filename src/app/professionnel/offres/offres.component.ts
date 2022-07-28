@@ -17,6 +17,13 @@ export class OffresComponent implements OnInit, OnDestroy {
   public hoursToDday: number;
   public daysToDday: number;
   
+  defaultImageDemande: string = './assets/img/professionnel/offre/mobile_course-demande_lazy.png';
+  imageDemande: string = './assets/img/professionnel/offre/mobile_course-demande.png';
+  defaultImageDisposition: string = './assets/img/professionnel/offre/livreur_lazy.png';
+  imageDisposition: string = './assets/img/professionnel/offre/livreur.png';
+  defaultImageBox: string = './assets/img/professionnel/offre/logo_woozooBox_lazy.png';
+  imageBox: string = './assets/img/professionnel/offre/logo_woozooBox.png';
+
   constructor() { }
 
   ngOnDestroy(): void {
