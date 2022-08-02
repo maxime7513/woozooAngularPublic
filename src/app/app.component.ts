@@ -13,7 +13,10 @@ import { Meta } from '@angular/platform-browser';
   animations: [ slideInAnimation ]
 })
 export class AppComponent {
+  title = "Woozoo";
   imgPreloadTab : string[] = [
+    "./assets/lottie/woozoo_loop.json",
+    "./assets/img/home-page/logo-woozoo.png",
     "./assets/img/header/logo-woozoo.png",
     // professionnel
     "./assets/img/map.png",
@@ -56,7 +59,6 @@ export class AppComponent {
     "./assets/img/coursier/avantages/call-center.svg",
     "./assets/img/coursier/avantages/tenue.svg",
     // footer
-    "./assets/lottie/woozoo_loop.json",
     "./assets/img/footer/facebook.svg",
     "./assets/img/footer/instagram.svg",
     "./assets/img/footer/linkedin.svg",
@@ -67,7 +69,7 @@ export class AppComponent {
     "./assets/img/professionnel/solutions/inter-magasin.png",
     "./assets/img/professionnel/valeurs/efficace.png",
     "./assets/img/professionnel/valeurs/flexible.png",
-    "./assets/img/professionnel/solutions/livreur.png"
+    "./assets/img/professionnel/solutions/livreur.png",
   ]
 
   prepareRoute(outlet: RouterOutlet) { // animation router
@@ -80,7 +82,7 @@ export class AppComponent {
     this.metaTagService.addTags([
       { name: 'author', content: 'Maxime Bleunven' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:image', content: 'https://www.woozoo.io/assets/img/woozoo-meta_img.png' },
+      { property: 'og:image', content: 'https://www.woozoo-livraison.com/assets/img/woozoo-meta_img.png' },
       { charset: 'UTF-8' },
     ]);
 

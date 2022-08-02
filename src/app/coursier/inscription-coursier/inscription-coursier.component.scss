@@ -95,6 +95,12 @@ form{
                 line-height: 1.2;
             }
         }
+        .mat-form-field-ripple{
+            background: var(--blue-secondary) !important;
+        }
+        .mat-form-field.mat-form-field-invalid .mat-form-field-ripple{
+            background-color: #f44336 !important;
+        }
     }
     #capacite{
         align-items: center;
@@ -137,9 +143,6 @@ form{
                 border-color: var(--blue-primary) !important;
             }
         }
-    }
-    mat-error{
-        color: red;
     }
     > mat-error{
         font-size: 12px;

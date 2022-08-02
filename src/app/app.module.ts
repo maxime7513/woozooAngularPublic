@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // module
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,6 +24,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
+// Note we need a separate function as it's required for LOTTIE
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
+
 // mes modules
 import { HeaderModule } from './modules/header/header.module';
 import { FooterModule } from './modules/footer/footer.module';
@@ -30,6 +38,7 @@ import { FooterModule } from './modules/footer/footer.module';
 import { AppComponent } from './app.component';
 
 // home page
+import { LoaderComponent } from './loader/loader.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { FooterHomePageComponent } from './home-page/footer-home-page/footer-home-page.component';
@@ -64,7 +73,6 @@ import { AvantagesComponent } from './coursier/avantages/avantages.component';
 // service
 import { SecteursService } from './services/secteurs.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,12 +100,14 @@ import { SecteursService } from './services/secteurs.service';
     AvantagesComponent,
     AvantagesSecteurComponent,
     CoursierPresentationComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    LottieModule.forRoot({ player: playerFactory }),
     HeaderModule,
     FooterModule,
     ReactiveFormsModule,

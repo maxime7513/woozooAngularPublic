@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SecteursService } from '../services/secteurs.service';
 import { Location } from '@angular/common';
 import { AnimationOptions } from 'ngx-lottie';

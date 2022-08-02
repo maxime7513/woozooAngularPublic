@@ -30,6 +30,7 @@ export class ValeursComponent implements OnInit {
     "slidesToScroll": 1,
     "autoplay": true,
     "arrows": false,
+    "pauseOnFocus": false,
     responsive: [
       {
         breakpoint: 551,

@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faBox, faLocationDot, faArrowRightArrowLeft, faRoad, faClock, faCreditCard, faRedo } from '@fortawesome/free-solid-svg-icons';
 import { Loader } from '@googlemaps/js-api-loader';
 import { HotToastService } from '@ngneat/hot-toast';
@@ -10,7 +10,7 @@ import { PopupService } from 'src/app/services/popup.service';
   styleUrls: ['./devis.component.scss']
 })
 
-export class DevisComponent implements OnInit, AfterViewInit {
+export class DevisComponent implements OnInit {
   // icone fontawesome
   boxIcon = faBox;
   locationIcon = faLocationDot;
@@ -25,8 +25,8 @@ export class DevisComponent implements OnInit, AfterViewInit {
   estimation: boolean = false;
 
   constructor(private PopupLivraisonService: PopupService, private toast: HotToastService) { }
-  
-  ngAfterViewInit(): void {
+
+  ngOnInit(): void {
     let loader = new Loader({
       apiKey: "AIzaSyCwEtZWTM3zQsdXs2XA0q3s5qo52OLcips",
       version: "weekly",
@@ -37,9 +37,6 @@ export class DevisComponent implements OnInit, AfterViewInit {
       this.initMap();
       this.resizeMap();
     })
-  }
-
-  ngOnInit(): void {
   }
   
   initMap(): void {
@@ -216,7 +213,7 @@ export class DevisComponent implements OnInit, AfterViewInit {
   resizeMap(){ // map qui reste carré (responsive)
     let map = document.getElementById("map") as HTMLElement,
     mapWidth = map.clientWidth,
-    calcHeightMap:any = mapWidth * 0.685;
+    calcHeightMap: number = mapWidth * 0.685;
     map.style.height = calcHeightMap + "px";
   }
 

@@ -60,49 +60,29 @@ form{
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        ::ng-deep mat-form-field{
-            color: #fff;
-            &:not(.message){
-                width: 45%;
+        ::ng-deep{
+            mat-form-field{
+                color: #fff;
+                &:not(.message){
+                    width: 45%;
+                }
+                &.message{
+                    width: 100%;
+                }
+                label{
+                    color: #fff !important;
+                }
+                .mat-form-field-underline{
+                    background: #ccc !important;
+                }
+                .mat-form-field-ripple{
+                    background: #0eb3b7 !important;
+                }
             }
-            &.message{
-                width: 100%;
-            }
-            label{
-                color: #fff !important;
-            }
-            .mat-form-field-underline{
-                background: #ccc !important;
-            }
-            .mat-form-field.mat-focused, .mat-form-field-ripple{
-                background: #0eb3b7 !important;
-            }
-            .mat-input-element{
-                caret-color: #0eb3b7;
+            .mat-form-field-invalid .mat-form-field-ripple{
+                background-color: #f44336 !important;
             }
         }
-        // input{
-        //     width: 45%;
-        //     height: 30px;
-        //     margin-bottom: 20px;
-        //     padding-left: 7px;
-        //     border: none;
-        //     color: #0971a4;
-        //     border-radius: 4px;
-        //     overflow: hidden;
-        //     text-overflow: ellipsis;
-        //     @media screen and (max-width : 430px){
-        //         width: 100%;
-        //     }
-        // }
-        // textarea{
-        //     width: 100%;
-        //     margin-bottom: 20px;
-        //     padding: 7px 0 0 7px;
-        //     border: none;
-        //     color: #0971a4;
-        //     border-radius: 4px;
-        // }
     }
     button{
         position: relative;
@@ -128,9 +108,6 @@ form{
                 transition: .3s;
             }
         }
-    }
-    mat-error{
-        color: red;
     }
 }
 

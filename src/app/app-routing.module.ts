@@ -10,7 +10,7 @@ const routes: Routes = [
     data: {
       animation: 'Home',
       seo: {
-        title: 'Woozoo | Solution de livraison rapide, flexible et sécurisée',
+        title: 'Woozoo • Solution de livraison rapide, flexible et sécurisée',
         metaTags: [
           { name: 'description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
           { property: 'og:title', content: 'Woozoo | Solution de livraison rapide, flexible et sécurisée' },
@@ -25,9 +25,9 @@ const routes: Routes = [
       seo: {
         title: 'Livraison pour tous les commerces et entreprises',
         metaTags: [
-          { name: 'description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+          { name: 'description', content: 'Connectez-vous à la meilleur flotte de livreurs de votre ville. Woozoo est le service de livraison instantané pour tous les commerces et entreprises' },
           { property: 'og:title', content: 'Woozoo | Livraison pour tous les commerces et entreprises' },
-          { proprety: 'og:description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+          { proprety: 'og:description', content: 'Connectez-vous à la meilleur flotte de livreurs de votre ville. Woozoo est le service de livraison instantané pour tous les commerces et entreprises' },
         ]
       }
     } 
@@ -61,17 +61,47 @@ const routes: Routes = [
   {
     path: 'mentionsLegales',
     loadChildren: () => import('./modules/mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule),
-    data: {animation: 'MentionsLegales'}
+    data: {
+      animation: 'MentionsLegales',
+      seo: {
+        title: "Woozoo • Mentions légales",
+        metaTags: [
+          { name: 'description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+          { property: 'og:title', content: 'Woozoo • Mentions légales' },
+          { proprety: 'og:description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+        ]
+      }
+    }
   },
   {
     path: 'confidentialite',
     loadChildren: () => import('./modules/confidentialite/confidentialite.module').then(m => m.ConfidentialiteModule),
-    data: {animation: 'Confidentialite'}
+    data: {
+      animation: 'Confidentialite',
+      seo: {
+        title: "Woozoo • Confidentialité",
+        metaTags: [
+          { name: 'description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+          { property: 'og:title', content: 'Woozoo • Confidentialité' },
+          { proprety: 'og:description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+        ]
+      }
+    }
   },
   {
     path: 'conditionsGenerales',
     loadChildren: () => import('./modules/conditions/conditions.module').then(m => m.ConditionsModule),
-    data: {animation: 'ConditionsGenerales'}
+    data: {
+      animation: 'ConditionsGenerales',
+      seo: {
+        title: "Woozoo • Conditions générales",
+        metaTags: [
+          { name: 'description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+          { property: 'og:title', content: 'Woozoo • Conditions générales' },
+          { proprety: 'og:description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+        ]
+      }
+    }
   },
 ];
 
