@@ -34,14 +34,6 @@ export class AppComponent {
     "./assets/img/professionnel/secteurs/sushi.png",
     "./assets/img/professionnel/secteurs/liberale.png",
     "./assets/img/professionnel/secteurs/double_arrow.png",
-    "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
-    "./assets/img/professionnel/presentation/mockup-mise_a_disposition2.png",
-    "./assets/img/professionnel/presentation/mockup-mise_a_disposition3.png",
-    "./assets/img/professionnel/partenaire/french-tech.png",
-    "./assets/img/professionnel/partenaire/accelerateur.png",
-    "./assets/img/professionnel/partenaire/axa.png",
-    "./assets/img/professionnel/partenaire/cci.png",
-    "./assets/img/noir-bleu_min.jpg",
     // header
     "./assets/img/header/livreur.png",
     "./assets/img/header/sushi.png",
@@ -52,6 +44,18 @@ export class AppComponent {
     "./assets/img/coursier/mockup_csm/mockup_coordonnees.png",
     "./assets/img/coursier/mockup_csm/mockup_recuperation.png",
     "./assets/img/coursier/mockup_csm/mockup_livraison.png",
+    // poster video homepage
+    "./assets/img/background-video_img.jpg",
+    // professionnel
+    "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
+    "./assets/img/professionnel/presentation/mockup-mise_a_disposition2.png",
+    "./assets/img/professionnel/presentation/mockup-mise_a_disposition3.png",
+    "./assets/img/professionnel/partenaire/french-tech.png",
+    "./assets/img/professionnel/partenaire/accelerateur.png",
+    "./assets/img/professionnel/partenaire/axa.png",
+    "./assets/img/professionnel/partenaire/cci.png",
+    "./assets/img/noir-bleu_min.jpg",
+    // coursier
     "./assets/img/coursier/avantages/euro.svg",
     "./assets/img/coursier/avantages/calendrier.svg",
     "./assets/img/coursier/avantages/euro3.svg",
@@ -69,7 +73,7 @@ export class AppComponent {
     "./assets/img/professionnel/solutions/inter-magasin.png",
     "./assets/img/professionnel/valeurs/efficace.png",
     "./assets/img/professionnel/valeurs/flexible.png",
-    "./assets/img/professionnel/solutions/livreur.png",
+    "./assets/img/professionnel/solutions/livreur.png"
   ]
 
   prepareRoute(outlet: RouterOutlet) { // animation router
@@ -82,7 +86,7 @@ export class AppComponent {
     this.metaTagService.addTags([
       { name: 'author', content: 'Maxime Bleunven' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:image', content: 'https://www.woozoo-livraison.com/assets/img/woozoo-meta_img.png' },
+      { property: 'og:image', content: './assets/img/woozoo-meta_img.png' },
       { charset: 'UTF-8' },
     ]);
 
