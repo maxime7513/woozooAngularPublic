@@ -82,7 +82,7 @@ export class InscriptionCoursierComponent implements OnInit {
   activerPopup(){
     this.toast.close();
     this.afficherPopup = true;
-    this.toast.info("Remplis ce formulaire d'inscription pour faire partie de l'équipe Woozoo");
+    this.toast.info("Remplis ce formulaire d'inscription pour faire partie de l'équipe Woozoo", {position: 'bottom-center'});
   }
 
   submit(){
