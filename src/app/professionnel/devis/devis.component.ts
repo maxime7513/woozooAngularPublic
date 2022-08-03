@@ -124,16 +124,16 @@ export class DevisComponent implements OnInit {
     service = new google.maps.DistanceMatrixService();
   
     if(!origin){
-      this.toast.error('Renseigner l\'adresse de départ');
+      this.toast.error('Renseigner l\'adresse de départ', {position: 'bottom-center'});
       return
     }else if(!destination){
-      this.toast.error('Renseigner l\'adresse de livraison');
+      this.toast.error('Renseigner l\'adresse de livraison', {position: 'bottom-center'});
       return
     }
 
     if(!AutocompleteDirectionsHandler.adresseValide){
-      this.toast.error('Veuillez sélectionner une des adresses proposée');
-      this.toast.info('service disponible uniquement 35km autour de Marseille')
+      this.toast.error('Veuillez sélectionner une des adresses proposée', {position: 'bottom-center'});
+      this.toast.info('service disponible uniquement 35km autour de Marseille', {position: 'bottom-center'})
       return
     }
 
