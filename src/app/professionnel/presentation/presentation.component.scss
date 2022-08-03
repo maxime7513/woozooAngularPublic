@@ -43,6 +43,9 @@ section{
         }
         &.active{
         opacity: 1;
+            button{
+                pointer-events: all;
+            }
         }
         > div:not(#container-commentaire_presentation){
             display: flex;
@@ -83,6 +86,7 @@ section{
         cursor: pointer;
         transition: .4s;
         z-index: 1;
+        pointer-events: none;
         @media screen and (max-width : 800px){
             font-size: 15px;
             margin-top: 13px;

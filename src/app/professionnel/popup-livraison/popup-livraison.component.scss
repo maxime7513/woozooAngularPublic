@@ -10,9 +10,11 @@ div{
         }
     }
     .mat-dialog-content{
-        margin: 0 !important;
-        padding: 10px 20px !important;
         overflow: unset !important;
+        @media screen and (min-width : 700px){
+            margin: 0 !important;
+            padding: 10px 20px !important;
+        }
         p{
             color: #fff;
             text-align: center;
@@ -22,13 +24,23 @@ div{
                 font-size: 44px;
                 vertical-align: text-bottom;
                 margin-right: 10px;
+                @media screen and (max-width : 700px){
+                    font-size: 30px;
+                }
             }
             &:first-of-type{
                 font-size: 26px;
+                @media screen and (max-width : 700px){
+                    font-size: 20px;
+                    margin-top: 10px;
+                }
             }
             &:last-of-type{
                 font-size: 36px;
                 margin-top: 13px;
+                @media screen and (max-width : 700px){
+                    font-size: 25px;
+                }
             }
         }
     }
