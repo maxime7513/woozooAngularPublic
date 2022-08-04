@@ -1,7 +1,14 @@
 <header [class.active]="scrolled && this.headerPage != 'mentionsLegales'" [ngClass]="{'secteur': this.headerPage == 'secteur', 'mentions_legales': this.headerPage == 'mentionsLegales' }">
     <a routerLink=""><img src="./assets/img/header/logo-woozoo.png" alt="woozoo"></a>
     <nav>
-        <button *ngIf="getScreenWidth < 800" (click)="dropdownHeader()" id="menu-hamburger"><fa-icon [icon]="barreIcon"></fa-icon></button>
+        <button *ngIf="getScreenWidth < 800" (click)="dropdownHeader()" id="menu-hamburger" [class.active]="headerMobileShow">
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </button>
+
         <div class="header-dropdown" [ngClass]="{'mobile': getScreenWidth < 800, 'show': headerMobileShow}">
             <a routerLink="{{ cheminRouterLink }}">Accueil</a>
             <a *ngIf="headerPage === 'coursier'" (click)="scroll('avantages',100)">Nos Avantages</a>

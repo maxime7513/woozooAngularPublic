@@ -2,7 +2,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { PopupService } from '../services/popup.service';
 import { SecteursService } from '../services/secteurs.service';
 import {Location} from "@angular/common";
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ContactService } from '../shared/contact-dialog/contact.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class HeaderComponent implements OnInit {
   solutionsSubMenu : boolean;
   secteursSubMenu : boolean;
   logoWoozoo : string;
-  barreIcon : any;
   headerPage: string = '';
   scrolled: boolean;
   boutonContact : string = '';
@@ -35,7 +33,6 @@ export class HeaderComponent implements OnInit {
     this.headerMobileShow = false;
     this.solutionsSubMenu = false;
     this.secteursSubMenu = false;
-    this.barreIcon = faBars;
     this.getScreenWidth = window.innerWidth;
   }
 
@@ -45,11 +42,6 @@ export class HeaderComponent implements OnInit {
 
   dropdownHeader(){
     this.headerMobileShow = !this.headerMobileShow;
-    if(this.headerMobileShow){
-      this.barreIcon = faTimes;
-    }else{
-      this.barreIcon = faBars;
-    }
   }
 
   scroll(el: string, reglageHeight: number){ // function scroll
