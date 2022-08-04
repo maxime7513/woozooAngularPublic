@@ -8,6 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // module
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+// Note we need a separate function as it's required for LOTTIE
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,12 +29,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-
-// Note we need a separate function as it's required for LOTTIE
-// by the AOT compiler.
-export function playerFactory() {
-  return player;
-}
 
 // mes modules
 import { HeaderModule } from './modules/header/header.module';

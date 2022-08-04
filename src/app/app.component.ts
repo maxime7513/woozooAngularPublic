@@ -44,12 +44,13 @@ export class AppComponent {
     "./assets/img/coursier/mockup_csm/mockup_coordonnees.png",
     "./assets/img/coursier/mockup_csm/mockup_recuperation.png",
     "./assets/img/coursier/mockup_csm/mockup_livraison.png",
-    // poster video homepage
-    "./assets/img/background-video_img.jpg",
     // professionnel
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition2.png",
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition3.png",
+    // background image homepage
+    "./assets/img/background-video_img.jpg",
+    // professionnel
     "./assets/img/professionnel/partenaire/french-tech.png",
     "./assets/img/professionnel/partenaire/accelerateur.png",
     "./assets/img/professionnel/partenaire/axa.png",

@@ -22,9 +22,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   checkVideoLoad(){
     const video = this.videoplayer.nativeElement;
     video.oncanplay = () => {
+      console.log('oncanplay')
       if(!video.paused){
+        console.log('tourne deja')
         return
       }else{
+        console.log('play')
         video.muted = true; // In chrome without this line it's not working although "muted" in HTML
         video.play();
         // video.play().then(() => {}).catch((error: any) => {
@@ -34,7 +37,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     };
   }
 
-  checkImgLoad(){
+  checkPosterVideoLoad(){
     var posterVideo = this.videoplayer.nativeElement.getAttribute('poster')
     if(posterVideo){
       var image = new Image();
@@ -43,6 +46,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.loaderService.change();
       };
     }
+  }
+
+  checkImgLoad(){
+    var image = new Image();
+    image.src = '/assets/img/background-video_img.jpg';
+    image.onload = () => {
+      this.loaderService.change();
+    };
   }
 
 }
