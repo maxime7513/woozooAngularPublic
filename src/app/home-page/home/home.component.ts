@@ -22,12 +22,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   checkVideoLoad(){
     const video = this.videoplayer.nativeElement;
     video.oncanplay = () => {
-      console.log('oncanplay')
       if(!video.paused){
-        console.log('tourne deja')
         return
       }else{
-        console.log('play')
         video.muted = true; // In chrome without this line it's not working although "muted" in HTML
         video.play();
         // video.play().then(() => {}).catch((error: any) => {
