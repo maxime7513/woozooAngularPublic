@@ -8,7 +8,6 @@ import { SecteursService } from 'src/app/services/secteurs.service';
   styleUrls: ['./contenu-secteur.component.scss']
 })
 export class ContenuSecteurComponent implements OnInit, AfterViewInit {
-  getScreenWidth: any;
   secteurVisible: string;
   @Input() avantagesVisible: any;
   secteurs: Array<{value: string, viewValue: string}> = [
@@ -63,7 +62,6 @@ export class ContenuSecteurComponent implements OnInit, AfterViewInit {
 
   constructor(private data: SecteursService) {
     this.secteurVisible = this.data.secteur;
-    this.getScreenWidth = window.innerWidth;
   }
 
   ngOnInit(): void {
@@ -106,11 +104,7 @@ export class ContenuSecteurComponent implements OnInit, AfterViewInit {
       }
       let underline;
       if(elementId == 'luxe'){
-        if(this.getScreenWidth < 600){
-          underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true });
-        }else{
           underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'box', color: '#0eb3b7', padding: [7,10], multiline: true });
-        }
       }else{
         underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true });
       }
