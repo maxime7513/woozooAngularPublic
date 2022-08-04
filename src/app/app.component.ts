@@ -46,7 +46,6 @@ export class AppComponent {
     "./assets/img/coursier/mockup_csm/mockup_livraison.png",
     // professionnel
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
-    "./assets/img/professionnel/presentation/mockup-mise_a_disposition2.png",
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition3.png",
     // background image homepage
     "./assets/img/background-video_img.jpg",

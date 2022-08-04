@@ -29,7 +29,7 @@ export class MiseDispositionDetailsComponent implements OnInit, OnDestroy {
       }
   };
   defautImage: string = './assets/img/professionnel/presentation/mockup-mise_a_disposition_lazy.png';
-  slides: string[] = ['./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png', './assets/img/professionnel/presentation/mockup-mise_a_disposition2.png', './assets/img/professionnel/presentation/mockup-mise_a_disposition3.png'];
+  slides: string[] = ['./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png', './assets/img/professionnel/presentation/mockup-mise_a_disposition3.png'];
   imageShowSlides: string = this.slides[0];
   indexSlider: number = 1;
 
