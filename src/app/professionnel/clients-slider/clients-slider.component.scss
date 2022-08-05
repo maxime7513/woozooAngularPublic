@@ -28,7 +28,11 @@ section{
         }
     }
     img{
-        width: 120px;
+        height: 70px;
+        width: auto;
         margin: auto;
+        @media screen and (max-width : 550px){
+            height: 60px;
+        }
     }
 }

@@ -38,7 +38,7 @@ export class ClientsSliderComponent implements OnInit {
         }
       },
       {
-        breakpoint: 650,
+        breakpoint: 600,
         settings: {
           slidesToShow: 2
         }
