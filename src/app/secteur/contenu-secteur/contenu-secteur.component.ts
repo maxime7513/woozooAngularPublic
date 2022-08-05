@@ -102,12 +102,7 @@ export class ContenuSecteurComponent implements OnInit, AfterViewInit {
       if(this.secteurVisible != elementId){ // utilisateur a changer de secteurs avant le debut de la fonction
         return
       }
-      let underline;
-      if(elementId == 'luxe'){
-          underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'box', color: '#0eb3b7', padding: [7,10], multiline: true });
-      }else{
-        underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true });
-      }
+      let underline = annotate(document.getElementById(elementId) as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true });
       underline.show();
     }, 3500);
   }

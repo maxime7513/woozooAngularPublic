@@ -8,14 +8,13 @@
     <div *ngIf="secteurVisible == 'restaurant'">
         <div class="restaurant">
             <h3>Externaliser votre logistique, déchargez-vous de sa gestion</h3>
-            <p>Différents services afin de s'adapter au mieux à vos besoins</p>
             <ul>
                 <li>
-                    <span>Livraison à la demande</span><br>Commander un coursier à la demande pour chacune de vos livraisons, et suivez les en temps réel grâce à notre application.<br>
+                    <strong>Livraison à la demande</strong><br>Commander un coursier à la demande pour chacune de vos livraisons, et suivez les en temps réel grâce à notre application.<br>
                     <b>Tarification à la course.</b>
                 </li>
                 <li>
-                    <span>Mise à disposition de coursiers</span><br>Ce service s’adapte à vos besoins et met à votre disposition un ou plusieurs livreurs, <span>entièrement dédié à votre activité</span>.
+                    <strong>Mise à disposition de coursiers</strong><br>Ce service s’adapte à vos besoins et met à votre disposition un ou plusieurs livreurs, <span>entièrement dédié à votre activité</span>.
                     Mieux qu’un simple service de livraison, un coursier formé à vos méthodes est mis à votre disposition et travaille <span>selon vos besoins</span>.<br>
                     <b>Tarification à la demi-heure.</b>
                 </li>
@@ -28,15 +27,18 @@
 
     <div *ngIf="secteurVisible == 'luxe'">
         <div>
-            <h3>Proposer une livraison haut de gamme, unique et sur-mesure</h3>
+            <h3>Ne passer plus à côtés des besoins de vos clients</h3>
+            <ul>
+                <li>
+                    <strong>Renforcer votre image de marque</strong> avec une livraison de qualité, fidèle à vos valeurs et à l'image de votre entreprise.
+                </li>
+                <li>
+                    <strong>Proposer une livraison haut de gamme</strong>, sécurisée et sur-mesure à l'image de votre marque. 
+                </li>
+            </ul>
             <p>
-                Ne passez plus à côté des besoins de vos clients, offrez leur une expérience inégalé avec une livraison garantie <span>haut de gamme et sécurisée, à l'image de votre marque</span>.
-                Grâce à notre service de coursiers de proximité disponible 7j/7, offrez à l'ensemble de vos consommateurs un mode de livraison à la demande, extrêmement rapide et équitable.
-            </p>
-            <h4 id="luxe">Renforcez votre image de marque</h4>
-            <p>
-                Woozoo sélectionne les meilleurs coursiers pour réaliser des <span>livraisons de qualités, fidèles à vos valeurs et votre marque</span>.
-                Choisissez un créneau de livraison qui vous convient et suivez votre livraison en temps réel.
+                Grâce à notre service de coursiers de proximité disponible 7j/7, <span>offrez à l'ensemble de vos consommateurs <u id="luxe">un mode de livraison à la demande</u></span>,
+                extrêmement rapide et équitable.
             </p>
         </div>
         <img [defaultImage]="defaultImageLuxe" [lazyLoad]="imageLuxe" alt="luxe">
@@ -44,19 +46,22 @@
     
     <div *ngIf="secteurVisible == 'liberale'">
         <div>
-            <h3>Connectez-vous à la meilleur flotte de livreurs de votre ville</h3>
-            <p>
-                <strong>Vous êtes avocat ou notaire</strong> et vous avez <span>un pli très urgent à livrer?</span> Grâce à notre livraison express à la demande, votre pli sera chez son destinataire
-                en moins de deux heures.
-            </p>
-            <p>
-                <strong>Vous êtes prothésiste dentaire</strong> et vous souhaitez livrer plusieurs cabinets de dentiste en même temps? Grâce à notre plateforme vous pouvez <span>créer votre tournée
-                de livraison en quelque clics</span>.
-            </p>
-            <p>
-                <strong>Vous êtes tailleur-couturier</strong> et vous souhaitez livrer vos clients à interval régulier? Notre plateforme vous offre la possibilité de <span>créer très
+            <h3>Un pli très urgent à livrer?</h3>
+            <p>Connectez-vous à la meilleur flotte de livreurs de votre ville.</p>
+            <ul>
+                <li>
+                    <strong>Vous êtes avocat ou notaire</strong>, grâce à notre livraison express à la demande, votre pli sera chez son destinataire
+                    en moins de deux heures.
+                </li>
+                <li>
+                    <strong>Vous êtes prothésiste dentaire</strong> et vous souhaitez livrer plusieurs praticien dentaire en même temps? Grâce à notre plateforme vous pouvez <span>créer votre tournée
+                    de livraison en quelque clics</span>.
+                </li>
+                <li>
+                    <strong>Vous êtes tailleur-couturier</strong> et vous souhaitez livrer vos clients à interval régulier? Notre plateforme vous offre la possibilité de <span>créer très
                     facilement des <u id="liberale">tournées récurrentes.</u></span>
-            </p>
+                </li>
+            </ul>
         </div>
         <img [defaultImage]="defaultImageLiberale" [lazyLoad]="imageLiberale" alt="liberale">
     </div>
@@ -67,13 +72,16 @@
             <p>Simplifiez le transfert de marchandises entre vos magasins, grâce à notre service de livraison.</p>
             <h4>Départ entrepot urbain</h4>
             <p>
-                Une solution de livraison innovante pour les professionnels de la logistique.
-                Fini les ruptures de stocks, choisissez la bonne stratégie pour <u id="inter-magasin">réapprovisionnez vos points de vente</u> :
+                Fini les ruptures de stocks, choisissez la bonne stratégie pour <span id="inter-magasin">réapprovisionnez vos points de vente</span> :
             </p>
             <p></p>
             <ul>
-                <li>Optez pour une <span>livraison express à la demande</span> pour transferez vos marchandise entre points de vente</li>
-                <li><span id="programmer">programmez vos tournées</span> à l'avance sur notre plateforme spécialement dédié, en quelques clics.</li>
+                <li>
+                    <strong>Optez pour une livraison express à la demande</strong>, pour transferez vos marchandise entre points de vente.
+                </li>
+                <li>
+                    <strong>Programmez vos tournées</strong> à l'avance sur notre plateforme spécialement dédié, en quelques clics.
+                </li>
             </ul>
         </div>
         <img [defaultImage]="defaultImageInterMagasin" [lazyLoad]="imageInterMagasin" alt="inter-magasin">

@@ -39,7 +39,6 @@
 }
 
 section{
-    // overflow: hidden;
     padding: 100px 0 70px 0;
     > div:not(#header_secteurs_details){
         display: flex;
@@ -111,13 +110,6 @@ section{
             color: var(--blue-secondary);
             font-weight: 500;
         }
-        b{
-            font-size: 16px;
-            font-weight: 400;
-            @media screen and (max-width : 600px){
-                font-size: 13px;
-            }
-        }
         strong{
             font-weight: 600;
             color: #0eb3b7;
@@ -134,8 +126,12 @@ section{
             left: -18px;
             width: 15px;
         }
-        span:first-of-type{
-            font-weight: 600;
+        b{
+            font-size: 16px;
+            font-weight: 400;
+            @media screen and (max-width : 600px){
+                font-size: 13px;
+            }
         }
     }
     u{
