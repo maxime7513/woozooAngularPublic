@@ -60,15 +60,14 @@ section{
                     font-weight: 600;
                     color: #72efa8;
                     margin-bottom: 13px;
+                    cursor: pointer;
                 }
                 &:nth-of-type(2){
                     color: #fff;
                     line-height: 1.1;
-                    &.mobile{
-                        display: none;
-                        &.show{
-                            display: block;
-                        }
+                    display: none;
+                    &.show{
+                        display: block;
                     }
                 }
                 fa-icon{

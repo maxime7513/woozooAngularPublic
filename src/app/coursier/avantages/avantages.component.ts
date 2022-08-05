@@ -13,7 +13,7 @@ export class AvantagesComponent implements OnInit {
   avantages: Array<{image: string, titre: string, texte: string}> = [
     {image: "euro.svg",
     titre: "Une rémunération équitable",
-    texte: "Nous garantissons à nos livreurs 4 euros minimum par course. Nos livreurs partenaires peuvent gagner 15 euros HT minimum de l'heure."
+    texte: "Nous garantissons à nos livreurs partenaire une rémunération juste et équitable."
     },
     {image: "calendrier.svg",
     titre: "Gérez votre planning",
@@ -36,19 +36,19 @@ export class AvantagesComponent implements OnInit {
     texte: "Nous vous fournissons tout l’équipement nécessaire (sac et tenue), totalement personnalisé pour apporter un côté fun à vos livraisons."
     }
   ];
-  getScreenWidth: any;
+  // getScreenWidth: any;
   constructor() {
-    this.getScreenWidth = window.innerWidth;
+    // this.getScreenWidth = window.innerWidth;
   }
 
   ngOnInit(): void {}
 
   showDetails(el: number, el2: number){
-    if(this.getScreenWidth < 700){
+    // if(this.getScreenWidth < 700){
       let chevron = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') fa-icon svg');
       let detailsAvantages = <HTMLElement>document.querySelector('#avantages div:nth-of-type('+ el +') div:nth-of-type('+ el2 +') p:last-of-type');
       chevron.classList.toggle('rotate');
       detailsAvantages.classList.toggle('show');
-    }
+    // }
   }
 }
