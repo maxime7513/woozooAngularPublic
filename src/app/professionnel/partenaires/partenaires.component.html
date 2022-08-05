@@ -1,9 +1,14 @@
 <section id="partenaires">
     <h2 class="h2">Nos partenaires</h2>
-    <div>
+    <!-- <div>
         <img [defaultImage]="defautImage1" [lazyLoad]="image1" alt="french-tech">
         <img [defaultImage]="defautImage2" [lazyLoad]="image2" alt="accelerateur">
         <img [defaultImage]="defautImage3" [lazyLoad]="image3" alt="axa assurance">
         <img [defaultImage]="defautImage4" [lazyLoad]="image4" alt="cci">
-    </div>
+    </div> -->
+    <ngx-slick-carousel #slickModal="slick-carousel" id="slider-partenaires" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of slides">
+          <img src="{{ slide.img }}" alt="logo partenaires" width="100%">
+        </div>
+    </ngx-slick-carousel>
 </section>
