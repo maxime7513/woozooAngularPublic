@@ -18,13 +18,13 @@ export class PartenairesComponent implements OnInit {
       }
   };
   slides = [
-    {img: "./assets/img/professionnel/partenaire/french-tech.png"},
-    {img: "./assets/img/professionnel/partenaire/cci.png"},
-    {img: "./assets/img/professionnel/partenaire/accelerateur.png"},
-    {img: "./assets/img/professionnel/partenaire/imm.png"},
-    {img: "./assets/img/professionnel/partenaire/bpi.png"},
-    {img: "./assets/img/professionnel/partenaire/axa.png"},
-    {img: "./assets/img/professionnel/partenaire/capital-innovation.png"},
+    {entreprise: "French Tech", lazyImg: "./assets/img/professionnel/partenaire/french-tech_lazy.png", img: "./assets/img/professionnel/partenaire/french-tech.png"},
+    {entreprise: "CCI", lazyImg: "./assets/img/professionnel/partenaire/cci_lazy.png", img: "./assets/img/professionnel/partenaire/cci.png"},
+    {entreprise: "Accelerateur M", lazyImg: "./assets/img/professionnel/partenaire/accelerateur_lazy.png", img: "./assets/img/professionnel/partenaire/accelerateur.png"},
+    {entreprise: "IMM", lazyImg: "./assets/img/professionnel/partenaire/imm_lazy.png", img: "./assets/img/professionnel/partenaire/imm.png"},
+    {entreprise: "BPI", lazyImg: "./assets/img/professionnel/partenaire/bpi_lazy.png", img: "./assets/img/professionnel/partenaire/bpi.png"},
+    {entreprise: "AXA", lazyImg: "./assets/img/professionnel/partenaire/axa_lazy.png", img: "./assets/img/professionnel/partenaire/axa.png"},
+    {entreprise: "Capital-innovation", lazyImg: "./assets/img/professionnel/partenaire/capital-innovation_lazy.png", img: "./assets/img/professionnel/partenaire/capital-innovation.png"}
   ];
   slideConfig = {
     "slidesToShow": 5,

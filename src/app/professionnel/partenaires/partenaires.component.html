@@ -2,7 +2,7 @@
     <h2 class="h2">Nos partenaires</h2>
     <ngx-slick-carousel #slickModal="slick-carousel" id="slider-partenaires" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let slide of slides">
-          <img src="{{ slide.img }}" alt="logo partenaires">
+          <img [defaultImage]="slide.lazyImg" [lazyLoad]="slide.img" alt="{{ slide.entreprise }}">
         </div>
     </ngx-slick-carousel>
 </section>
