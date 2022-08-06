@@ -18,10 +18,10 @@ export class ClientsSliderComponent implements OnInit {
       }
   };
   slides = [
-    {entreprise: "Kyo Sushi", lazyImg: "./assets/img/professionnel/partenaire/kyoSushi_lazy.png", img: "./assets/img/professionnel/partenaire/kyoSushi.png"},
-    {entreprise: "Rosebaie", lazyImg: "./assets/img/professionnel/partenaire/roseBaie_lazy.png", img: "./assets/img/professionnel/partenaire/roseBaie.png"},
-    {entreprise: "Black Pearl Music", lazyImg: "./assets/img/professionnel/partenaire/blackPearlMusic_lazy.png", img: "./assets/img/professionnel/partenaire/blackPearlMusic.png"},
-    {entreprise: "Home Studio", lazyImg: "./assets/img/professionnel/partenaire/homeStudio_lazy.png", img: "./assets/img/professionnel/partenaire/homeStudio.png"}
+    {entreprise: "Kyo Sushi", img: "./assets/img/professionnel/partenaire/kyoSushi.png"},
+    {entreprise: "Rosebaie", img: "./assets/img/professionnel/partenaire/roseBaie.png"},
+    {entreprise: "Black Pearl Music", img: "./assets/img/professionnel/partenaire/blackPearlMusic.png"},
+    {entreprise: "Home Studio", img: "./assets/img/professionnel/partenaire/homeStudio.png"}
   ];
   slideConfig = {
     "slidesToShow": 4,

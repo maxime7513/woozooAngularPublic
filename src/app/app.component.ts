@@ -26,6 +26,7 @@ export class AppComponent {
     "./assets/img/professionnel/offre/mobile_course-demande.png",
     "./assets/img/professionnel/offre/livreur.png",
     "./assets/img/professionnel/offre/logo_woozooBox.png",
+    "./assets/img/noir-bleu_min.jpg",
     "./assets/img/professionnel/valeurs/securite.png",
     "./assets/img/professionnel/valeurs/rapide.png",
     "./assets/img/professionnel/valeurs/qualite.png",
@@ -44,17 +45,16 @@ export class AppComponent {
     "./assets/img/coursier/mockup_csm/mockup_coordonnees.png",
     "./assets/img/coursier/mockup_csm/mockup_recuperation.png",
     "./assets/img/coursier/mockup_csm/mockup_livraison.png",
-    // professionnel
+    // professionnel clients
+    "./assets/img/professionnel/partenaire/kyoSushi.png",
+    "./assets/img/professionnel/partenaire/roseBaie.png",
+    "./assets/img/professionnel/partenaire/.png",
+    "./assets/img/professionnel/partenaire/homeStudio.png",
+    // mise a disposition
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition3.png",
     // background image homepage
     "./assets/img/background-video_img.jpg",
-    // professionnel
-    "./assets/img/professionnel/partenaire/french-tech.png",
-    "./assets/img/professionnel/partenaire/accelerateur.png",
-    "./assets/img/professionnel/partenaire/axa.png",
-    "./assets/img/professionnel/partenaire/cci.png",
-    "./assets/img/noir-bleu_min.jpg",
     // coursier
     "./assets/img/coursier/avantages/euro.svg",
     "./assets/img/coursier/avantages/calendrier.svg",
