@@ -48,7 +48,7 @@ export class AppComponent {
     // professionnel clients
     "./assets/img/professionnel/partenaire/kyoSushi.png",
     "./assets/img/professionnel/partenaire/roseBaie.png",
-    "./assets/img/professionnel/partenaire/.png",
+    "./assets/img/professionnel/partenaire/blackPearlMusic.png",
     "./assets/img/professionnel/partenaire/homeStudio.png",
     // mise a disposition
     "./assets/img/professionnel/presentation/mockup-mise_a_disposition1.png",
