@@ -10,11 +10,11 @@ const routes: Routes = [
     data: {
       animation: 'Home',
       seo: {
-        title: 'Woozoo • Solution de livraison rapide, flexible et sécurisée',
+        title: 'Woozoo • Service de livraison rapide, flexible et sécurisée',
         metaTags: [
-          { name: 'description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
-          { property: 'og:title', content: 'Woozoo | Solution de livraison rapide, flexible et sécurisée' },
-          { proprety: 'og:description', content: 'Woozo est la solution de livraison qui vous connecte à la meilleur flotte de livreurs de votre ville.' },
+          { name: 'description', content: 'Woozo est le service de livraison qui vous connecte à la meilleur flotte de livreurs de Marseille. Faites livrer tous vos colis, Woozoo vous assure une livraison rapide, flexible et sécurisée.' },
+          { property: 'og:title', content: 'Woozoo | Service de livraison rapide, flexible et sécurisée' },
+          { proprety: 'og:description', content: 'Woozo est le service de livraison qui vous connecte à la meilleur flotte de livreurs de Marseille. Faites livrer tous vos colis, Woozoo vous assure une livraison rapide, flexible et sécurisée.' },
         ]
       }
     }
