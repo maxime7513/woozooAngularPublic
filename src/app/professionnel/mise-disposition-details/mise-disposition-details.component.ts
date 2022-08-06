@@ -43,8 +43,7 @@ export class MiseDispositionDetailsComponent implements OnInit, OnDestroy {
   roughtNotation(){
     const a1 = annotate(document.getElementById('besoins') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true }),
     a2 = annotate(document.getElementById('forme') as HTMLElement, { type: 'underline', color: 'var(--blue-secondary)', padding: 2, multiline: true  }),
-    a3 = annotate(document.getElementById('gerer') as HTMLElement, { type: 'underline', color: 'var(--blue-secondary)', padding: 2, multiline: true }),
-    // a4 = annotate(document.getElementById('astreinte') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, animationDuration: 1000}),
+    a3 = annotate(document.getElementById('gerer') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 2, multiline: true }),
     agroupe = annotationGroup([a1, a2, a3]);
     
     agroupe.show();
