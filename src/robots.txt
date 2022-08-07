@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /assets/
 
 Sitemap: https://www.woozoo.io/sitemap.xml
