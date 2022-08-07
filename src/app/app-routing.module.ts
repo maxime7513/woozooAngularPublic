@@ -12,9 +12,9 @@ const routes: Routes = [
       seo: {
         title: 'Woozoo • Service de livraison rapide, flexible et sécurisée',
         metaTags: [
-          { name: 'description', content: 'Woozo est le service de livraison qui vous connecte à la meilleur flotte de livreurs de Marseille. Faites livrer tous vos colis, Woozoo vous assure une livraison rapide, flexible et sécurisée.' },
+          { name: 'description', content: 'Woozo est le service de livraison qui vous connecte à la meilleur flotte de livreurs de Marseille et ses alentours. Faites livrer tous vos colis, Woozoo vous assure une livraison rapide, flexible et sécurisée.' },
           { property: 'og:title', content: 'Woozoo | Service de livraison rapide, flexible et sécurisée' },
-          { proprety: 'og:description', content: 'Woozo est le service de livraison qui vous connecte à la meilleur flotte de livreurs de Marseille. Faites livrer tous vos colis, Woozoo vous assure une livraison rapide, flexible et sécurisée.' },
+          { proprety: 'og:description', content: 'Woozo est le service de livraison qui vous connecte à la meilleur flotte de livreurs de Marseille et ses alentours. Faites livrer tous vos colis, Woozoo vous assure une livraison rapide, flexible et sécurisée.' },
         ]
       }
     }
@@ -25,9 +25,9 @@ const routes: Routes = [
       seo: {
         title: 'Livraison pour tous les commerces et entreprises',
         metaTags: [
-          { name: 'description', content: 'Connectez-vous à la meilleur flotte de livreurs de votre ville. Woozoo est le service de livraison instantané pour tous les commerces et entreprises' },
+          { name: 'description', content: 'Connectez-vous à la meilleur flotte de livreurs de votre ville. Woozoo est le service de livraison instantané pour tous les commerces et entreprises.' },
           { property: 'og:title', content: 'Woozoo | Livraison pour tous les commerces et entreprises' },
-          { proprety: 'og:description', content: 'Connectez-vous à la meilleur flotte de livreurs de votre ville. Woozoo est le service de livraison instantané pour tous les commerces et entreprises' },
+          { proprety: 'og:description', content: 'Connectez-vous à la meilleur flotte de livreurs de votre ville. Woozoo est le service de livraison instantané pour tous les commerces et entreprises.' },
         ]
       }
     } 
