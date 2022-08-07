@@ -32,7 +32,7 @@ export class AvantagesSecteurComponent implements OnInit {
   }
 
   roughtNotation(){
-    let underline = annotate(document.querySelector('h5') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 13 });
+    let underline = annotate(document.querySelector('h2') as HTMLElement, { type: 'underline', color: '#0eb3b7', padding: 13 });
     underline.show();
     this.notationOneTime = true; // la fonction est effectué et ne peut pas etre relancé
   }
