@@ -2,43 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>https://www.woozoo.io/</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
+    <lastmod>2022-08-07T21:00:00+00:00</lastmod>
     <priority>1.00</priority>
     </url>
     
     <url>
     <loc>https://www.woozoo.io/professionnel</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
+    <lastmod>2022-08-07T21:00:00+00:00</lastmod>
     <priority>0.80</priority>
     </url>
     
     <url>
     <loc>https://www.woozoo.io/secteur</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
+    <lastmod>2022-08-07T21:00:00+00:00</lastmod>
     <priority>0.80</priority>
     </url>
     
     <url>
     <loc>https://www.woozoo.io/coursier</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
+    <lastmod>2022-08-07T21:00:00+00:00</lastmod>
     <priority>0.80</priority>
     </url>
     
     <url>
     <loc>https://www.woozoo.io/conditionsGenerales</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
-    <priority>0.40</priority>
-    </url>
-    
-    <url>
-    <loc>https://www.woozoo.io/confidentialite</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
-    <priority>0.40</priority>
-    </url>
-    
-    <url>
-    <loc>https://www.woozoo.io/mentionsLegales</loc>
-    <lastmod>2022-07-16T21:00:00+00:00</lastmod>
+    <lastmod>2022-08-07T21:00:00+00:00</lastmod>
     <priority>0.40</priority>
     </url>
 </urlset>
