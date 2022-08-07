@@ -8,11 +8,17 @@ form{
     padding: 30px;
     border-radius: 20px;
     transition: .4s;
-    h4{
+    h3{
         font-size: 30px;
         color: var(--blue-secondary);
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 13px;
+    }
+    h2{
+        font-size: 16px;
+        color: #7e8da9;
+        margin-bottom: 25px;
+        text-align: center;
     }
     > div{
         display: flex;
@@ -194,7 +200,7 @@ form{
     form{
         padding: 15px 25px;
         margin-top: 0;
-        h4{
+        h3{
             font-size: 26px;
         }
         div{

@@ -2,14 +2,14 @@
     <h2>Le bien être de nos livreurs,<br>au coeur de nos préoccupations</h2>
         <div>
             <div *ngFor="let avantage of avantages | slice:0:3; index as i">
-                <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="icone avantages">
+                <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="avantages livreurs">
                 <p (click)="showDetails(1,i+1)">{{ avantage.titre }}<fa-icon [icon]="chevronDown"></fa-icon></p>
                 <p>{{ avantage.texte }}</p>
             </div>
         </div>    
         <div>
             <div *ngFor="let avantage of avantages | slice:3:6; index as i">
-                <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="icone avantages">
+                <img src="./assets/img/coursier/avantages/{{ avantage.image }}" alt="avantages livreurs">
                 <p (click)="showDetails(2,i+1)">{{ avantage.titre }}<fa-icon [icon]="chevronDown"></fa-icon></p>
                 <p>{{ avantage.texte }}</p>
             </div>
