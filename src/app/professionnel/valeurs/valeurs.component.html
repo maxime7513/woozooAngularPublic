@@ -1,8 +1,7 @@
 <section>
     <ngx-slick-carousel #slickModal="slick-carousel" id="slider-valeurs" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let valeur of valeurs" class="avantage">
-            <img src="./assets/img/professionnel/valeurs/{{valeur.img}}.png" alt="icone {{valeur.titre}}">
-            <!-- <h4>{{valeur.titre}}</h4> -->
+            <img src="./assets/img/professionnel/valeurs/{{valeur.img}}.png" alt="livraison {{valeur.titre}}">
             <p>{{valeur.texte}}</p>
         </div>
     </ngx-slick-carousel>

@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class ValeursComponent implements OnInit {
   valeurs: Array<{img: string, titre: string, texte: string}> = [
     {img: "securite",
-    titre: "Sécurité",
+    titre: "Sécurisé",
     texte: "Nous vous garantissons une livraison 100% sécurisée, grâce à un process établie",
     },
     {img: "rapide",
-    titre: "Urgence",
+    titre: "Urgente",
     texte: "La réactivité de notre service, vous garantie une livraison toujours plus rapide",
     },
     {img: "qualite",
-    titre: "Qualité",
+    titre: "qualité",
     texte: "Nous formons nos coursiers partenaires pour vous assurer une livraison de qualité",
     },
     {img: "equitable",
