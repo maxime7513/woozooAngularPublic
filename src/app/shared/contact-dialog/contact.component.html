@@ -4,10 +4,7 @@
     </button>
     <div mat-dialog-content>
         <h4>appelez-nous</h4>
-        <p>
-            <fa-icon [icon]="phoneIcon"></fa-icon>
-            <span>04 83 43 64 26</span>
-        </p>
+        <a href="tel:0483436426"><fa-icon [icon]="phoneIcon"></fa-icon>04 83 43 64 26</a>
         <h4>ou Ecrivez-nous</h4>
         <form [formGroup]="contactForm" (ngSubmit)="submit()">
             <div>
