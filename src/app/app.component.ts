@@ -5,6 +5,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { SEOService } from './services/seo.service';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { Meta } from '@angular/platform-browser';
+import { CanonicalService } from './services/canonical.service';
 
 @Component({
   selector: 'app-root',
@@ -80,7 +81,7 @@ export class AppComponent {
     return outlet?.activatedRouteData?.['animation'];
   }
 
-  constructor(private metaTagService: Meta, private router: Router, private activatedRoute: ActivatedRoute, private seoService: SEOService){}
+  constructor(private metaTagService: Meta, private router: Router, private activatedRoute: ActivatedRoute, private seoService: SEOService, private canonical: CanonicalService){}
 
   ngOnInit(): void {
     this.metaTagService.addTags([
@@ -88,6 +89,7 @@ export class AppComponent {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { property: 'og:image', content: './assets/img/woozoo-meta_img.png' },
       { charset: 'UTF-8' },
+      { name: 'robots', content: 'index, follow' }
     ]);
 
     this.router.events.pipe(
@@ -105,6 +107,8 @@ export class AppComponent {
       this.seoService.updateMetaTags(seoData['metaTags']);
     });
 
+    this.canonical.createCanonicalLink();
+    
     this.preloadImages();
   }
 
